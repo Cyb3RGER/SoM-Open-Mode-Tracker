@@ -1,0 +1,10 @@
+[
+    {
+        "name": "Mode",
+        "type": "toggle",
+        "img": "images/long_mode.png",
+        "disabled_img": "images/short_mode.png",
+        "disabled_img_mods": "",
+        "codes": "mode"
+      }
+]

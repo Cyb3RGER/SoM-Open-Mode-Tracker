@@ -1,0 +1,163 @@
+{    
+    "items_characters": {        
+        "type": "itemgrid",
+        "h_alignment": "left",
+        "item_margin": "1,2",
+        "rows": [ 
+            [ "boy", "girl", "sprite" ]
+        ]        
+    },
+    "items_magic": {
+        "type": "itemgrid",
+        "h_alignment": "center",
+        "item_margin": "1,2",
+        "rows": [ 
+            ["undine", "water_seed"],
+            ["rocky", "earth_seed"],
+            ["sylphid", "wind_seed"],
+            ["salamando", "fire_seed"],
+            ["shade", "dark_seed"],
+            ["lumina", "light_seed"],
+            ["luna", "moon_seed"],
+            ["dryad", "tree_seed"]
+        ]
+    },
+    "items_weapons": {
+        "type": "itemgrid",
+        "h_alignment": "center",
+        "item_margin": "1,2",
+        "rows": [ 
+            ["gloves", "sword"],
+            ["axe", "spear"],
+            ["whip", "bow"],
+            ["boomerang", "javelin"]
+        ]
+    },
+    "items_key_items": {
+        "type": "itemgrid",
+        "h_alignment": "center",
+        "item_margin": "1,2",
+        "rows": [ 
+            [ "mallet" , "belt" ],
+            [ "tail", "key"],
+            [ "drum", "rope"]
+        ]
+    },
+    "shared_item_grid": {		
+		"type": "array",
+		"orientation": "vertical",
+		"content": [ 
+			{
+				"type": "layout",
+				"key": "items_characters"
+			},
+			{
+				"type": "array",
+				"orientation": "horizontal",
+				"content": [				
+					{
+						"type": "layout",
+						"key": "items_magic"						
+					},
+					{
+						"type": "layout",
+						"key": "items_weapons"
+					},
+					{
+						"type": "layout",
+						"key": "items_key_items"
+					}
+				]
+			}
+		]
+    },
+    "orbs_item_grid": 
+    {
+        "type": "array",
+        "orientation": "hotizontal",
+        "content": [  
+            {		
+                "type": "itemgrid",
+                "h_alignment": "center",
+                "v_alignment": "center",
+                "item_margin": "1,2",
+                "item_width": 64,
+                "item_height": 32,
+                "rows": [ 
+                    ["header_et","header_mc", "header_fp", "header_mp"],
+                ]
+            },            
+            {		
+                "type": "itemgrid",
+                "h_alignment": "center",
+                "v_alignment": "center",
+                "item_margin": "16,2",
+                "item_size": 32,                
+                "rows": [                     
+                    ["et_orb", "mc_orb", "fp_orb1", "mp_orb"],
+                    ["", "", "fp_orb2", ""],
+                    ["", "", "fp_orb3", ""]
+                ]
+            }
+        ]
+    },
+    "fancy_item_grid": {
+        "type": "dock",
+        "content": [
+            {            		
+                "type": "group",
+                "header": "Characters",
+                "dock": "top",							
+                "content": {
+                    "type": "layout",
+                    "key": "items_characters"
+                }
+            },
+            {            		
+                "type": "group",
+                "header": "Magic",
+                "dock": "left",							
+                "content": {
+                    "type": "layout",
+                    "key": "items_magic"
+                }
+            },
+            {            		
+                "type": "group",
+                "header": "Weapons",
+                "dock": "center",							
+                "content": {
+                    "type": "layout",
+                    "key": "items_weapons"
+                }
+            },
+            {            		
+                "type": "group",
+                "header": "Key Items",
+                "dock": "center",							
+                "content": {
+                    "type": "layout",
+                    "key": "items_key_items"
+                }
+            }
+        ]
+    },
+    "tracker_capture_item": {
+        "type": "container",
+        "content": {
+            "type": "itemgrid",
+            "h_alignment": "center",
+            "item_margin": "1,2",
+            "rows": [
+                ["undine", "water_seed", "orb_undine", "gloves_generic", "sword_generic", "mallet", "belt"],
+                ["rocky", "earth_seed", "orb_rocky","axe_generic", "spear_generic", "tail", "key"],
+                ["sylphid", "wind_seed", "orb_sylphid","whip_generic", "bow_generic", "", ""],
+                ["salamando", "fire_seed", "orb_salamando","boomerang_generic", "javelin_generic", "", ""],
+                ["shade", "dark_seed", "orb_shade","", "", "", ""],
+                ["lumina", "light_seed", "orb_lumina","", "", "", ""],
+                ["luna", "moon_seed", "orb_luna","", "", "", ""],
+                ["dryad", "tree_seed", "orb_dryad","", "", "girl", "sprite"]
+            ]
+        }
+    }
+}

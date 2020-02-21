@@ -1,0 +1,421 @@
+[
+    //header
+    {
+        "name": "Earth Temple",
+        "type": "static",
+        "capturable": false,
+        "img": "images/overlay_et.png",
+        "img_mods": "stretch",
+        "codes": "header_et"
+    },
+    {
+        "name": "Matango Cave",
+        "type": "static",
+        "capturable": false,
+        "img": "images/overlay_mc.png",
+        "codes": "header_mc"
+    },
+    {
+        "name": "Fire Palace",
+        "type": "static",
+        "capturable": false,
+        "img": "images/overlay_fp.png",
+        "codes": "header_fp"
+    },
+    {
+        "name": "Moon Palace",
+        "type": "static",
+        "capturable": false,
+        "img": "images/overlay_mp.png",
+        "codes": "header_mp"
+    },    
+    //generics
+    {
+        "name": "Unanalysed Orb",
+        "type": "static",
+        "capturable": true,
+        "img": "images/orb.png",
+        "codes": "orb_unknown"
+    },
+    {
+        "name": "Undine Orb",
+        "type": "static",
+        "capturable": true,
+        "img": "images/orb_undine.png",
+        "codes": "orb_undine"
+    },
+    {
+        "name": "Rocky Orb",
+        "type": "static",
+        "capturable": true,
+        "img": "images/orb_rocky.png",
+        "codes": "orb_rocky"
+    },
+    {
+        "name": "Sylphid Orb",
+        "type": "static",
+        "capturable": true,
+        "img": "images/orb_sylphid.png",
+        "codes": "orb_sylphid"
+    },
+    {
+        "name": "Salamando Orb",
+        "type": "static",
+        "capturable": true,
+        "img": "images/orb_salamando.png",
+        "codes": "orb_salamando"
+    },
+    {
+        "name": "Shade Orb",
+        "type": "static",
+        "capturable": true,
+        "img": "images/orb_shade.png",
+        "codes": "orb_shade"
+    },
+    {
+        "name": "Lumina Orb",
+        "type": "static",
+        "capturable": true,
+        "img": "images/orb_lumina.png",
+        "codes": "orb_lumina"
+    },
+    {
+        "name": "Luna Orb",
+        "type": "static",
+        "capturable": true,
+        "img": "images/orb_luna.png",
+        "codes": "orb_luna"
+    },
+    {
+        "name": "Dryad Orb",
+        "type": "static",
+        "capturable": true,
+        "img": "images/orb_dryad.png",
+        "codes": "orb_dryad"
+    },
+    //orbs
+    {
+		"name": "Earth Temple Orb",
+        "type": "progressive",
+        "capturable": false,
+        "loop": true,
+        "allow_disabled": false,
+		"stages": [
+            {
+                "img": "images/orb.png",
+                "codes": "earth_temple,earth_temple_orb,et_orb,et_orb_unknown",
+                "inherit_codes": false,
+            },  
+            {
+                "img": "images/orb_undine.png",
+                "codes": "earth_temple,earth_temple_orb,et_orb,et_orb_undine",
+                "inherit_codes": false,
+            },
+            {
+                "img": "images/orb_rocky.png",
+                "codes": "earth_temple,earth_temple_orb,et_orb,et_orb_rocky",
+                "inherit_codes": false,
+            },
+            {
+                "img": "images/orb_sylphid.png",
+                "codes": "earth_temple,earth_temple_orb,et_orb,et_orb_sylphid",
+                "inherit_codes": false,
+            },
+            {
+                "img": "images/orb_salamando.png",
+                "codes": "earth_temple,earth_temple_orb,et_orb,et_orb_salamando",
+                "inherit_codes": false,
+            },
+            {
+                "img": "images/orb_shade.png",
+                "codes": "earth_temple,earth_temple_orb,et_orb,et_orb_shade",
+                "inherit_codes": false,
+            },
+            {
+                "img": "images/orb_lumina.png",
+                "codes": "earth_temple,earth_temple_orb,et_orb,et_orb_lumina",
+                "inherit_codes": false,
+            },      
+            {
+                "img": "images/orb_luna.png",
+                "codes": "earth_temple,earth_temple_orb,et_orb,et_orb_luna",
+                "inherit_codes": false,
+            },
+            {
+                "img": "images/orb_dryad.png",
+                "codes": "earth_temple,earth_temple_orb,et_orb,et_orb_dryad",
+                "inherit_codes": false,
+            }
+        ]
+    },
+    {
+		"name": "Matango Cave Orb",
+        "type": "progressive",
+        "capturable": false,
+        "loop": true,
+        "allow_disabled": false,
+		"stages": [
+            {
+                "img": "images/orb.png",
+                "codes": "matango_cave,earth_temple_orb,mc_orb,mc_orb_unknown",
+                "inherit_codes": false,
+            },  
+            {
+                "img": "images/orb_undine.png",
+                "codes": "matango_cave,earth_temple_orb,mc_orb,mc_orb_undine",
+                "inherit_codes": false,
+            },
+            {
+                "img": "images/orb_rocky.png",
+                "codes": "matango_cave,earth_temple_orb,mc_orb,mc_orb_rocky",
+                "inherit_codes": false,
+            },
+            {
+                "img": "images/orb_sylphid.png",
+                "codes": "matango_cave,earth_temple_orb,mc_orb,mc_orb_sylphid",
+                "inherit_codes": false,
+            },
+            {
+                "img": "images/orb_salamando.png",
+                "codes": "matango_cave,earth_temple_orb,mc_orb,mc_orb_salamando",
+                "inherit_codes": false,
+            },
+            {
+                "img": "images/orb_shade.png",
+                "codes": "matango_cave,earth_temple_orb,mc_orb,mc_orb_shade",
+                "inherit_codes": false,
+            },
+            {
+                "img": "images/orb_lumina.png",
+                "codes": "matango_cave,earth_temple_orb,mc_orb,mc_orb_lumina",
+                "inherit_codes": false,
+            },      
+            {
+                "img": "images/orb_luna.png",
+                "codes": "matango_cave,earth_temple_orb,mc_orb,mc_orb_luna",
+                "inherit_codes": false,
+            },
+            {
+                "img": "images/orb_dryad.png",
+                "codes": "matango_cave,earth_temple_orb,mc_orb,mc_orb_dryad",
+                "inherit_codes": false,
+            }
+        ]
+    },
+    {
+		"name": "Fire Palace Orb 1",
+        "type": "progressive",
+        "capturable": false,
+        "loop": true,
+        "allow_disabled": false,
+		"stages": [
+            {
+                "img": "images/orb.png",
+                "codes": "fire_palace,fire_palace_orb1,fp_orb1,fp_orb1_unknown",
+                "inherit_codes": false,
+            },  
+            {
+                "img": "images/orb_undine.png",
+                "codes": "fire_palace,fire_palace_orb1,fp_orb1,fp_orb1_undine",
+                "inherit_codes": false,
+            },
+            {
+                "img": "images/orb_rocky.png",
+                "codes": "fire_palace,fire_palace_orb1,fp_orb1,fp_orb1_rocky",
+                "inherit_codes": false,
+            },
+            {
+                "img": "images/orb_sylphid.png",
+                "codes": "fire_palace,fire_palace_orb1,fp_orb1,fp_orb1_sylphid",
+                "inherit_codes": false,
+            },
+            {
+                "img": "images/orb_salamando.png",
+                "codes": "fire_palace,fire_palace_orb1,fp_orb1,fp_orb1_salamando",
+                "inherit_codes": false,
+            },
+            {
+                "img": "images/orb_shade.png",
+                "codes": "fire_palace,fire_palace_orb1,fp_orb1,fp_orb1_shade",
+                "inherit_codes": false,
+            },
+            {
+                "img": "images/orb_lumina.png",
+                "codes": "fire_palace,fire_palace_orb1,fp_orb1,fp_orb1_lumina",
+                "inherit_codes": false,
+            },      
+            {
+                "img": "images/orb_luna.png",
+                "codes": "fire_palace,fire_palace_orb1,fp_orb1,fp_orb1_luna",
+                "inherit_codes": false,
+            },
+            {
+                "img": "images/orb_dryad.png",
+                "codes": "fire_palace,fire_palace_orb1,fp_orb1,fp_orb1_dryad",
+                "inherit_codes": false,
+            }
+        ]
+    },
+    {
+		"name": "Fire Palace Orb",
+        "type": "progressive",
+        "capturable": false,
+        "loop": true,
+        "allow_disabled": false,
+		"stages": [
+            {
+                "img": "images/orb.png",
+                "codes": "fire_palace,fire_palace_orb2,fp_orb2,fp_orb2_unknown",
+                "inherit_codes": false,
+            },  
+            {
+                "img": "images/orb_undine.png",
+                "codes": "fire_palace,fire_palace_orb2,fp_orb2,fp_orb2_undine",
+                "inherit_codes": false,
+            },
+            {
+                "img": "images/orb_rocky.png",
+                "codes": "fire_palace,fire_palace_orb2,fp_orb2,fp_orb2_rocky",
+                "inherit_codes": false,
+            },
+            {
+                "img": "images/orb_sylphid.png",
+                "codes": "fire_palace,fire_palace_orb2,fp_orb2,fp_orb2_sylphid",
+                "inherit_codes": false,
+            },
+            {
+                "img": "images/orb_salamando.png",
+                "codes": "fire_palace,fire_palace_orb2,fp_orb2,fp_orb2_salamando",
+                "inherit_codes": false,
+            },
+            {
+                "img": "images/orb_shade.png",
+                "codes": "fire_palace,fire_palace_orb2,fp_orb2,fp_orb2_shade",
+                "inherit_codes": false,
+            },
+            {
+                "img": "images/orb_lumina.png",
+                "codes": "fire_palace,fire_palace_orb2,fp_orb2,fp_orb2_lumina",
+                "inherit_codes": false,
+            },      
+            {
+                "img": "images/orb_luna.png",
+                "codes": "fire_palace,fire_palace_orb2,fp_orb2,fp_orb2_luna",
+                "inherit_codes": false,
+            },
+            {
+                "img": "images/orb_dryad.png",
+                "codes": "fire_palace,fire_palace_orb2,fp_orb2,fp_orb2_dryad",
+                "inherit_codes": false,
+            }
+        ]
+    },
+    {
+		"name": "Fire Palace Orb 3",
+        "type": "progressive",
+        "capturable": false,
+        "loop": true,
+        "allow_disabled": false,
+		"stages": [
+            {
+                "img": "images/orb.png",
+                "codes": "fire_palace,fire_palace_orb3,fp_orb3,fp_orb3_unknown",
+                "inherit_codes": false,
+            },  
+            {
+                "img": "images/orb_undine.png",
+                "codes": "fire_palace,fire_palace_orb3,fp_orb3,fp_orb3_undine",
+                "inherit_codes": false,
+            },
+            {
+                "img": "images/orb_rocky.png",
+                "codes": "fire_palace,fire_palace_orb3,fp_orb3,fp_orb3_rocky",
+                "inherit_codes": false,
+            },
+            {
+                "img": "images/orb_sylphid.png",
+                "codes": "fire_palace,fire_palace_orb3,fp_orb3,fp_orb3_sylphid",
+                "inherit_codes": false,
+            },
+            {
+                "img": "images/orb_salamando.png",
+                "codes": "fire_palace,fire_palace_orb3,fp_orb3,fp_orb3_salamando",
+                "inherit_codes": false,
+            },
+            {
+                "img": "images/orb_shade.png",
+                "codes": "fire_palace,fire_palace_orb3,fp_orb3,fp_orb3_shade",
+                "inherit_codes": false,
+            },
+            {
+                "img": "images/orb_lumina.png",
+                "codes": "fire_palace,fire_palace_orb3,fp_orb3,fp_orb3_lumina",
+                "inherit_codes": false,
+            },      
+            {
+                "img": "images/orb_luna.png",
+                "codes": "fire_palace,fire_palace_orb3,fp_orb3,fp_orb3_luna",
+                "inherit_codes": false,
+            },
+            {
+                "img": "images/orb_dryad.png",
+                "codes": "fire_palace,fire_palace_orb3,fp_orb3,fp_orb3_dryad",
+                "inherit_codes": false,
+            }
+        ]
+    },
+    {
+		"name": "Moon Palace Orb",
+        "type": "progressive",
+        "capturable": false,
+        "loop": true,
+        "allow_disabled": false,
+		"stages": [
+            {
+                "img": "images/orb.png",
+                "codes": "moon_palace,moon_palace_orb,mp_orb,mp_orb_unknown",
+                "inherit_codes": false,
+            },  
+            {
+                "img": "images/orb_undine.png",
+                "codes": "moon_palace,moon_palace_orb,mp_orb,mp_orb_undine",
+                "inherit_codes": false,
+            },
+            {
+                "img": "images/orb_rocky.png",
+                "codes": "moon_palace,moon_palace_orb,mp_orb,mp_orb_rocky",
+                "inherit_codes": false,
+            },
+            {
+                "img": "images/orb_sylphid.png",
+                "codes": "moon_palace,moon_palace_orb,mp_orb,mp_orb_sylphid",
+                "inherit_codes": false,
+            },
+            {
+                "img": "images/orb_salamando.png",
+                "codes": "moon_palace,moon_palace_orb,mp_orb,mp_orb_salamando",
+                "inherit_codes": false,
+            },
+            {
+                "img": "images/orb_shade.png",
+                "codes": "moon_palace,moon_palace_orb,mp_orb,mp_orb_shade",
+                "inherit_codes": false,
+            },
+            {
+                "img": "images/orb_lumina.png",
+                "codes": "moon_palace,moon_palace_orb,mp_orb,mp_orb_lumina",
+                "inherit_codes": false,
+            },      
+            {
+                "img": "images/orb_luna.png",
+                "codes": "moon_palace,moon_palace_orb,mp_orb,mp_orb_luna",
+                "inherit_codes": false,
+            },
+            {
+                "img": "images/orb_dryad.png",
+                "codes": "moon_palace,moon_palace_orb,mp_orb,mp_orb_dryad",
+                "inherit_codes": false,
+            }
+        ]
+    }
+]

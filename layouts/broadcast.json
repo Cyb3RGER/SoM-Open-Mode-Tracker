@@ -1,0 +1,41 @@
+{
+    "tracker_broadcast": {
+        "type": "array",
+        "dropshadow": true,
+        "margin": "10",
+        "content": [
+            {
+                "type": "array",
+                "orientation": "vertical",
+                "content": [
+                    {
+						"type": "array",
+						"orientation": "horizontal",
+						"content": [
+							{
+								"type": "layout",
+								"key": "shared_item_grid"
+							},
+							{
+								"type": "layout",
+								"key": "orbs_item_grid"
+							}
+						]
+                    },
+                    {
+                        "type": "container",
+                        "margin": "0,5,0,0",
+                        "content": {
+                            "type": "recentpins",
+                            "h_alignment": "stretch",
+                            "v_alignment": "center",
+                            "orientation": "vertical",
+                            "compact": true,
+                            "num_items": 2
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+}

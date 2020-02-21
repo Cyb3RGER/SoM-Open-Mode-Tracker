@@ -1,0 +1,955 @@
+[  
+  //character
+  {
+    "name": "Boy",
+    "type": "static",
+    "img": "images/boy.png",
+    "disabled_img": "images/boy_gray.png",
+    "disabled_img_mods": "",
+    "codes": "boy"
+  },
+  {
+    "name": "Girl",
+    "type": "toggle",
+    "capturable": true,
+    "img": "images/girl.png",
+    "disabled_img": "images/girl_gray.png",
+    "disabled_img_mods": "",
+    "codes": "girl"
+  },
+  {
+    "name": "Sprite",
+    "type": "toggle",
+    "capturable": true,
+    "img": "images/sprite.png",
+    "disabled_img": "images/sprite_gray.png",
+    "disabled_img_mods": "",
+    "codes": "sprite"
+  },
+	//key items
+	{
+    "name": "Midge Mallet",
+    "type": "toggle",
+    "capturable": true,
+    "img": "images/midge_mallet.png",
+    "codes": "mallet"
+  },
+	{
+    "name": "Moogle Belt",
+    "type": "toggle",
+    "capturable": true,
+    "img": "images/moogle_belt.png",
+    "codes": "belt"
+  },
+	{
+    "name": "Sea Hare Tail",
+    "type": "toggle",
+    "capturable": true,
+    "img": "images/sea_hare_tail.png",
+    "codes": "tail"
+  },
+	{
+    "name": "Gold Tower Key",
+    "type": "toggle",
+    "capturable": true,
+    "img": "images/gold_tower_key.png",
+    "codes": "key"
+  },
+	//"key" items
+	{
+    "name": "Flammie Drum",
+    "type": "static",
+    "img": "images/flammie_drum.png",
+    "codes": "drum"
+  },
+	{
+    "name": "Magic Rope",
+    "type": "static",
+    "img": "images/magic_rope.png",
+    "codes": "rope"
+  },
+  //magic sprites
+  {
+    "name": "Undine",
+    "type": "toggle",
+    "capturable": true,
+    "img": "images/undine.png",
+    "codes": "undine"
+  },
+  {
+    "name": "Rocky",
+    "type": "toggle",
+    "capturable": true,
+    "img": "images/rocky.png",
+    "codes": "rocky"
+  },
+  {
+    "name": "Sylphid",
+    "type": "toggle",
+    "capturable": true,
+    "img": "images/sylphid.png",
+    "codes": "sylphid"
+  },
+  {
+    "name": "Salamando",
+    "type": "toggle",
+    "capturable": true,
+    "img": "images/salamando.png",
+    "codes": "salamando"
+  },
+  {
+    "name": "Shade",
+    "type": "toggle",
+    "capturable": true,
+    "img": "images/shade.png",
+    "codes": "shade"
+  },
+  {
+    "name": "Lumina",
+    "type": "toggle",
+    "capturable": true,
+    "img": "images/lumina.png",
+    "codes": "lumina"
+  },
+  {
+    "name": "Luna",
+    "type": "toggle",
+    "capturable": true,
+    "img": "images/luna.png",
+    "codes": "luna"
+  },  
+  {
+    "name": "Dryad",
+    "type": "toggle",
+    "capturable": true,
+    "img": "images/dryad.png",
+    "codes": "dryad"
+  },
+  //mana seeds
+  {
+    "name": "Water Seed",
+    "type": "toggle",
+    "capturable": true,
+    "img": "images/water_seed.png",
+    "disabled_img": "images/water_seed_clear.png",
+    "disabled_img_mods": "",
+    "codes": "water_seed"
+  },
+  {
+    "name": "Earth Seed",
+    "type": "toggle",
+    "capturable": true,
+    "img": "images/earth_seed.png",
+    "disabled_img": "images/earth_seed_clear.png",
+    "disabled_img_mods": "",
+    "codes": "earth_seed"
+  },
+  {
+    "name": "Wind Seed",
+    "type": "toggle",
+    "capturable": true,
+    "img": "images/wind_seed.png",
+    "disabled_img": "images/wind_seed_clear.png",
+    "disabled_img_mods": "",
+    "codes": "wind_seed"
+  },
+  {
+    "name": "Fire Seed",
+    "type": "toggle",
+    "capturable": true,
+    "img": "images/fire_seed.png",
+    "disabled_img": "images/fire_seed_clear.png",
+    "disabled_img_mods": "",
+    "codes": "fire_seed"
+  },
+  {
+    "name": "Dark Seed",
+    "type": "toggle",
+    "capturable": true,
+    "img": "images/dark_seed.png",
+    "disabled_img": "images/dark_seed_clear.png",
+    "disabled_img_mods": "",
+    "codes": "dark_seed"
+  },
+  {
+    "name": "Light Seed",
+    "type": "toggle",
+    "capturable": true,
+    "img": "images/light_seed.png",
+    "disabled_img": "images/light_seed_clear.png",
+    "disabled_img_mods": "",
+    "codes": "light_seed"
+  },
+  {
+    "name": "Moon Seed",
+    "type": "toggle",
+    "capturable": true,
+    "img": "images/moon_seed.png",
+    "disabled_img": "images/moon_seed_clear.png",
+    "disabled_img_mods": "",
+    "codes": "moon_seed"
+  },  
+  {
+    "name": "Tree Seed",
+    "type": "toggle",
+    "capturable": true,
+    "img": "images/tree_seed.png",
+    "disabled_img": "images/tree_seed_clear.png",
+    "disabled_img_mods": "",
+    "codes": "tree_seed"
+  },
+	//weapons
+	{
+		"name": "Gloves",
+    "type": "progressive_toggle",
+    "capturable": false,
+    "loop": true,
+    "allow_disabled": false,
+		"stages": [
+      {
+        "img": "images/gloves.png",
+        "img_mods": "overlay|images/overlay_0.png",
+        "codes": "gloves,orb0",
+        "secondary_codes": "orb0"
+      },
+      {
+        "img": "images/gloves.png",
+        "img_mods": "overlay|images/overlay_1.png",
+        "codes": "gloves,orb1",
+        "secondary_codes": "orb1"
+      },
+      {    
+        "img": "images/gloves.png",
+        "img_mods": "overlay|images/overlay_2.png",
+        "codes": "gloves,orb2",
+        "secondary_codes": "orb2"
+      },
+      {
+        "img": "images/gloves.png",
+        "img_mods": "overlay|images/overlay_3.png",
+        "codes": "gloves,orb3",
+        "secondary_codes": "orb3"
+      },
+      {
+        "img": "images/gloves.png",
+        "img_mods": "overlay|images/overlay_4.png",
+        "codes": "gloves,orb4",
+        "secondary_codes": "orb4"
+      },
+      {
+        "img": "images/gloves.png",
+        "img_mods": "overlay|images/overlay_5.png",
+        "codes": "gloves,orb5",
+        "secondary_codes": "orb5"
+      },
+      {
+        "img": "images/gloves.png",
+        "img_mods": "overlay|images/overlay_6.png",
+        "codes": "gloves,orb6",
+        "secondary_codes": "orb6"
+      },
+      {
+        "img": "images/gloves.png",
+        "img_mods": "overlay|images/overlay_7.png",
+        "codes": "gloves,orb7",
+        "secondary_codes": "orb7"
+      },
+      {
+        "img": "images/gloves.png",
+        "img_mods": "overlay|images/overlay_8.png",
+        "codes": "gloves,orb8",
+        "secondary_codes": "orb8"
+      },
+      {
+        "img": "images/gloves.png",
+        "img_mods": "overlay|images/overlay_9.png",
+        "codes": "gloves,orb9",
+        "secondary_codes": "orb9"
+      },
+      {
+        "img": "images/gloves.png",
+        "img_mods": "overlay|images/overlay_10.png",
+        "codes": "gloves,orb10",
+        "secondary_codes": "orb10"
+      },
+      {
+        "img": "images/gloves.png",
+        "img_mods": "overlay|images/overlay_11.png",
+        "codes": "gloves,orb11",
+        "secondary_codes": "orb11"
+      },
+      {
+        "img": "images/gloves.png",
+        "img_mods": "overlay|images/overlay_12.png",
+        "codes": "gloves,orb12",
+        "secondary_codes": "orb12"
+			}
+		]
+  },
+  {
+		"name": "Sword",
+    "type": "progressive_toggle",
+    "capturable": false,
+    "loop": true,
+    "allow_disabled": false,
+		"stages": [
+      {
+        "img": "images/sword.png",
+        "img_mods": "overlay|images/overlay_0.png",
+        "codes": "sword,orb0",
+        "secondary_codes": "orb0"
+      },
+      {
+        "img": "images/sword.png",
+        "img_mods": "overlay|images/overlay_1.png",
+        "codes": "sword,orb1",
+        "secondary_codes": "orb1"
+      },
+      {    
+        "img": "images/sword.png",
+        "img_mods": "overlay|images/overlay_2.png",
+        "codes": "sword,orb2",
+        "secondary_codes": "orb2"
+      },
+      {
+        "img": "images/sword.png",
+        "img_mods": "overlay|images/overlay_3.png",
+        "codes": "sword,orb3",
+        "secondary_codes": "orb3"
+      },
+      {
+        "img": "images/sword.png",
+        "img_mods": "overlay|images/overlay_4.png",
+        "codes": "sword,orb4",
+        "secondary_codes": "orb4"
+      },
+      {
+        "img": "images/sword.png",
+        "img_mods": "overlay|images/overlay_5.png",
+        "codes": "sword,orb5",
+        "secondary_codes": "orb5"
+      },
+      {
+        "img": "images/sword.png",
+        "img_mods": "overlay|images/overlay_6.png",
+        "codes": "sword,orb6",
+        "secondary_codes": "orb6"
+      },
+      {
+        "img": "images/sword.png",
+        "img_mods": "overlay|images/overlay_7.png",
+        "codes": "sword,orb7",
+        "secondary_codes": "orb7"
+      },
+      {
+        "img": "images/sword.png",
+        "img_mods": "overlay|images/overlay_8.png",
+        "codes": "sword,orb8",
+        "secondary_codes": "orb8"
+			},
+      {
+        "img": "images/sword.png",
+        "img_mods": "overlay|images/overlay_9.png",
+        "codes": "sword,orb9",
+        "secondary_codes": "orb9"
+      },
+      {
+        "img": "images/sword.png",
+        "img_mods": "overlay|images/overlay_10.png",
+        "codes": "sword,orb10",
+        "secondary_codes": "orb10"
+      },
+      {
+        "img": "images/sword.png",
+        "img_mods": "overlay|images/overlay_11.png",
+        "codes": "sword,orb11",
+        "secondary_codes": "orb11"
+      },
+      {
+        "img": "images/sword.png",
+        "img_mods": "overlay|images/overlay_12.png",
+        "codes": "sword,orb12",
+        "secondary_codes": "orb12"
+			}
+		]
+  },
+  {
+		"name": "Axe",
+    "type": "progressive_toggle",
+    "capturable": false,
+    "loop": true,
+    "allow_disabled": false,
+		"stages": [
+      {
+        "img": "images/axe.png",
+        "img_mods": "overlay|images/overlay_0.png",
+        "codes": "axe,orb0",
+        "secondary_codes": "orb0"
+      },
+      {
+        "img": "images/axe.png",
+        "img_mods": "overlay|images/overlay_1.png",
+        "codes": "axe,orb1",
+        "secondary_codes": "orb1"
+      },
+      {    
+        "img": "images/axe.png",
+        "img_mods": "overlay|images/overlay_2.png",
+        "codes": "axe,orb2",
+        "secondary_codes": "orb2"
+      },
+      {
+        "img": "images/axe.png",
+        "img_mods": "overlay|images/overlay_3.png",
+        "codes": "axe,orb3",
+        "secondary_codes": "orb3"
+      },
+      {
+        "img": "images/axe.png",
+        "img_mods": "overlay|images/overlay_4.png",
+        "codes": "axe,orb4",
+        "secondary_codes": "orb4"
+      },
+      {
+        "img": "images/axe.png",
+        "img_mods": "overlay|images/overlay_5.png",
+        "codes": "axe,orb5",
+        "secondary_codes": "orb5"
+      },
+      {
+        "img": "images/axe.png",
+        "img_mods": "overlay|images/overlay_6.png",
+        "codes": "axe,orb6",
+        "secondary_codes": "orb6"
+      },
+      {
+        "img": "images/axe.png",
+        "img_mods": "overlay|images/overlay_7.png",
+        "codes": "axe,orb7",
+        "secondary_codes": "orb7"
+      },
+      {
+        "img": "images/axe.png",
+        "img_mods": "overlay|images/overlay_8.png",
+        "codes": "axe,orb8",
+        "secondary_codes": "orb8"
+			},
+      {
+        "img": "images/axe.png",
+        "img_mods": "overlay|images/overlay_9.png",
+        "codes": "axe,orb9",
+        "secondary_codes": "orb9"
+      },
+      {
+        "img": "images/axe.png",
+        "img_mods": "overlay|images/overlay_10.png",
+        "codes": "axe,orb10",
+        "secondary_codes": "orb10"
+      },
+      {
+        "img": "images/axe.png",
+        "img_mods": "overlay|images/overlay_11.png",
+        "codes": "axe,orb11",
+        "secondary_codes": "orb11"
+      },
+      {
+        "img": "images/axe.png",
+        "img_mods": "overlay|images/overlay_12.png",
+        "codes": "axe,orb12",
+        "secondary_codes": "orb12"
+			}
+		]
+  },
+  {
+		"name": "Spear",
+    "type": "progressive_toggle",
+    "capturable": false,
+    "loop": true,
+    "allow_disabled": false,
+		"stages": [
+      {
+        "img": "images/spear.png",
+        "img_mods": "overlay|images/overlay_0.png",
+        "codes": "spear,orb0",
+        "secondary_codes": "orb0"
+      },
+      {
+        "img": "images/spear.png",
+        "img_mods": "overlay|images/overlay_1.png",
+        "codes": "spear,orb1",
+        "secondary_codes": "orb1"
+      },
+      {    
+        "img": "images/spear.png",
+        "img_mods": "overlay|images/overlay_2.png",
+        "codes": "spear,orb2",
+        "secondary_codes": "orb2"
+      },
+      {
+        "img": "images/spear.png",
+        "img_mods": "overlay|images/overlay_3.png",
+        "codes": "spear,orb3",
+        "secondary_codes": "orb3"
+      },
+      {
+        "img": "images/spear.png",
+        "img_mods": "overlay|images/overlay_4.png",
+        "codes": "spear,orb4",
+        "secondary_codes": "orb4"
+      },
+      {
+        "img": "images/spear.png",
+        "img_mods": "overlay|images/overlay_5.png",
+        "codes": "spear,orb5",
+        "secondary_codes": "orb5"
+      },
+      {
+        "img": "images/spear.png",
+        "img_mods": "overlay|images/overlay_6.png",
+        "codes": "spear,orb6",
+        "secondary_codes": "orb6"
+      },
+      {
+        "img": "images/spear.png",
+        "img_mods": "overlay|images/overlay_7.png",
+        "codes": "spear,orb7",
+        "secondary_codes": "orb7"
+      },
+      {
+        "img": "images/spear.png",
+        "img_mods": "overlay|images/overlay_8.png",
+        "codes": "spear,orb8",
+        "secondary_codes": "orb8"
+			},
+      {
+        "img": "images/spear.png",
+        "img_mods": "overlay|images/overlay_9.png",
+        "codes": "spear,orb9",
+        "secondary_codes": "orb9"
+      },
+      {
+        "img": "images/spear.png",
+        "img_mods": "overlay|images/overlay_10.png",
+        "codes": "spear,orb10",
+        "secondary_codes": "orb10"
+      },
+      {
+        "img": "images/spear.png",
+        "img_mods": "overlay|images/overlay_11.png",
+        "codes": "spear,orb11",
+        "secondary_codes": "orb11"
+      },
+      {
+        "img": "images/spear.png",
+        "img_mods": "overlay|images/overlay_12.png",
+        "codes": "spear,orb12",
+        "secondary_codes": "orb12"
+			}
+		]
+  },
+  {
+		"name": "Whip",
+    "type": "progressive_toggle",
+    "capturable": false,
+    "loop": true,
+    "allow_disabled": false,
+		"stages": [
+      {
+        "img": "images/whip.png",
+        "img_mods": "overlay|images/overlay_0.png",
+        "codes": "whip,orb0",
+        "secondary_codes": "orb0"
+      },
+      {
+        "img": "images/whip.png",
+        "img_mods": "overlay|images/overlay_1.png",
+        "codes": "whip,orb1",
+        "secondary_codes": "orb1"
+      },
+      {    
+        "img": "images/whip.png",
+        "img_mods": "overlay|images/overlay_2.png",
+        "codes": "whip,orb2",
+        "secondary_codes": "orb2"
+      },
+      {
+        "img": "images/whip.png",
+        "img_mods": "overlay|images/overlay_3.png",
+        "codes": "whip,orb3",
+        "secondary_codes": "orb3"
+      },
+      {
+        "img": "images/whip.png",
+        "img_mods": "overlay|images/overlay_4.png",
+        "codes": "whip,orb4",
+        "secondary_codes": "orb4"
+      },
+      {
+        "img": "images/whip.png",
+        "img_mods": "overlay|images/overlay_5.png",
+        "codes": "whip,orb5",
+        "secondary_codes": "orb5"
+      },
+      {
+        "img": "images/whip.png",
+        "img_mods": "overlay|images/overlay_6.png",
+        "codes": "whip,orb6",
+        "secondary_codes": "orb6"
+      },
+      {
+        "img": "images/whip.png",
+        "img_mods": "overlay|images/overlay_7.png",
+        "codes": "whip,orb7",
+        "secondary_codes": "orb7"
+      },
+      {
+        "img": "images/whip.png",
+        "img_mods": "overlay|images/overlay_8.png",
+        "codes": "whip,orb8",
+        "secondary_codes": "orb8"
+			},
+      {
+        "img": "images/whip.png",
+        "img_mods": "overlay|images/overlay_9.png",
+        "codes": "whip,orb9",
+        "secondary_codes": "orb9"
+      },
+      {
+        "img": "images/whip.png",
+        "img_mods": "overlay|images/overlay_10.png",
+        "codes": "whip,orb10",
+        "secondary_codes": "orb10"
+      },
+      {
+        "img": "images/whip.png",
+        "img_mods": "overlay|images/overlay_11.png",
+        "codes": "whip,orb11",
+        "secondary_codes": "orb11"
+      },
+      {
+        "img": "images/whip.png",
+        "img_mods": "overlay|images/overlay_12.png",
+        "codes": "whip,orb12",
+        "secondary_codes": "orb12"
+			}
+		]
+  },
+  {
+		"name": "Bow and Arrow",
+    "type": "progressive_toggle",
+    "capturable": false,
+    "loop": true,
+    "allow_disabled": false,
+		"stages": [
+      {
+        "img": "images/bow.png",
+        "img_mods": "overlay|images/overlay_0.png",
+        "codes": "bow,orb0",
+        "secondary_codes": "orb0"
+      },
+      {
+        "img": "images/bow.png",
+        "img_mods": "overlay|images/overlay_1.png",
+        "codes": "bow,orb1",
+        "secondary_codes": "orb1"
+      },
+      {    
+        "img": "images/bow.png",
+        "img_mods": "overlay|images/overlay_2.png",
+        "codes": "bow,orb2",
+        "secondary_codes": "orb2"
+      },
+      {
+        "img": "images/bow.png",
+        "img_mods": "overlay|images/overlay_3.png",
+        "codes": "bow,orb3",
+        "secondary_codes": "orb3"
+      },
+      {
+        "img": "images/bow.png",
+        "img_mods": "overlay|images/overlay_4.png",
+        "codes": "bow,orb4",
+        "secondary_codes": "orb4"
+      },
+      {
+        "img": "images/bow.png",
+        "img_mods": "overlay|images/overlay_5.png",
+        "codes": "bow,orb5",
+        "secondary_codes": "orb5"
+      },
+      {
+        "img": "images/bow.png",
+        "img_mods": "overlay|images/overlay_6.png",
+        "codes": "bow,orb6",
+        "secondary_codes": "orb6"
+      },
+      {
+        "img": "images/bow.png",
+        "img_mods": "overlay|images/overlay_7.png",
+        "codes": "bow,orb7",
+        "secondary_codes": "orb7"
+      },
+      {
+        "img": "images/bow.png",
+        "img_mods": "overlay|images/overlay_8.png",
+        "codes": "bow,orb8",
+        "secondary_codes": "orb8"
+			},
+      {
+        "img": "images/bow.png",
+        "img_mods": "overlay|images/overlay_9.png",
+        "codes": "bow,orb9",
+        "secondary_codes": "orb9"
+      },
+      {
+        "img": "images/bow.png",
+        "img_mods": "overlay|images/overlay_10.png",
+        "codes": "bow,orb10",
+        "secondary_codes": "orb10"
+      },
+      {
+        "img": "images/bow.png",
+        "img_mods": "overlay|images/overlay_11.png",
+        "codes": "bow,orb11",
+        "secondary_codes": "orb11"
+      },
+      {
+        "img": "images/bow.png",
+        "img_mods": "overlay|images/overlay_12.png",
+        "codes": "bow,orb12",
+        "secondary_codes": "orb12"
+			}
+		]
+  },
+  {
+		"name": "Boomerang",
+    "type": "progressive_toggle",
+    "capturable": false,
+    "loop": true,
+    "allow_disabled": false,
+		"stages": [
+      {
+        "img": "images/boomerang.png",
+        "img_mods": "overlay|images/overlay_0.png",
+        "codes": "boomerang,orb0",
+        "secondary_codes": "orb0"
+      },
+      {
+        "img": "images/boomerang.png",
+        "img_mods": "overlay|images/overlay_1.png",
+        "codes": "boomerang,orb1",
+        "secondary_codes": "orb1"
+      },
+      {    
+        "img": "images/boomerang.png",
+        "img_mods": "overlay|images/overlay_2.png",
+        "codes": "boomerang,orb2",
+        "secondary_codes": "orb2"
+      },
+      {
+        "img": "images/boomerang.png",
+        "img_mods": "overlay|images/overlay_3.png",
+        "codes": "boomerang,orb3",
+        "secondary_codes": "orb3"
+      },
+      {
+        "img": "images/boomerang.png",
+        "img_mods": "overlay|images/overlay_4.png",
+        "codes": "boomerang,orb4",
+        "secondary_codes": "orb4"
+      },
+      {
+        "img": "images/boomerang.png",
+        "img_mods": "overlay|images/overlay_5.png",
+        "codes": "boomerang,orb5",
+        "secondary_codes": "orb5"
+      },
+      {
+        "img": "images/boomerang.png",
+        "img_mods": "overlay|images/overlay_6.png",
+        "codes": "boomerang,orb6",
+        "secondary_codes": "orb6"
+      },
+      {
+        "img": "images/boomerang.png",
+        "img_mods": "overlay|images/overlay_7.png",
+        "codes": "boomerang,orb7",
+        "secondary_codes": "orb7"
+      },
+      {
+        "img": "images/boomerang.png",
+        "img_mods": "overlay|images/overlay_8.png",
+        "codes": "boomerang,orb8",
+        "secondary_codes": "orb8"
+			},
+      {
+        "img": "images/boomerang.png",
+        "img_mods": "overlay|images/overlay_9.png",
+        "codes": "boomerang,orb9",
+        "secondary_codes": "orb9"
+      },
+      {
+        "img": "images/boomerang.png",
+        "img_mods": "overlay|images/overlay_10.png",
+        "codes": "boomerang,orb10",
+        "secondary_codes": "orb10"
+      },
+      {
+        "img": "images/boomerang.png",
+        "img_mods": "overlay|images/overlay_11.png",
+        "codes": "boomerang,orb11",
+        "secondary_codes": "orb11"
+      },
+      {
+        "img": "images/boomerang.png",
+        "img_mods": "overlay|images/overlay_12.png",
+        "codes": "boomerang,orb12",
+        "secondary_codes": "orb12"
+			}
+		]
+  },
+  {
+		"name": "Javelin",
+    "type": "progressive_toggle",
+    "capturable": false,
+    "loop": true,
+    "allow_disabled": false,
+		"stages": [
+      {
+        "img": "images/javelin.png",
+        "img_mods": "overlay|images/overlay_0.png",
+        "codes": "javelin,orb0",
+        "secondary_codes": "orb0"
+      },
+      {
+        "img": "images/javelin.png",
+        "img_mods": "overlay|images/overlay_1.png",
+        "codes": "javelin,orb1",
+        "secondary_codes": "orb1"
+      },
+      {    
+        "img": "images/javelin.png",
+        "img_mods": "overlay|images/overlay_2.png",
+        "codes": "javelin,orb2",
+        "secondary_codes": "orb2"
+      },
+      {
+        "img": "images/javelin.png",
+        "img_mods": "overlay|images/overlay_3.png",
+        "codes": "javelin,orb3",
+        "secondary_codes": "orb3"
+      },
+      {
+        "img": "images/javelin.png",
+        "img_mods": "overlay|images/overlay_4.png",
+        "codes": "javelin,orb4",
+        "secondary_codes": "orb4"
+      },
+      {
+        "img": "images/javelin.png",
+        "img_mods": "overlay|images/overlay_5.png",
+        "codes": "javelin,orb5",
+        "secondary_codes": "orb5"
+      },
+      {
+        "img": "images/javelin.png",
+        "img_mods": "overlay|images/overlay_6.png",
+        "codes": "javelin,orb6",
+        "secondary_codes": "orb6"
+      },
+      {
+        "img": "images/javelin.png",
+        "img_mods": "overlay|images/overlay_7.png",
+        "codes": "javelin,orb7",
+        "secondary_codes": "orb7"
+      },
+      {
+        "img": "images/javelin.png",
+        "img_mods": "overlay|images/overlay_8.png",
+        "codes": "javelin,orb8",
+        "secondary_codes": "orb8"
+			},
+      {
+        "img": "images/javelin.png",
+        "img_mods": "overlay|images/overlay_9.png",
+        "codes": "javelin,orb9",
+        "secondary_codes": "orb9"
+      },
+      {
+        "img": "images/javelin.png",
+        "img_mods": "overlay|images/overlay_10.png",
+        "codes": "javelin,orb10",
+        "secondary_codes": "orb10"
+      },
+      {
+        "img": "images/javelin.png",
+        "img_mods": "overlay|images/overlay_11.png",
+        "codes": "javelin,orb11",
+        "secondary_codes": "orb11"
+      },
+      {
+        "img": "images/javelin.png",
+        "img_mods": "overlay|images/overlay_12.png",
+        "codes": "javelin,orb12",
+        "secondary_codes": "orb12"
+			}
+		]
+	},
+  //generics
+	{
+    "name": "Gloves",
+    "type": "static",
+    "capturable": true,
+    "img": "images/gloves.png",        
+    "codes": "gloves_generic"
+  },
+  {
+    "name": "Sword",
+    "type": "static",
+    "capturable": true,
+    "img": "images/sword.png",        
+    "codes": "sword_generic"
+  },
+  {
+    "name": "Axe",
+    "type": "static",
+    "capturable": true,
+    "img": "images/axe.png",        
+    "codes": "axe_generic"
+  },
+  {
+    "name": "Spear",
+    "type": "static",
+    "capturable": true,
+    "img": "images/spear.png",        
+    "codes": "spear_generic"
+  },
+  {
+    "name": "Whip",
+    "type": "static",
+    "capturable": true,
+    "img": "images/whip.png",        
+    "codes": "whip_generic"
+  },
+  {
+    "name": "Bow and Arrow",
+    "type": "static",
+    "capturable": true,
+    "img": "images/bow.png",        
+    "codes": "bow_generic"
+  },
+  {
+    "name": "Boomerang",
+    "type": "static",
+    "capturable": true,
+    "img": "images/boomerang.png",        
+    "codes": "boomerang_generic"
+  },
+  {
+    "name": "Javelin",
+    "type": "static",
+    "capturable": true,
+    "img": "images/javelin.png",        
+    "codes": "javelin_generic"
+  },
+]
