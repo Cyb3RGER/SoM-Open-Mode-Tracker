@@ -1,6 +1,17 @@
---settings
-function isLongMode()
-	local value = Tracker:ProviderCountForCode("mode")
+--goals
+function isVanillaShort()
+	local value = Tracker:ProviderCountForCode("vanilla_short")
+	
+	print(value)
+	if (value == 1) then
+		return 1
+	end
+
+	return 0
+end
+
+function isVanillaLong()
+	local value = Tracker:ProviderCountForCode("vanilla_long")
 
 	if (value == 1) then
 		return 1
@@ -9,13 +20,37 @@ function isLongMode()
 	return 0
 end
 
-function isShortMode()
-	if isLongMode() == 1 then
-		return 0
-	else 
+function isReviveTheTree()
+	local value = Tracker:ProviderCountForCode("revive_the_tree")
+
+	if (value == 1) then
 		return 1
 	end
+
+	return 0
 end
+
+--logic
+function isBasicLogic()
+	local value = Tracker:ProviderCountForCode("basic")
+
+	if (value == 1) then
+		return 1
+	end
+
+	return 0
+end
+
+function isRestrictedLogic()
+	local value = Tracker:ProviderCountForCode("restricted")
+
+	if (value == 1) then
+		return 1
+	end
+
+	return 0
+end
+
 --character
 function hasGirl()
 	local value = Tracker:ProviderCountForCode("girl")
@@ -139,6 +174,87 @@ function hasDryad()
 	return 0
 end
 
+--seeds
+function hasWaterSeed()
+	local value = Tracker:ProviderCountForCode("water_seed")
+
+	if (value == 1) then
+		return 1
+	end
+
+	return 0
+end
+
+function hasEarthSeed()
+	local value = Tracker:ProviderCountForCode("earth_seed")
+
+	if (value == 1) then
+		return 1
+	end
+
+	return 0
+end
+
+function hasWindSeed()
+	local value = Tracker:ProviderCountForCode("wind_seed")
+
+	if (value == 1) then
+		return 1
+	end
+
+	return 0
+end
+
+function hasFireSeed()
+	local value = Tracker:ProviderCountForCode("fire_seed")
+
+	if (value == 1) then
+		return 1
+	end
+
+	return 0
+end
+
+function hasDarkSeed()
+	local value = Tracker:ProviderCountForCode("dark_seed")
+
+	if (value == 1) then
+		return 1
+	end
+
+	return 0
+end
+
+function hasLightSeed()
+	local value = Tracker:ProviderCountForCode("light_seed")
+
+	if (value == 1) then
+		return 1
+	end
+
+	return 0
+end
+
+function hasMoonSeed()
+	local value = Tracker:ProviderCountForCode("moon_seed")
+
+	if (value == 1) then
+		return 1
+	end
+
+	return 0
+end
+
+function hasTreeSeed()
+	local value = Tracker:ProviderCountForCode("tree_seed")
+
+	if (value == 1) then
+		return 1
+	end
+
+	return 0
+end
+
 --weapons
 function hasWhip()
 	local value = Tracker:ProviderCountForCode("whip")
@@ -171,7 +287,7 @@ function canCutStuff()
 end
 
 --orbs
-function canDestroyOrb(name)		
+function canDestroyOrb(name)
 
 	if (Tracker:ProviderCountForCode(name .. "_unknown") == 1) then
 		return 0
@@ -196,47 +312,142 @@ function canDestroyOrb(name)
 	return 0
 end
 
-function canDestroyETOrb()		
+function canDestroyETOrb()
 	if(canDestroyOrb("et_orb") == 1) then
 		return 1
 	end
 	return 0
 end	
 
-function canDestroyMCOrb()		
+function canDestroyMCOrb()
 	if(canDestroyOrb("mc_orb") == 1) then
 		return 1
 	end
 	return 0
 end	
 
-function canDestroyFPOrb1()		
+function canDestroyFPOrb1()
 	if(canDestroyOrb("fp_orb1") == 1) then
 		return 1
 	end
 	return 0
 end	
 
-function canDestroyFPOrb2()	
+function canDestroyFPOrb2()
 	if(canDestroyOrb("fp_orb2") == 1 and canDestroyFPOrb1() == 1) then
 		return 1 
 	end	
 	return 0
 end	
 
-function canDestroyFPOrb3()		
+function canDestroyFPOrb3()
 	if(canDestroyOrb("fp_orb3") == 1 and canDestroyFPOrb1() == 1 and canDestroyFPOrb2() == 1) then
 		return 1 
 	end
 	return 0
 end	
 
-function canDestroyMPOrb()		
+function canDestroyMPOrb()
 	if(canDestroyOrb("mp_orb") == 1) then
 		return 1
 	end
 	return 0
 end	
+
+--access
+function hasWaterPalaceAccess()
+	if (isBasicLogic() == 1) then
+		return 1
+	else
+		return hasWaterSeed()
+	end
+	return 0
+end
+
+function hasEarthPalaceAccess()
+	if (isBasicLogic() == 1) then
+		return 1
+	else
+		return hasEarthSeed()
+	end
+	return 0
+end
+
+function hasWindPalaceAccess()
+	if (isBasicLogic() == 1) then
+		return 1
+	else
+		return hasWindSeed()
+	end
+	return 0
+end
+
+function hasFirePalaceAccess()
+	if (isBasicLogic() == 1) then
+		return 1
+	else
+		return hasFireSeed()
+	end
+	return 0
+end
+
+function hasDarkPalaceAccess()
+	if (isBasicLogic() == 1) then
+		return 1
+	else
+		return hasDarkSeed()
+	end
+	return 0
+end
+
+function hasLightPalaceAccess()
+	if (isBasicLogic() == 1) then
+		return 1
+	else
+		return hasLightSeed()
+	end
+	return 0
+end
+
+function hasMoonPalaceAccess()
+	if (isBasicLogic() == 1) then
+		return 1
+	else
+		return hasMoonSeed()
+	end
+	return 0
+end
+
+function hasTreePalaceAccess()
+	if (isBasicLogic() == 1) then
+		return 1
+	else
+		return hasTreeSeed()
+	end
+	return 0
+end
+
+function hasManaFortressAccess()
+	if (canCutStuff() == 1 and hasWhip() == 1) then
+		if (isVanillaLong() == 1) then
+			return grandPalaceBoss()
+		else
+			return 1
+		end
+	end
+	return 0
+end
+
+function hasManaTreeAccess()
+	if (canCutStuff() == 1) then
+		if (isReviveTheTree() == 1) then
+			return manaTreeRevive()			
+		else
+			return 1
+		end
+	end
+	return 0
+end
 
 -- utils
 function always()
@@ -250,5 +461,13 @@ function grandPalaceBoss()
 		return 1
 	end
 
+	return 0
+end
+
+function manaTreeRevive()
+	if (hasWaterSeed() == 1 and hasEarthSeed() == 1 and hasWindSeed() == 1 and hasFireSeed() == 1 
+		and hasDarkSeed() == 1 and hasLightSeed() == 1 and hasMoonSeed() == 1 and hasTreeSeed() == 1) then
+		return 1
+	end
 	return 0
 end

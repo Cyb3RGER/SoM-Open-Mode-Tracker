@@ -1,10 +1,47 @@
 [
-    {
-        "name": "Mode",
-        "type": "toggle",
+  {
+    "name": "Goals",
+    "type": "progressive",
+    "loop": true,
+    "capturable": false,
+    "allow_disabled": false,
+    "initial_stage_idx": 0,
+    "stages": [
+      {
+        "img": "images/short_mode.png",
+        "inherit_codes": false,
+        "codes": "vanilla_short"
+      },
+      {
         "img": "images/long_mode.png",
-        "disabled_img": "images/short_mode.png",
-        "disabled_img_mods": "",
-        "codes": "mode"
+        "inherit_codes": false,
+        "codes": "vanilla_long"
+      },
+      {
+        "img": "images/revive_the_tree.png",
+        "inherit_codes": false,
+        "codes": "revive_the_tree"
       }
+    ]
+  },
+  {
+    "name": "Logic",
+    "type": "progressive",
+    "loop": true,
+    "capturable": false,
+    "allow_disabled": false,
+    "initial_stage_idx": 0,
+    "stages": [
+      {
+        "img": "images/basic.png",
+        "inherit_codes": false,
+        "codes": "basic"
+      },
+      {
+        "img": "images/restrictive.png",
+        "inherit_codes": false,
+        "codes": "restrictive"
+      }
+    ]
+  }
 ]

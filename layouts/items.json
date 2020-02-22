@@ -44,15 +44,15 @@
         ]
     },
     "shared_item_grid": {		
-		"type": "array",
+        "type": "array",        
 		"orientation": "vertical",
 		"content": [ 
 			{
-				"type": "layout",
+                "type": "layout",
 				"key": "items_characters"
 			},
 			{
-				"type": "array",
+                "type": "array",
 				"orientation": "horizontal",
 				"content": [				
 					{

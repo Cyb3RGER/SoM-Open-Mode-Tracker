@@ -46,7 +46,7 @@
 						{
 							"type": "group",
 							"header": "Items",
-							"dock": "left",	
+							"dock": "left",								
 							"header_content": {
                                 "type": "button_popup",
                                 "style": "settings",
@@ -65,19 +65,6 @@
 							"content": {
 								"type": "layout",
 								"key": "orbs_item_grid"
-							}
-						},
-						{
-							"type": "group",
-							"header": "Pinned Locations",
-							"dock": "left",	
-							"content": {
-								"type": "recentpins",
-								"style": "wrap",
-								"h_alignment": "stretch",
-								"v_alignment": "stretch",
-								"orientation": "vertical",
-								"compact": true
 							}
 						}
 					]
