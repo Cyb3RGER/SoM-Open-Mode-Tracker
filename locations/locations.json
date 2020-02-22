@@ -415,7 +415,7 @@
 						"name": "North Town",
 						"children": [
 							{
-								"name": "Castle Double Chest",
+								"name": "North Town Castle",
 								"map_locations": [
 									{
 										"map": "overworld",
@@ -425,59 +425,25 @@
 								],
 								"sections": [
 									{
-										
+										"name": "Castle Double Chest",
 										"chest_unopened_img": "images/chest.png",
 										"chest_opened_img": "images/chest_open.png",	
 										"item_count": 2												
 									},
-								]
-							},
-							{
-								"name": "Castle Double Chest",
-								"map_locations": [
-									{
-										"map": "overworld",
-										"x": 3195,
-										"y": 1075
-									}
-								],
-								"sections": [									
 									{
 										"name": "Inside Boss",
 										"chest_unopened_img": "images/boss.png",
 										"chest_opened_img": "images/boss_done.png",	
 										"item_count": 2
 									},
-								]
-							},
-							{
-								"name": "Castle Chest",
-								"map_locations": [
 									{
-										"map": "overworld",
-										"x": 3195,
-										"y": 1075
-									}
-								],
-								"sections": [	
-									{										
+										"name": "Castle Chest",
 										"chest_unopened_img": "images/chest.png",
 										"chest_opened_img": "images/chest_open.png",	
 										"item_count": 1
-									}
-								]
-							},
-							{
-								"name": "Outside Boss",
-								"map_locations": [
+									},
 									{
-										"map": "overworld",
-										"x": 3195,
-										"y": 1075
-									}
-								],
-								"sections": [	
-									{										
+										"name": "Outside Boss",
 										"chest_unopened_img": "images/boss.png",
 										"chest_opened_img": "images/boss_done.png",	
 										"item_count": 2
