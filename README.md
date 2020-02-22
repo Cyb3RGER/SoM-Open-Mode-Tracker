@@ -1,5 +1,5 @@
 # Secret of Mana Open World Tracker Package for EmoTracker
-This a Tracker for the Secret of Mana Randomizer Open World Beta currently found on Discord here: https://discord.gg/YfmUHqU
+This a tracker for the Secret of Mana Randomizer Open World Beta currently found on Discord here: https://discord.gg/YfmUHqU
 
 Also check out the stable build of the Secret of Mana Randomizer here: https://secretofmanaancientcave.blogspot.com
 
