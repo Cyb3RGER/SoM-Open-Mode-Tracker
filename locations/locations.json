@@ -174,7 +174,7 @@
 				"map_locations": [
 					{
 						"map": "overworld",
-						"x": 2020,
+						"x": 2010,
 						"y": 2955
 					}
 				],
@@ -190,7 +190,7 @@
 						"name": "Elinee's Castle Double Chests",
 						"chest_unopened_img": "images/chest.png",
 						"chest_opened_img": "images/chest_open.png",
-						"access_rules": [ "$hasAxe" ],
+						"access_rules": [ "$hasAxe", "$hasWhip, $canCutStuff" ],
 						"item_count": 2
 					}
 				]
@@ -794,7 +794,7 @@
 						"map_locations": [
 							{
 								"map": "overworld",
-								"x": 1275,
+								"x": 1260,
 								"y": 2915
 							}
 						],
@@ -834,7 +834,7 @@
 						"map_locations": [
 							{
 								"map": "overworld",
-								"x": 1350,
+								"x": 1360,
 								"y": 2915
 							}
 						],

@@ -290,7 +290,13 @@ end
 function canDestroyOrb(name)
 
 	if (Tracker:ProviderCountForCode(name .. "_unknown") == 1) then
-		return 0
+		if hasUndine() == 1 and hasRocky() == 1 and hasSylphid() == 1 and hasSalamando() == 1 
+			and hasShade() == 1 and hasLumina() == 1 and hasLuna() == 1 and hasDryad() == 1
+			and hasGirl() == 1 and hasSprite() == 1 then
+			return 1
+		else
+			return 0
+		end
 	elseif (Tracker:ProviderCountForCode(name .. "_undine") == 1 and hasUndine() == 1 and hasSprite() == 1) then
 		return 1
 	elseif (Tracker:ProviderCountForCode(name .. "_rocky") == 1 and hasRocky() == 1 and hasSprite() == 1) then
@@ -429,10 +435,10 @@ end
 
 function hasManaFortressAccess()
 	if (canCutStuff() == 1 and hasWhip() == 1) then
-		if (isVanillaLong() == 1) then
-			return grandPalaceBoss()
-		else
+		if (isVanillaShort() == 1) then
 			return 1
+		else
+			return grandPalaceBoss()
 		end
 	end
 	return 0
