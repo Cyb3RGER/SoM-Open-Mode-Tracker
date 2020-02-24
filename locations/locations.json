@@ -276,23 +276,23 @@
 									{
 										"name": "Fire Palace Orb 3",								
 										"hosted_item": "fp_orb3",
-										"access_rules": [ "$canDestroyFPOrb1, $canDestroyFPOrb2", 
-														  "{$canDestroyFPOrb2, undine, girl}" ]
+										"access_rules": [ "$canDestroyFPOrb1, $canDestroyFPOrb2, $hasWhip", 
+														  "{$canDestroyFPOrb2, $hasWhip, undine, girl}" ]
 									},
 									{
 										"name": "Fire Palace Boss",
 										"chest_unopened_img": "images/boss.png",
 										"chest_opened_img": "images/boss_done.png",
-										"access_rules": [ "$canDestroyFPOrb1, $canDestroyFPOrb2, $canDestroyFPOrb3", 
-														  "{$canDestroyFPOrb2, $canDestroyFPOrb3, undine, girl}" ],
+										"access_rules": [ "$canDestroyFPOrb1, $canDestroyFPOrb2, $canDestroyFPOrb3, $hasWhip", 
+														  "{$canDestroyFPOrb2, $canDestroyFPOrb3, $hasWhip, undine, girl}" ],
 										"item_count": 1
 									},
 									{
 										"name": "Fire Palace Mana Seed",
 										"chest_unopened_img": "images/mana_seed.png",
 										"chest_opened_img": "images/mana_seed_disabled.png",
-										"access_rules": [ "$canDestroyFPOrb1, $canDestroyFPOrb2, $canDestroyFPOrb3, $hasFirePalaceAccess",
-											              "{$canDestroyFPOrb2, $canDestroyFPOrb3, $hasFirePalaceAccess, undine, girl}" ],
+										"access_rules": [ "$canDestroyFPOrb1, $canDestroyFPOrb2, $canDestroyFPOrb3, $hasFirePalaceAccess, $hasWhip",
+											              "{$canDestroyFPOrb2, $canDestroyFPOrb3, $hasFirePalaceAccess, $hasWhip, undine, girl}" ],
 										"item_count": 1
 									}
 								]
