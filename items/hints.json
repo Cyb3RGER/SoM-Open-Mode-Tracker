@@ -1,0 +1,11 @@
+[
+    {
+        "name": "Cannon Hint",
+        "type": "toggle",
+        "capturable": false,
+        "img": "images/hint.png",
+        "disabled_img": "images/hint_done.png",
+        "disabled_img_mods": "",
+        "codes": "cannon_hint"
+    }
+]

@@ -340,14 +340,14 @@ function canDestroyFPOrb1()
 end	
 
 function canDestroyFPOrb2()
-	if(canDestroyOrb("fp_orb2") == 1 and canDestroyFPOrb1() == 1) then
+	if(canDestroyOrb("fp_orb2") == 1) then
 		return 1 
 	end	
 	return 0
 end	
 
 function canDestroyFPOrb3()
-	if(canDestroyOrb("fp_orb3") == 1 and canDestroyFPOrb1() == 1 and canDestroyFPOrb2() == 1) then
+	if(canDestroyOrb("fp_orb3") == 1) then
 		return 1 
 	end
 	return 0
@@ -435,10 +435,12 @@ end
 
 function hasManaFortressAccess()
 	if (canCutStuff() == 1 and hasWhip() == 1) then
-		if (isVanillaShort() == 1) then
-			return 1
-		else
+		if (isVanillaLong() == 1) then
 			return grandPalaceBoss()
+		elseif (isReviveTheTree() == 1) then
+			return 0
+		else
+			return 1
 		end
 	end
 	return 0

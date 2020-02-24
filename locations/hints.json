@@ -1,0 +1,302 @@
+[
+    {
+        "name": "All Hints",
+        "children": [
+			{
+				"name": "Potos Area Hints",
+				"map_locations": [
+					{
+						"map": "overworld_hints",
+						"x": 2430,
+						"y": 3200
+					}
+				],
+				"sections": [					
+					{
+						"name": "Sign between Pandora and Potos",
+						"chest_unopened_img": "images/hint.png",
+						"chest_opened_img": "images/hint_done.png",
+						"item_count": 1
+					},
+					{
+						"name": "Sign at bridge near Neko",
+						"chest_unopened_img": "images/hint.png",
+						"chest_opened_img": "images/hint_done.png",
+						"item_count": 1
+					}
+				]
+			},
+			{
+				"name": "Potos Neko",
+				"map_locations": [
+					{
+						"map": "overworld_hints",
+						"x": 2190,
+						"y": 3060
+					}
+				],
+				"sections": [					
+					{
+						"name": "Sign in front of Neko Area",
+						"chest_unopened_img": "images/hint.png",
+						"chest_opened_img": "images/hint_done.png",
+						"item_count": 1
+					}
+				]
+			},
+			{
+				"name": "Kippo Village",
+				"map_locations": [
+					{
+						"map": "overworld_hints",
+						"x": 2000,
+						"y": 3490
+					}
+				],
+				"sections": [
+					{
+						"name": "Sign in front of Kippo Vilalge",
+						"chest_unopened_img": "images/hint.png",
+						"chest_opened_img": "images/hint_done.png",
+						"item_count": 1
+					}
+				]
+			},
+			{
+				"name": "Mandala Village",
+				"map_locations": [
+					{
+						"map": "overworld_hints",
+						"x": 1190,
+						"y": 2700
+					}
+				],
+				"sections": [
+					{
+						"name": "Mandala Village Tower Hints",
+						"chest_unopened_img": "images/hint.png",
+						"chest_opened_img": "images/hint_done.png",								
+						"item_count": 7
+					}
+				]
+			},
+			{
+				"name": "Tasnica",
+				"map_locations": [
+					{
+						"map": "overworld_hints",
+						"x": 388,
+						"y": 3203
+					}
+				],
+				"sections": [
+					{
+						"name": "Tasnica King Hint",
+						"chest_unopened_img": "images/hint.png",
+						"chest_opened_img": "images/hint_done.png",	
+						"item_count": 1
+					}
+				]
+			},
+			{
+				"name": "North Town Ruins",
+				"map_locations": [
+					{
+						"map": "overworld_hints",
+						"x": 3420,
+						"y": 1075
+					}
+				],
+				"sections": [
+					{
+						"name": "Dyluck Hint",
+						"chest_unopened_img": "images/hint.png",
+						"chest_opened_img": "images/hint_done.png",	
+						"item_count": 1
+					}
+				]
+			},
+			{
+				"name": "Santas House",
+				"map_locations": [
+					{
+						"map": "overworld_hints",
+						"x": 2625,
+						"y": 625
+					}
+				],
+				"sections": [
+					{
+						"name": "Rudolph Hint",
+						"chest_unopened_img": "images/hint.png",
+						"chest_opened_img": "images/hint_done.png",
+						"item_count": 1
+					}
+				]
+			},
+			{
+				"name": "Gaia's Navel",
+				"map_locations": [
+					{
+						"map": "overworld_hints",
+						"x": 2180,
+						"y": 3235
+					}
+				],
+				"sections": [
+					{
+						"name": "Gaia's Navel North Signs",
+						"chest_unopened_img": "images/hint.png",
+						"chest_opened_img": "images/hint_done.png",
+						"item_count": 1
+					}
+				]
+			},								
+			{
+				"name": "Water Palace",				
+				"map_locations": [
+					{
+						"map": "overworld_hints",
+						"x": 2125,
+						"y": 2925
+					}
+				],
+				"sections": [	
+					{
+						"name": "Water Palace Sign Hint",
+						"chest_unopened_img": "images/hint.png",
+						"chest_opened_img": "images/hint_done.png",
+						"item_count": 1
+					}
+				]
+			},
+			{
+				"name": "Pandora",
+				"map_locations": [
+					{
+						"map": "overworld_hints",
+						"x": 2425,
+						"y": 3475
+					}
+				],
+				"sections": [
+					{
+						"name": "Sign north of Pandora",
+						"chest_unopened_img": "images/hint.png",
+						"chest_opened_img": "images/hint_done.png",
+						"item_count": 1
+					}
+				]
+			},
+			{
+				"name": "Potos",
+				"map_locations": [
+					{
+						"map": "overworld_hints",
+						"x": 2425,
+						"y": 3045
+					}
+				],
+				"sections": [
+					{
+						"name": "Potos Elder Hint",
+						"chest_unopened_img": "images/hint.png",
+						"chest_opened_img": "images/hint_done.png",
+						"item_count": 1
+					}
+				]
+			},
+			//Cannon hints
+			{
+				"name": "Potos Cannon",
+				"map_locations": [
+					{
+						"map": "overworld_hints",
+						"x": 2500,
+						"y": 3080
+					}
+				],
+				"sections": [
+					{
+						"hosted_item": "cannon_hint"
+					}
+				]
+			},
+			{
+				"name": "Kakara Cannon",
+				"map_locations": [
+					{
+						"map": "overworld_hints",
+						"x": 720,
+						"y": 1500
+					}
+				],
+				"sections": [
+					{
+						"hosted_item": "cannon_hint"
+					}
+				]
+			},
+			{
+				"name": "South Town Cannon",
+				"map_locations": [
+					{
+						"map": "overworld_hints",
+						"x": 3680,
+						"y": 1640
+					}
+				],
+				"sections": [
+					{
+						"hosted_item": "cannon_hint"
+					}
+				]
+			},
+			{
+				"name": "Ice Country Cannon",
+				"map_locations": [
+					{
+						"map": "overworld_hints",
+						"x": 2860,
+						"y": 630
+					}
+				],
+				"sections": [
+					{
+						"hosted_item": "cannon_hint"
+					}
+				]
+			},
+			{
+				"name": "Gaia's Navel Cannon",
+				"map_locations": [
+					{
+						"map": "overworld_hints",
+						"x": 2090,
+						"y": 3130
+					}
+				],
+				"sections": [
+					{
+						"hosted_item": "cannon_hint"
+					}
+				]
+			},
+			{
+				"name": "Upper Lands Cannon",
+				"map_locations": [
+					{
+						"map": "overworld_hints",
+						"x": 2620,
+						"y": 2720
+					}
+				],
+				"sections": [
+					{
+						"hosted_item": "cannon_hint"
+					}
+				]
+			}
+        ]
+    }
+]

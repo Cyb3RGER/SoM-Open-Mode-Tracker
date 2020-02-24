@@ -70,7 +70,7 @@
 						"y": 2925
 					}
 				],
-				"sections": [
+				"sections": [					
 					{
 						"name": "Water Palace Boss",
 						"chest_unopened_img": "images/boss.png",
@@ -110,7 +110,7 @@
 						"y": 3235
 					}
 				],
-				"sections": [
+				"sections": [					
 					{
 						"name": "Gaia's Navel Cave Chest",
 						"chest_unopened_img": "images/chest.png",
@@ -167,7 +167,7 @@
 					}
 				]							
 			},
-			//Gaia's Navel - END
+			//Gaia's Navel - END			
 			//Elinee's Castle
 			{
 				"name": "Elinee's Castle",
@@ -225,8 +225,7 @@
 						]
 					},
 					{
-						"name": "Fire Palace",
-						
+						"name": "Fire Palace",						
 						"children": [
 							{
 								"name": "Fire Palace",														
@@ -248,45 +247,52 @@
 										"name": "Fire Palace Near Entrance Chest",
 										"chest_unopened_img": "images/chest.png",
 										"chest_opened_img": "images/chest_open.png",
-										"access_rules": [ "$canDestroyFPOrb1" ],
+										"access_rules": [ "$canDestroyFPOrb1",
+														  "{undine, girl}" ],
 										"item_count": 1
 									},
 									{
 										"name": "Fire Palace Orb 2",								
 										"hosted_item": "fp_orb2",
-										"access_rules": [ "$canDestroyFPOrb1" ],
+										"access_rules": [ "$canDestroyFPOrb1",
+														  "{undine, girl}" ]
 									},
 									{
 										"name": "Fire Palace Near Orb 2",
 										"chest_unopened_img": "images/chest.png",
 										"chest_opened_img": "images/chest_open.png",
-										"access_rules": [ "$canDestroyFPOrb2" ],
+										"access_rules": [ "$canDestroyFPOrb1, $canDestroyFPOrb2",
+														  "{$canDestroyFPOrb2, undine, girl}" ],
 										"item_count": 1
 									},
 									{
 										"name": "Fire Palace After Little Maze",
 										"chest_unopened_img": "images/chest.png",
 										"chest_opened_img": "images/chest_open.png",
-										"access_rules": [ "$canDestroyFPOrb2" ],
+										"access_rules": [ "$canDestroyFPOrb1, $canDestroyFPOrb2",
+														  "{$canDestroyFPOrb2, undine, girl}" ],
 										"item_count": 1
 									},
 									{
 										"name": "Fire Palace Orb 3",								
 										"hosted_item": "fp_orb3",
-										"access_rules": [ "$canDestroyFPOrb2" ],
+										"access_rules": [ "$canDestroyFPOrb1, $canDestroyFPOrb2", 
+														  "{$canDestroyFPOrb2, undine, girl}" ]
 									},
 									{
 										"name": "Fire Palace Boss",
 										"chest_unopened_img": "images/boss.png",
 										"chest_opened_img": "images/boss_done.png",
-										"access_rules": [ "$canDestroyFPOrb3" ],
+										"access_rules": [ "$canDestroyFPOrb1, $canDestroyFPOrb2, $canDestroyFPOrb3", 
+														  "{$canDestroyFPOrb2, $canDestroyFPOrb3, undine, girl}" ],
 										"item_count": 1
 									},
 									{
 										"name": "Fire Palace Mana Seed",
 										"chest_unopened_img": "images/mana_seed.png",
 										"chest_opened_img": "images/mana_seed_disabled.png",
-										"access_rules": [ "$canDestroyFPOrb3, $hasFirePalaceAccess" ],
+										"access_rules": [ "$canDestroyFPOrb1, $canDestroyFPOrb2, $canDestroyFPOrb3, $hasFirePalaceAccess",
+											              "{$canDestroyFPOrb2, $canDestroyFPOrb3, $hasFirePalaceAccess, undine, girl}" ],
 										"item_count": 1
 									}
 								]
@@ -343,28 +349,23 @@
 					}
 				]
 			},
-			{
-				"name": "Tasnica",
-				"children": [
+			{				
+				"name": "Tasnica",																	
+				"map_locations": [
 					{
-						"name": "Tasnica Miniboss",						
-						"chest_unopened_img": "images/boss.png",
-						"chest_opened_img": "images/boss_done.png",						
-						"map_locations": [
-							{
-								"map": "overworld",
-								"x": 388,
-								"y": 3203
-							}
-						],
-						"sections": [
-							{
-								"name": "Tasnica Miniboss",
-								"item_count": 1
-							}
-						]
+						"map": "overworld",
+						"x": 388,
+						"y": 3203
 					}
-				]
+				],
+				"sections": [
+					{
+						"name": "Tasnica Miniboss",
+						"chest_unopened_img": "images/boss.png",
+						"chest_opened_img": "images/boss_done.png",	
+						"item_count": 1
+					}
+				]				
 			},
 			{
 				"name": "Turtle Island",
@@ -484,6 +485,7 @@
 										"chest_opened_img": "images/boss_done.png",	
 										"item_count": 2
 									},
+									
 									{
 										"name": "North Town Ruins Boss 2",
 										"chest_unopened_img": "images/boss.png",
@@ -555,9 +557,7 @@
 				"name": "Ice Country",
 				"children": [
 					{
-						"name": "Santas House",						
-						"chest_unopened_img": "images/chest.png",
-						"chest_opened_img": "images/chest_open.png",						
+						"name": "Santas House",
 						"map_locations": [
 							{
 								"map": "overworld",
@@ -567,7 +567,9 @@
 						],
 						"sections": [
 							{
-								"name": "Santas House",
+								"name": "Santas House Chest",
+								"chest_unopened_img": "images/chest.png",
+								"chest_opened_img": "images/chest_open.png",
 								"item_count": 1
 							}
 						]
@@ -788,9 +790,9 @@
 			{
 				"name": "Lofty Mountains",
 				"children": [
+					
 					{
-						"name": "Palace of Darkness",
-						
+						"name": "Palace of Darkness",						
 						"map_locations": [
 							{
 								"map": "overworld",

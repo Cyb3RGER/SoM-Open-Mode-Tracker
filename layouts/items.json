@@ -84,7 +84,7 @@
                 "item_width": 64,
                 "item_height": 32,
                 "rows": [ 
-                    ["header_et","header_mc", "header_fp", "header_mp"],
+                    ["header_et","header_mc", "header_fp", "header_mp"]
                 ]
             },            
             {		
