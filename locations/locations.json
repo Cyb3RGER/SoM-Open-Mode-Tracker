@@ -623,7 +623,13 @@
 										"item_count": 1
 									},
 									{
-										"name": "Ice Castle Boss",
+										"name": "Ice Castle Boss 1",
+										"chest_unopened_img": "images/boss.png",
+										"chest_opened_img": "images/boss_done.png",			
+										"item_count": 1
+									},
+									{
+										"name": "Ice Castle Boss 2",
 										"chest_unopened_img": "images/boss.png",
 										"chest_opened_img": "images/boss_done.png",	
 										"access_rules": [ "$hasWhip" ],
