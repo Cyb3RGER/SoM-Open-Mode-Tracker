@@ -1,7 +1,7 @@
 {
     "tracker_broadcast": {
         "type": "array",
-        "dropshadow": true,
+        "dropshadow": false,
         "margin": "10",
         "content": [
             {
@@ -21,18 +21,6 @@
 								"key": "orbs_item_grid"
 							}
 						]
-                    },
-                    {
-                        "type": "container",
-                        "margin": "0,5,0,0",
-                        "content": {
-                            "type": "recentpins",
-                            "h_alignment": "stretch",
-                            "v_alignment": "center",
-                            "orientation": "vertical",
-                            "compact": true,
-                            "num_items": 2
-                        }
                     }
                 ]
             }

@@ -156,7 +156,7 @@
                 ["shade", "dark_seed", "orb_shade","", "", "", ""],
                 ["lumina", "light_seed", "orb_lumina","", "", "", ""],
                 ["luna", "moon_seed", "orb_luna","", "", "", ""],
-                ["dryad", "tree_seed", "orb_dryad","", "", "girl", "sprite"]
+                ["dryad", "tree_seed", "orb_dryad","", "boy", "girl", "sprite"]
             ]
         }
     }

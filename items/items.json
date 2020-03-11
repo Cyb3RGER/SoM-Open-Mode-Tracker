@@ -2,7 +2,8 @@
   //character
   {
     "name": "Boy",
-    "type": "static",
+    "type": "toggle",
+    "capturable": true,
     "img": "images/boy.png",
     "disabled_img": "images/boy_gray.png",
     "disabled_img_mods": "",
