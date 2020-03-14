@@ -2,7 +2,6 @@
 function isVanillaShort()
 	local value = Tracker:ProviderCountForCode("vanilla_short")
 	
-	print(value)
 	if (value == 1) then
 		return 1
 	end
@@ -52,10 +51,40 @@ function isRestrictedLogic()
 end
 
 --character
+function hasBoy()
+	local value = Tracker:ProviderCountForCode("boy")
+
+	if (value == 2) then
+		return 1
+	end
+
+	return 0
+end
+
+function isBoyDisabled()
+	local value = Tracker:ProviderCountForCode("boy")
+
+	if (value == 0) then
+		return 1
+	end
+
+	return 0
+end
+	
 function hasGirl()
+	local value = Tracker:ProviderCountForCode("girl")	
+
+	if (value == 2) then
+		return 1
+	end
+
+	return 0
+end
+
+function isGirlDisabled()	
 	local value = Tracker:ProviderCountForCode("girl")
 
-	if (value == 1) then
+	if (value == 0) then
 		return 1
 	end
 
@@ -65,7 +94,17 @@ end
 function hasSprite()
 	local value = Tracker:ProviderCountForCode("sprite")
 
-	if (value == 1) then
+	if (value == 2) then
+		return 1
+	end
+
+	return 0
+end
+
+function isSpriteDisabled()
+	local value = Tracker:ProviderCountForCode("sprite")
+
+	if (value == 0) then
 		return 1
 	end
 
@@ -287,9 +326,53 @@ function canCutStuff()
 end
 
 --orbs
+
+function updateOrbPerCharacterStates()
+	local objs = {
+		Tracker:FindObjectForCode("et_orb"),
+		Tracker:FindObjectForCode("mc_orb"),
+		Tracker:FindObjectForCode("fp_orb1"),
+		Tracker:FindObjectForCode("fp_orb2"),
+		Tracker:FindObjectForCode("fp_orb3"),
+		Tracker:FindObjectForCode("mp_orb")
+	}
+	for i=1, 6 do
+		local obj = objs[i]
+		if isSpriteDisabled() == 1 then
+			if isGirlDisabled() == 1 then
+				obj.ItemState:setProperty("state",0)		
+				obj.ItemState:setProperty("forceState",true)		
+			else
+				obj.ItemState:setProperty("state",6)	
+				obj.ItemState:setProperty("forceState",true)
+			end
+		else		
+			obj.ItemState:setProperty("forceState",false)
+			if isGirlDisabled() == 1 then
+				obj.ItemState:setProperty("removeLumina",true)
+			else
+				obj.ItemState:setProperty("removeLumina",false)
+			end
+		end
+	end
+end
+
+--this is subject to change soon(TM)
+--ToDo: account for the girl being able to destroy sylphid and salamando orbs
+--      when this feature gets implemented into the randomizer
 function canDestroyOrb(name)
 
-	if (Tracker:ProviderCountForCode(name .. "_unknown") == 1) then
+	updateOrbPerCharacterStates()
+
+	if isSpriteDisabled() == 1 then
+		if isGirlDisabled() == 1 then
+			return 1
+		else
+			return hasLumina() and hasGirl()
+		end
+	end
+
+	if (Tracker:ProviderCountForCode(name) == 0) then
 		if hasUndine() == 1 and hasRocky() == 1 and hasSylphid() == 1 and hasSalamando() == 1 
 			and hasShade() == 1 and hasLumina() == 1 and hasLuna() == 1 and hasDryad() == 1
 			and hasGirl() == 1 and hasSprite() == 1 then
@@ -297,21 +380,21 @@ function canDestroyOrb(name)
 		else
 			return 0
 		end
-	elseif (Tracker:ProviderCountForCode(name .. "_undine") == 1 and hasUndine() == 1 and hasSprite() == 1) then
+	elseif (Tracker:ProviderCountForCode(name) == 1 and hasUndine() == 1 and hasSprite() == 1) then
 		return 1
-	elseif (Tracker:ProviderCountForCode(name .. "_rocky") == 1 and hasRocky() == 1 and hasSprite() == 1) then
+	elseif (Tracker:ProviderCountForCode(name) == 2 and hasRocky() == 1 and hasSprite() == 1) then
 		return 1
-	elseif (Tracker:ProviderCountForCode(name .. "_sylphid") == 1 and hasSylphid() == 1 and hasSprite() == 1) then
+	elseif (Tracker:ProviderCountForCode(name) == 3 and hasSylphid() == 1 and hasSprite() == 1) then
 		return 1
-	elseif (Tracker:ProviderCountForCode(name .. "_salamando") == 1 and hasSalamando() == 1 and (hasSprite() == 1)) then
+	elseif (Tracker:ProviderCountForCode(name) == 4 and hasSalamando() == 1 and (hasSprite() == 1)) then
 		return 1
-	elseif (Tracker:ProviderCountForCode(name .. "_shade") == 1 and hasShade() == 1 and hasSprite() == 1) then
+	elseif (Tracker:ProviderCountForCode(name) == 5 and hasShade() == 1 and hasSprite() == 1) then
 		return 1
-	elseif (Tracker:ProviderCountForCode(name .. "_lumina") == 1 and hasLumina() == 1 and hasGirl() == 1) then
+	elseif (Tracker:ProviderCountForCode(name) == 6 and hasLumina() == 1 and hasGirl() == 1) then
 		return 1
-	elseif (Tracker:ProviderCountForCode(name .. "_luna") == 1 and hasLuna() == 1 and hasSprite() == 1) then
+	elseif (Tracker:ProviderCountForCode(name) == 7 and hasLuna() == 1 and hasSprite() == 1) then
 		return 1
-	elseif (Tracker:ProviderCountForCode(name .. "_dryad") == 1 and hasDryad() == 1 and hasSprite() == 1) then
+	elseif (Tracker:ProviderCountForCode(name) == 8 and hasDryad() == 1 and hasSprite() == 1) then
 		return 1
 	end
 
@@ -437,6 +520,9 @@ function hasManaFortressAccess()
 	if (canCutStuff() == 1 and hasWhip() == 1) then
 		if (isVanillaLong() == 1) then
 			return grandPalaceBoss()
+		--this is subject to change soon(TM)
+		--mana fortress will become accessable in mana tree
+		--ToDo: 
 		elseif (isReviveTheTree() == 1) then
 			return 0
 		else
@@ -463,6 +549,12 @@ function always()
 end
 
 function grandPalaceBoss()
+
+	--this a bug in the rando currently
+	--ToDo: remove when fixed
+	if (isReviveTheTree() == 1 or isVanillaShort() == 1) then
+		return 1
+	end
 
 	if (hasWhip() == 1 and hasGirl() == 1 and hasSprite() == 1 and hasUndine() == 1 and hasRocky() == 1 
 		and hasSylphid() == 1 and hasSalamando() == 1 and hasShade() == 1 and hasLumina() == 1 and hasLuna() == 1) then

@@ -94,6 +94,7 @@
         "codes": "orb_dryad"
     },
     //orbs
+    /*
     {
 		"name": "Earth Temple Orb",
         "type": "progressive",
@@ -148,6 +149,7 @@
             }
         ]
     },
+    
     {
 		"name": "Matango Cave Orb",
         "type": "progressive",
@@ -418,4 +420,5 @@
             }
         ]
     }
+    */
 ]

@@ -1,32 +1,4 @@
 [  
-  //character
-  {
-    "name": "Boy",
-    "type": "toggle",
-    "capturable": true,
-    "img": "images/boy.png",
-    "disabled_img": "images/boy_gray.png",
-    "disabled_img_mods": "",
-    "codes": "boy"
-  },
-  {
-    "name": "Girl",
-    "type": "toggle",
-    "capturable": true,
-    "img": "images/girl.png",
-    "disabled_img": "images/girl_gray.png",
-    "disabled_img_mods": "",
-    "codes": "girl"
-  },
-  {
-    "name": "Sprite",
-    "type": "toggle",
-    "capturable": true,
-    "img": "images/sprite.png",
-    "disabled_img": "images/sprite_gray.png",
-    "disabled_img_mods": "",
-    "codes": "sprite"
-  },
 	//key items
 	{
     "name": "Midge Mallet",

@@ -23,7 +23,7 @@
 						"name": "Potos Boss",
 						"chest_unopened_img": "images/boss.png",
 						"chest_opened_img": "images/boss_done.png",
-						"item_count": 2
+						"item_count": 1
 					}
 				]
 			},
@@ -49,7 +49,7 @@
 						"name": "Pandora Ruins Boss",
 						"chest_unopened_img": "images/boss.png",
 						"chest_opened_img": "images/boss_done.png",
-						"item_count": 2
+						"item_count": 1
 					},
 					{
 						"name": "Pandora Castle Chests",
@@ -70,30 +70,18 @@
 						"y": 2925
 					}
 				],
-				"sections": [					
-					{
-						"name": "Water Palace Boss",
-						"chest_unopened_img": "images/boss.png",
-						"chest_opened_img": "images/boss_done.png",
-						"item_count": 1
-					},
+				"sections": [
 					{
 						"name": "Water Palace Mana Seed",
 						"access_rules": [ "$hasWaterPalaceAccess" ],
-						"chest_unopened_img": "images/mana_seed.png",
-						"chest_opened_img": "images/mana_seed_disabled.png",
+						"chest_unopened_img": "images/boss.png",
+						"chest_opened_img": "images/boss_done.png",
 						"item_count": 2
 					},
 					{
-						"name": "Water Palace Cave Boss",
-						"chest_unopened_img": "images/boss.png",
-						"chest_opened_img": "images/boss_done.png",
-						"item_count": 1
-					},
-					{
 						"name": "Undine",
-						"chest_unopened_img": "images/undine.png",
-						"chest_opened_img": "images/undine_grey.png",					
+						"chest_unopened_img": "images/boss.png",
+						"chest_opened_img": "images/boss_done.png",					
 						"item_count": 2
 					}
 				]
@@ -104,8 +92,7 @@
 				"name": "Gaia's Navel",
 				"map_locations": [
 					{
-						"map": "overworld",
-						"force_visibility_rules": [ "$always" ],
+						"map": "overworld",						
 						"x": 2180,
 						"y": 3235
 					}
@@ -133,7 +120,7 @@
 						"name": "Dwarf Village Boss",
 						"chest_unopened_img": "images/boss.png",
 						"chest_opened_img": "images/boss_done.png",
-						"item_count": 3
+						"item_count": 2
 					},
 					{
 						"name": "Underground Ship Chest",
@@ -145,29 +132,22 @@
 						"name": "Underground Ship Boss",
 						"chest_unopened_img": "images/boss.png",
 						"chest_opened_img": "images/boss_done.png",
-						"item_count": 2
+						"item_count": 1
 					},
 					{
 						"name": "Earth Temple Orb",
 						"hosted_item": "et_orb"			
 					},
 					{
-						"name": "Earth Palace Boss",
+						"name": "Earth Palace Mana Seed",
 						"chest_unopened_img": "images/boss.png",
 						"chest_opened_img": "images/boss_done.png",
-						"access_rules": [ "$hasWhip, $canDestroyETOrb" ],
-						"item_count": 1
-					},
-					{
-						"name": "Earth Palace Mana Seed",
-						"chest_unopened_img": "images/mana_seed.png",
-						"chest_opened_img": "images/mana_seed_disabled.png",
 						"access_rules": [ "$hasWhip, $canDestroyETOrb, $hasEarthPalaceAccess" ],
 						"item_count": 2
 					}
 				]							
 			},
-			//Gaia's Navel - END			
+			//Gaia's Navel - END
 			//Elinee's Castle
 			{
 				"name": "Elinee's Castle",
@@ -180,16 +160,9 @@
 				],
 				"sections": [
 					{
-						"name": "Elinee's Castle Boss",
+						"name": "Elinee's Castle Reward (Chests)",
 						"chest_unopened_img": "images/boss.png",
 						"chest_opened_img": "images/boss_done.png",
-						"access_rules": [ "$hasAxe", "$hasWhip, $canCutStuff" ],
-						"item_count": 1
-					},
-					{
-						"name": "Elinee's Castle Double Chests",
-						"chest_unopened_img": "images/chest.png",
-						"chest_opened_img": "images/chest_open.png",
 						"access_rules": [ "$hasAxe", "$hasWhip, $canCutStuff" ],
 						"item_count": 2
 					}
@@ -232,8 +205,7 @@
 								
 								"map_locations": [
 									{
-										"map": "overworld",
-										"force_visibility_rules": [ "$always" ],
+										"map": "overworld",										
 										"x": 415,
 										"y": 1690
 									}
@@ -241,28 +213,33 @@
 								"sections": [
 									{
 										"name": "Fire Palace Orb 1",								
-										"hosted_item": "fp_orb1"
+										"hosted_item": "fp_orb1",
+										"access_rules": [ "$canDestroyFPOrb1",
+														  "{}"]
 									},
 									{
 										"name": "Fire Palace Near Entrance Chest",
 										"chest_unopened_img": "images/chest.png",
 										"chest_opened_img": "images/chest_open.png",
 										"access_rules": [ "$canDestroyFPOrb1",
-														  "{undine, girl}" ],
+														  "[$canDestroyFPOrb1], undine, girl" ],
 										"item_count": 1
 									},
 									{
 										"name": "Fire Palace Orb 2",								
 										"hosted_item": "fp_orb2",
-										"access_rules": [ "$canDestroyFPOrb1",
-														  "{undine, girl}" ]
+										"access_rules": [ "$canDestroyFPOrb1, $canDestroyFPOrb2", 
+														  "{$canDestroyFPOrb1}",
+														  "[$canDestroyFPOrb1], $canDestroyFPOrb2, undine, girl",
+														  "{undine, girl}"
+														  ]
 									},
 									{
 										"name": "Fire Palace Near Orb 2",
 										"chest_unopened_img": "images/chest.png",
 										"chest_opened_img": "images/chest_open.png",
 										"access_rules": [ "$canDestroyFPOrb1, $canDestroyFPOrb2",
-														  "{$canDestroyFPOrb2, undine, girl}" ],
+														  "[$canDestroyFPOrb1], $canDestroyFPOrb2, undine, girl" ],
 										"item_count": 1
 									},
 									{
@@ -270,29 +247,23 @@
 										"chest_unopened_img": "images/chest.png",
 										"chest_opened_img": "images/chest_open.png",
 										"access_rules": [ "$canDestroyFPOrb1, $canDestroyFPOrb2",
-														  "{$canDestroyFPOrb2, undine, girl}" ],
+														  "[$canDestroyFPOrb1], $canDestroyFPOrb2, undine, girl" ],
 										"item_count": 1
 									},
 									{
 										"name": "Fire Palace Orb 3",								
 										"hosted_item": "fp_orb3",
-										"access_rules": [ "$canDestroyFPOrb1, $canDestroyFPOrb2, $hasWhip", 
+										"access_rules": [ "$canDestroyFPOrb1, $canDestroyFPOrb2, $canDestroyFPOrb3, $hasWhip",
+														  "{$canDestroyFPOrb1, $canDestroyFPOrb2, $hasWhip}",
+														  "[$canDestroyFPOrb1], $canDestroyFPOrb2, $canDestroyFPOrb3, $hasWhip, undine, girl",
 														  "{$canDestroyFPOrb2, $hasWhip, undine, girl}" ]
 									},
 									{
-										"name": "Fire Palace Boss",
+										"name": "Fire Palace Reward",
 										"chest_unopened_img": "images/boss.png",
 										"chest_opened_img": "images/boss_done.png",
-										"access_rules": [ "$canDestroyFPOrb1, $canDestroyFPOrb2, $canDestroyFPOrb3, $hasWhip", 
-														  "{$canDestroyFPOrb2, $canDestroyFPOrb3, $hasWhip, undine, girl}" ],
-										"item_count": 1
-									},
-									{
-										"name": "Fire Palace Mana Seed",
-										"chest_unopened_img": "images/mana_seed.png",
-										"chest_opened_img": "images/mana_seed_disabled.png",
 										"access_rules": [ "$canDestroyFPOrb1, $canDestroyFPOrb2, $canDestroyFPOrb3, $hasFirePalaceAccess, $hasWhip",
-											              "{$canDestroyFPOrb2, $canDestroyFPOrb3, $hasFirePalaceAccess, $hasWhip, undine, girl}" ],
+											              "[$canDestroyFPOrb1], $canDestroyFPOrb2, $canDestroyFPOrb3, $hasFirePalaceAccess, $hasWhip, undine, girl" ],
 										"item_count": 1
 									}
 								]
@@ -304,7 +275,6 @@
 						"map_locations": [
 							{
 								"map": "overworld",
-								"force_visibility_rules": [ "$always" ],
 								"x": 925,
 								"y": 1435
 							}
@@ -312,7 +282,8 @@
 						"sections": [
 							{
 								"name": "Moon Palace Orb",								
-								"hosted_item": "mp_orb"
+								"hosted_item": "mp_orb",
+								"access_rules": [ "$canDestroyMPOrb", "{}" ]
 							},
 							{
 								"name": "Moon Palace Seed",						
@@ -435,7 +406,7 @@
 										"name": "Inside Boss",
 										"chest_unopened_img": "images/boss.png",
 										"chest_opened_img": "images/boss_done.png",	
-										"item_count": 2
+										"item_count": 1
 									},
 									{
 										"name": "Castle Chest",
@@ -447,7 +418,7 @@
 										"name": "Outside Boss",
 										"chest_unopened_img": "images/boss.png",
 										"chest_opened_img": "images/boss_done.png",	
-										"item_count": 2
+										"item_count": 1
 									}
 								]							
 							},
@@ -483,14 +454,14 @@
 										"name": "North Town Ruins Boss 1",
 										"chest_unopened_img": "images/boss.png",
 										"chest_opened_img": "images/boss_done.png",	
-										"item_count": 2
+										"item_count": 1
 									},
 									
 									{
 										"name": "North Town Ruins Boss 2",
 										"chest_unopened_img": "images/boss.png",
 										"chest_opened_img": "images/boss_done.png",	
-										"item_count": 2
+										"item_count": 1
 									}										
 								]
 							}
@@ -518,30 +489,16 @@
 										"item_count": 1
 									},
 									{
-										"name": "Gold Tower Boss 1",
-										"chest_unopened_img": "images/boss.png",
-										"chest_opened_img": "images/boss_done.png",
-										"access_rules": [ "$hasKey" ],
-										"item_count": 1
-									},
-									{
 										"name": "Gold Tower Chest 2",
-										"chest_unopened_img": "images/chest.png",
-										"chest_opened_img": "images/chest_open.png",
-										"access_rules": [ "$hasKey" ],
-										"item_count": 1
-									},
-									{
-										"name": "Gold Tower Boss 2",
 										"chest_unopened_img": "images/boss.png",
 										"chest_opened_img": "images/boss_done.png",
 										"access_rules": [ "$hasKey" ],
 										"item_count": 1
 									},
 									{
-										"name": "Gold Tower Mana Seed",
-										"chest_unopened_img": "images/mana_seed.png",
-										"chest_opened_img": "images/mana_seed_disabled.png",
+										"name": "Gold Tower Reward",
+										"chest_unopened_img": "images/boss.png",
+										"chest_opened_img": "images/boss_done.png",
 										"access_rules": [ "$hasKey, $hasLightPalaceAccess" ],
 										"item_count": 2
 									}
@@ -588,15 +545,9 @@
 								],
 								"sections": [
 									{
-										"name": "Tropical Town Boss",
+										"name": "Salamando",
 										"chest_unopened_img": "images/boss.png",
 										"chest_opened_img": "images/boss_done.png",	
-										"item_count": 1
-									},
-									{
-										"name": "Salamando",
-										"chest_unopened_img": "images/oven.png",
-										"chest_opened_img": "images/oven_open.png",	
 										"item_count": 1
 									}
 								]
@@ -633,7 +584,7 @@
 										"chest_unopened_img": "images/boss.png",
 										"chest_opened_img": "images/boss_done.png",	
 										"access_rules": [ "$hasWhip" ],
-										"item_count": 2
+										"item_count": 1
 									}
 								]
 							}
@@ -657,40 +608,40 @@
 						"name": "Pure Land Boss 1",
 						"chest_unopened_img": "images/boss.png",
 						"chest_opened_img": "images/boss_done.png",
-						"item_count": 2
+						"item_count": 1
 					},
 					{
 						"name": "Pure Land Boss 2",
 						"chest_unopened_img": "images/boss.png",
 						"chest_opened_img": "images/boss_done.png",
-						"item_count": 2
+						"item_count": 1
 					},
 					{
 						"name": "Pure Land Boss 3",
 						"chest_unopened_img": "images/boss.png",
 						"chest_opened_img": "images/boss_done.png",
-						"item_count": 2
+						"item_count": 1
 					},			
 					{
 						"name": "Pure Land Boss 4",
 						"chest_unopened_img": "images/boss.png",
 						"chest_opened_img": "images/boss_done.png",
 						"access_rules": [ "$canCutStuff" ],
-						"item_count": 2
+						"item_count": 1
 					},
 					{
 						"name": "Pure Land Boss 5",
 						"chest_unopened_img": "images/boss.png",
 						"chest_opened_img": "images/boss_done.png",
 						"access_rules": [ "$canCutStuff" ],
-						"item_count": 2
+						"item_count": 1
 					},
 					{
 						"name": "Pure Land Boss 6",
 						"chest_unopened_img": "images/boss.png",
 						"chest_opened_img": "images/boss_done.png",
 						"access_rules": [ "$canCutStuff" ],
-						"item_count": 2
+						"item_count": 1
 					},
 					{
 						"name": "Pure Land Mana Tree",
@@ -737,16 +688,10 @@
 						],
 						"sections": [
 							{
-								"name": "Sprite Village Boss",
+								"name": "Wind Palace Reward",
+								"access_rules": [ "$hasWindPalaceAccess" ],
 								"chest_unopened_img": "images/boss.png",
 								"chest_opened_img": "images/boss_done.png",
-								"item_count": 1
-							},
-							{
-								"name": "Wind Palace Mana Seed",
-								"access_rules": [ "$hasWindPalaceAccess" ],
-								"chest_unopened_img": "images/mana_seed.png",
-								"chest_opened_img": "images/mana_seed_disabled.png",
 								"item_count": 2
 							}
 						]
@@ -756,7 +701,6 @@
 						"map_locations": [
 							{
 								"map": "overworld",
-								"force_visibility_rules": [ "$always" ],
 								"x": 1685,
 								"y": 2165
 							}
@@ -771,19 +715,12 @@
 							{
 								"name": "Matango Cave Orb",
 								"hosted_item": "mc_orb",
-								"access_rules": [ "$hasWhip" ]
-							},
-							{
-								"name": "Matango Cave Boss",
-								"chest_unopened_img": "images/boss.png",
-								"chest_opened_img": "images/boss_done.png",
-								"access_rules": [ "$hasWhip, $canDestroyMCOrb" ],
-								"item_count": 1
+								"access_rules": [ "$hasWhip, $canDestroyMCOrb", "{$hasWhip}" ]
 							},
 							{
 								"name": "Flammie",
-								"chest_unopened_img": "images/check.png",
-								"chest_opened_img": "images/check_clear.png",
+								"chest_unopened_img": "images/boss.png",
+								"chest_opened_img": "images/boss_done.png",
 								"access_rules": [ "$hasWhip, $canDestroyMCOrb" ],
 								"item_count": 1
 							}
@@ -822,16 +759,9 @@
 								"item_count": 1
 							},
 							{
-								"name": "Palace of Darkness Boss",
+								"name": "Palace of Darkness Reward",
 								"chest_unopened_img": "images/boss.png",
 								"chest_opened_img": "images/boss_done.png",
-								"access_rules": [ "$hasAxe, $hasWhip" ],
-								"item_count": 1
-							},
-							{
-								"name": "Palace of Darkness Mana Seed",
-								"chest_unopened_img": "images/mana_seed.png",
-								"chest_opened_img": "images/mana_seed_disabled.png",
 								"access_rules": [ "$hasAxe, $hasWhip, $hasDarkPalaceAccess" ],
 								"item_count": 2
 							}
@@ -874,15 +804,9 @@
 						],
 						"sections": [
 							{
-								"name": "Tree Palace Entrance Boss",
+								"name": "Tree Palace Reward (Mana Seed)",
 								"chest_unopened_img": "images/boss.png",
 								"chest_opened_img": "images/boss_done.png",
-								"item_count": 1								
-							},
-							{
-								"name": "Tree Palace Mana Seed",
-								"chest_unopened_img": "images/mana_seed.png",
-								"chest_opened_img": "images/mana_seed_disabled.png",
 								"access_rules": [ "$hasTreePalaceAccess" ],
 								"item_count": 2
 							},
@@ -890,13 +814,13 @@
 								"name": "Tree Palace Boss after seed",								
 								"chest_unopened_img": "images/boss.png",
 								"chest_opened_img": "images/boss_done.png",
-								"item_count": 2
+								"item_count": 1
 							},
 							{
 								"name": "Tree Palace Aegagropilon",
 								"chest_unopened_img": "images/boss.png",
 								"chest_opened_img": "images/boss_done.png",
-								"item_count": 2
+								"item_count": 1
 							},
 							{
 								"name": "Grand Palace Chest",
@@ -910,7 +834,7 @@
 								"chest_unopened_img": "images/boss.png",
 								"chest_opened_img": "images/boss_done.png",
 								"access_rules": [ "$grandPalaceBoss" ],
-								"item_count": 2
+								"item_count": 1
 							}
 						]
 					},
@@ -936,14 +860,14 @@
 								"chest_unopened_img": "images/boss.png",
 								"chest_opened_img": "images/boss_done.png",
 								"access_rules": [ "$hasAxe" ],
-								"item_count": 2
+								"item_count": 1
 							},
 							{
 								"name": "Undergound Boss",
 								"chest_unopened_img": "images/boss.png",
 								"chest_opened_img": "images/boss_done.png",
 								"access_rules": [ "$hasAxe" ],
-								"item_count": 2
+								"item_count": 1
 							}							
 						]
 					}
