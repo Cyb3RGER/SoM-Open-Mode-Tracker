@@ -556,7 +556,7 @@ function grandPalaceBoss()
 		return 1
 	end
 
-	if (hasWhip() == 1 and hasGirl() == 1 and hasSprite() == 1 and hasUndine() == 1 and hasRocky() == 1 
+	if (hasWhip() == 1 and (hasGirl() == 1 or isGirlDisabled() == 1) and (hasSprite() == 1 or isSpriteDisabled() == 1) and hasUndine() == 1 and hasRocky() == 1 
 		and hasSylphid() == 1 and hasSalamando() == 1 and hasShade() == 1 and hasLumina() == 1 and hasLuna() == 1) then
 		return 1
 	end
