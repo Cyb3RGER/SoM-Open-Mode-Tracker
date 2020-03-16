@@ -294,6 +294,20 @@ function hasTreeSeed()
 	return 0
 end
 
+function countSeeds()
+	local count = 0
+	if hasWaterSeed() == 1 then count = count + 1 end
+	if hasEarthSeed() == 1 then count = count + 1 end
+	if hasWindSeed() == 1 then count = count + 1 end
+	if hasFireSeed() == 1 then count = count + 1 end
+	if hasDarkSeed() == 1 then count = count + 1 end
+	if hasLightSeed() == 1 then count = count + 1 end
+	if hasMoonSeed() == 1 then count = count + 1 end
+	if hasTreeSeed() == 1 then count = count + 1 end
+	return count
+end
+
+
 --weapons
 function hasWhip()
 	local value = Tracker:ProviderCountForCode("whip")
@@ -521,8 +535,7 @@ function hasManaFortressAccess()
 		if (isVanillaLong() == 1) then
 			return grandPalaceBoss()
 		--this is subject to change soon(TM)
-		--mana fortress will become accessable in mana tree
-		--ToDo: 
+		--mana fortress will become accessable in mana tree		
 		elseif (isReviveTheTree() == 1) then
 			return 0
 		else
@@ -565,8 +578,13 @@ function grandPalaceBoss()
 end
 
 function manaTreeRevive()
-	if (hasWaterSeed() == 1 and hasEarthSeed() == 1 and hasWindSeed() == 1 and hasFireSeed() == 1 
-		and hasDarkSeed() == 1 and hasLightSeed() == 1 and hasMoonSeed() == 1 and hasTreeSeed() == 1) then
+	local neededSeed
+	for i=1,8 do
+		neededSeed = Tracker:ProviderCountForCode("orb_count"..i) * i
+		if neededSeed > 0  then break end
+	end
+
+	if (countSeeds() == neededSeed) then
 		return 1
 	end
 	return 0

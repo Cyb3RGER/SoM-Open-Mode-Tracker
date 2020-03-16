@@ -1,4 +1,62 @@
 [  
+  //orb count
+  {
+		"name": "Orb Count",
+    "type": "progressive",
+    "capturable": false,
+    "loop": true,
+    "allow_disabled": false,
+		"stages": [
+      {
+        "img": "images/seed_grey.png",
+        "img_mods": "overlay|images/overlay_8.png",
+        "codes": "orb_count,orb_count8",
+        "secondary_codes": "orb_count8"
+      },
+      {
+        "img": "images/seed_grey.png",
+        "img_mods": "overlay|images/overlay_7.png",
+        "codes": "orb_count,orb_count7",
+        "secondary_codes": "orb_count7"
+      },
+      {
+        "img": "images/seed_grey.png",
+        "img_mods": "overlay|images/overlay_6.png",
+        "codes": "orb_count,orb_count6",
+        "secondary_codes": "orb_count6"
+      },
+      {
+        "img": "images/seed_grey.png",
+        "img_mods": "overlay|images/overlay_5.png",
+        "codes": "orb_count,orb_count5",
+        "secondary_codes": "orb_count5"
+      },
+      {
+        "img": "images/seed_grey.png",
+        "img_mods": "overlay|images/overlay_4.png",
+        "codes": "orb_count,orb_count4",
+        "secondary_codes": "orb_count4"
+      },
+      {
+        "img": "images/seed_grey.png",
+        "img_mods": "overlay|images/overlay_3.png",
+        "codes": "orb_count,orb_count3",
+        "secondary_codes": "orb_count3"
+      },
+      {
+        "img": "images/seed_grey.png",
+        "img_mods": "overlay|images/overlay_2.png",
+        "codes": "orb_count,orb_count2",
+        "secondary_codes": "orb_count2"
+      },
+      {
+        "img": "images/seed_grey.png",
+        "img_mods": "overlay|images/overlay_1.png",
+        "codes": "orb_count,orb_count1",
+        "secondary_codes": "orb_count1"
+      }   
+		]
+  },
 	//key items
 	{
     "name": "Midge Mallet",

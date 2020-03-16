@@ -48,8 +48,22 @@
 		"orientation": "vertical",
 		"content": [ 
 			{
-                "type": "layout",
-				"key": "items_characters"
+                "type": "array",
+				"orientation": "horizontal",
+				"content": [
+                    {
+                        "type": "layout",
+                        "key": "items_characters"
+                    },
+                    {
+                        "type": "itemgrid",
+                        "h_alignment": "right",
+                        "item_margin": "1,2",
+                        "rows": [ 
+                            ["orb_count"]
+                        ]
+                    }
+                ]                
 			},
 			{
                 "type": "array",
