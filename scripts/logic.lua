@@ -584,7 +584,7 @@ function manaTreeRevive()
 		if neededSeed > 0  then break end
 	end
 
-	if (countSeeds() == neededSeed) then
+	if (countSeeds() >= neededSeed) then
 		return 1
 	end
 	return 0
