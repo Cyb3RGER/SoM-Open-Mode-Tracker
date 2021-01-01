@@ -1,6 +1,7 @@
 local variant = Tracker.ActiveVariantUID
 local items_only = variant:find("itemsonly")
 local no_pins = variant:find("no_pins")
+debug = false
 
 --scripts
 ScriptHost:LoadScript("scripts/custom_items/class.lua")

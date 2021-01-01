@@ -1,13 +1,13 @@
-# Secret of Mana Open World Tracker Package for EmoTracker
-This a tracker for the Secret of Mana Randomizer Open World Beta currently found on Discord here: https://discord.gg/YfmUHqU
+# Secret of Mana Open World Tracker Package
 
-Also check out the stable build of the Secret of Mana Randomizer here: https://secretofmanaancientcave.blogspot.com
+This a tracker package for EmoTracker or other compible programms to use with the Open World Mode of the [Secret of Mana Randomizer](https://secretofmanaancientcave.blogspot.com).
 
-EmoTracker can be found here: https://emotracker.net
+Also check out the Secret of Mana Randomizer Discord [here](https://discord.gg/YfmUHqU).
 
-# Installation
+EmoTracker can be found [here](https://emotracker.net).
 
-Just download the source or lastest build and put under "Documents/EmoTracker/packs/" (as a zip or unpacked, both works).
+## Installation
 
+### EmoTracker
 
-
+Just download the source or lastest release and put it under "Documents/EmoTracker/packs/" (as a zip or unpacked, both work).

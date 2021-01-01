@@ -13,70 +13,70 @@
 				],
 				"sections": [					
 					{
-						"name": "Sign between Pandora and Potos",
+						"name": "Potos Elder Hint",
 						"chest_unopened_img": "images/hint.png",
 						"chest_opened_img": "images/hint_done.png",
 						"item_count": 1
 					},
 					{
-						"name": "Sign at bridge near Neko",
+						"name": "Potos Cannon",
+						"hosted_item": "cannon_hint"
+					},
+					{
+						"name": "Potos Forest Sign",
+						"chest_unopened_img": "images/hint.png",
+						"chest_opened_img": "images/hint_done.png",
+						"access_rules": [ "$canCutStuff" ],
+						"item_count": 1
+					},
+					{
+						"name": "Potos Threeway Sign",
 						"chest_unopened_img": "images/hint.png",
 						"chest_opened_img": "images/hint_done.png",
 						"item_count": 1
+					},
+					{
+						"name": "Beware Goblins Sign",
+						"chest_unopened_img": "images/hint.png",
+						"chest_opened_img": "images/hint_done.png",
+						"item_count": 1
+					},
+					{
+						"name": "Sign in front of Neko",
+						"chest_unopened_img": "images/hint.png",
+						"chest_opened_img": "images/hint_done.png",
+						"item_count": 1
+					},
+					{
+						"name": "Sign north of Pandora",
+						"chest_unopened_img": "images/hint.png",
+						"chest_opened_img": "images/hint_done.png",
+						"item_count": 1		
 					}
 				]
 			},
 			{
-				"name": "Potos Neko",
+				"name": "Mountain",
 				"map_locations": [
 					{
 						"map": "overworld_hints",
-						"x": 2190,
-						"y": 3060
-					}
-				],
-				"sections": [					
-					{
-						"name": "Sign in front of Neko Area",
-						"chest_unopened_img": "images/hint.png",
-						"chest_opened_img": "images/hint_done.png",
-						"item_count": 1
-					}
-				]
-			},
-			{
-				"name": "Kippo Village",
-				"map_locations": [
-					{
-						"map": "overworld_hints",
-						"x": 2000,
-						"y": 3490
-					}
-				],
-				"sections": [
-					{
-						"name": "Sign in front of Kippo Vilalge",
-						"chest_unopened_img": "images/hint.png",
-						"chest_opened_img": "images/hint_done.png",
-						"item_count": 1
-					}
-				]
-			},
-			{
-				"name": "Mandala Village",
-				"map_locations": [
-					{
-						"map": "overworld_hints",
-						"x": 1190,
-						"y": 2700
+						"x": 1300,
+						"y": 2900
 					}
 				],
 				"sections": [
 					{
-						"name": "Mandala Village Tower Hints",
+						"name": "Mandala Village Tower",
 						"chest_unopened_img": "images/hint.png",
 						"chest_opened_img": "images/hint_done.png",								
 						"item_count": 7
+					},
+					{
+						"name": "Jehk and Johk",
+						"chest_unopened_img": "images/hint.png",
+						"chest_opened_img": "images/hint_done.png",								
+						"access_rules": [ "$hasWhip" ],
+						"item_count": 2
 					}
 				]
 			},
@@ -91,7 +91,7 @@
 				],
 				"sections": [
 					{
-						"name": "Tasnica King Hint",
+						"name": "Tasnica King",
 						"chest_unopened_img": "images/hint.png",
 						"chest_opened_img": "images/hint_done.png",	
 						"item_count": 1
@@ -99,17 +99,23 @@
 				]
 			},
 			{
-				"name": "North Town Ruins",
+				"name": "North Town",
 				"map_locations": [
 					{
 						"map": "overworld_hints",
-						"x": 3420,
-						"y": 1075
+						"x": 3200,
+						"y": 1150
 					}
 				],
 				"sections": [
 					{
-						"name": "Dyluck Hint",
+						"name": "Krissie",
+						"chest_unopened_img": "images/hint.png",
+						"chest_opened_img": "images/hint_done.png",	
+						"item_count": 1
+					},
+					{
+						"name": "Dyluck",
 						"chest_unopened_img": "images/hint.png",
 						"chest_opened_img": "images/hint_done.png",	
 						"item_count": 1
@@ -127,7 +133,7 @@
 				],
 				"sections": [
 					{
-						"name": "Rudolph Hint",
+						"name": "Rudolph",
 						"chest_unopened_img": "images/hint.png",
 						"chest_opened_img": "images/hint_done.png",
 						"item_count": 1
@@ -145,10 +151,26 @@
 				],
 				"sections": [
 					{
-						"name": "Gaia's Navel North Signs",
+						"name": "Gaia's Navel Sign",
 						"chest_unopened_img": "images/hint.png",
 						"chest_opened_img": "images/hint_done.png",
 						"item_count": 1
+					},
+					{
+						"name": "Flower Guy",
+						"chest_unopened_img": "images/hint.png",
+						"chest_opened_img": "images/hint_done.png",
+						"item_count": 1
+					},
+					{
+						"name": "Sign in front of Kippo Vilalge",
+						"chest_unopened_img": "images/hint.png",
+						"chest_opened_img": "images/hint_done.png",
+						"item_count": 1
+					},
+					{
+						"name": "Gaia's Navel Cannon",
+						"hosted_item": "cannon_hint"
 					}
 				]
 			},								
@@ -163,43 +185,7 @@
 				],
 				"sections": [	
 					{
-						"name": "Water Palace Sign Hint",
-						"chest_unopened_img": "images/hint.png",
-						"chest_opened_img": "images/hint_done.png",
-						"item_count": 1
-					}
-				]
-			},
-			{
-				"name": "Pandora",
-				"map_locations": [
-					{
-						"map": "overworld_hints",
-						"x": 2425,
-						"y": 3475
-					}
-				],
-				"sections": [
-					{
-						"name": "Sign north of Pandora",
-						"chest_unopened_img": "images/hint.png",
-						"chest_opened_img": "images/hint_done.png",
-						"item_count": 1
-					}
-				]
-			},
-			{
-				"name": "Potos",
-				"map_locations": [
-					{
-						"map": "overworld_hints",
-						"x": 2425,
-						"y": 3045
-					}
-				],
-				"sections": [
-					{
-						"name": "Potos Elder Hint",
+						"name": "Water Palace Sign",
 						"chest_unopened_img": "images/hint.png",
 						"chest_opened_img": "images/hint_done.png",
 						"item_count": 1
@@ -207,21 +193,6 @@
 				]
 			},
 			//Cannon hints
-			{
-				"name": "Potos Cannon",
-				"map_locations": [
-					{
-						"map": "overworld_hints",
-						"x": 2500,
-						"y": 3080
-					}
-				],
-				"sections": [
-					{
-						"hosted_item": "cannon_hint"
-					}
-				]
-			},
 			{
 				"name": "Kakara Cannon",
 				"map_locations": [
@@ -259,21 +230,6 @@
 						"map": "overworld_hints",
 						"x": 2860,
 						"y": 630
-					}
-				],
-				"sections": [
-					{
-						"hosted_item": "cannon_hint"
-					}
-				]
-			},
-			{
-				"name": "Gaia's Navel Cannon",
-				"map_locations": [
-					{
-						"map": "overworld_hints",
-						"x": 2090,
-						"y": 3130
 					}
 				],
 				"sections": [

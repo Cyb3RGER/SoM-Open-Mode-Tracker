@@ -11,9 +11,9 @@
     },
     "var_itemsonly": {
       "display_name": "Items Only"
-    },
+    }/*,
     "var_no_pins": {
       "display_name": "I hate pins >:^( [WIP]"
-    }
+    }*/
   }
 }

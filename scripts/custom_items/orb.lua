@@ -17,8 +17,8 @@ function OrbItem:init(name, code)
     self.code = code
     self.baseCode = code
     self:setProperty("active", false)
-    self.forceState = false
-    self.removeLumina = false
+    self.isSpriteDisabled = 0
+    self.isGirlDisabled = 0
     self.state = 0
 
     self.ImageUnknown = ImageReference:FromPackRelativePath("images/orb.png")
@@ -43,42 +43,70 @@ function OrbItem:setState(state)
     self:propertyChanged("state",state)
 end
 
-function OrbItem:advanceState()   
-    if self.forceState == false then
-        if self.state == 8 then
-            self:setState(0)
-        elseif self.state == 5 and self.removeLumina == true then 
-            self:setState(self.state + 2)
-        else
-            self:setState(self.state + 1)
+function OrbItem:getNextState(state)
+    if state == 8 then
+        return 0
+    else
+        return state + 1
+    end
+end
+
+function OrbItem:getPrevState(state)
+    if state == 0 then
+        return 8
+    else
+        return state - 1
+    end
+end
+
+function OrbItem:advanceState()  
+    if self.isSpriteDisabled == 1 and self.isGirlDisabled == 1 then
+        if(self.state ~= 0 ) then self:setState(0) end
+        return
+    end 
+    local nextState = self:getNextState(self.state)
+    if self.isSpriteDisabled == 1 then        
+        while nextState == 1 or nextState == 2 or nextState == 5 or nextState == 7 or nextState == 8 do
+            nextState = self:getNextState(nextState)
+        end
+    elseif self.isGirlDisabled == 1 then
+        if nextState == 6 then
+            nextState = self:getNextState(nextState)
         end
     end
+
+    self:setState(nextState)
 end
 
 function OrbItem:decreaseState()
-    if self.forceState == false then
-        if self.state == 0 then
-            self:setState(8)
-        elseif self.state == 7 and self.removeLumina == true then 
-            self:setState(self.state - 2)
-        else
-            self:setState(self.state - 1)
+    if self.isSpriteDisabled == 1 and self.isGirlDisabled == 1 then
+        if(self.state ~= 0 ) then self:setState(0) end
+        return
+    end 
+    local nextState = self:getPrevState(self.state)
+    if self.isSpriteDisabled == 1 then
+        while nextState == 1 or nextState == 2 or nextState == 5 or nextState == 7 or nextState == 8 do
+            nextState = self:getPrevState(nextState)
+        end
+    elseif self.isGirlDisabled == 1 then
+        if nextState == 6 then
+            nextState = self:getPrevState(nextState)
         end
     end
+
+    self:setState(nextState)
 end
 
-function OrbItem:setActive(active)
-    if self.forceState == false then
-        if active ~= true then
-            self:setState(0)
-        elseif self.state == 0 then
-            self:setState(1)
-        end
+function OrbItem:setActive(active)    
+    if active ~= true then
+        self:setState(0)
+    elseif self.state == 0 then
+        self:setState(1)
     end
 end
 
 function OrbItem:getActive()
-    return (self.state > 0 or self.forceState == true)
+    return (self.state > 0 or (self.isSpriteDisabled == 1 and self.isGirlDisabled == 1))
 end
 
 function OrbItem:updateIcon()
@@ -146,13 +174,16 @@ function OrbItem:propertyChanged(key, value)
     if (key == "state") then
         self.state = value
     end
-    if key == "forceState" then
-        self.forceState = value
+    if key == "isSpriteDisabled" then
+        self.isSpriteDisabled = value
+        if self.state == 1 or self.state == 2 or self.state == 5 or self.state == 7 or self.state == 8 then
+            self:setState(0)
+        end
     end
-    if key == "removeLumina" then
-        self.removeLumina = value
+    if key == "isGirlDisabled" then
+        self.isGirlDisabled = value
         if self.state == 6 then
-            self.setState(0)
+            self:setState(0)
         end
     end
     self:updateIcon()
