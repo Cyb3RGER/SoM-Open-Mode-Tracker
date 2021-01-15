@@ -10,4 +10,4 @@ EmoTracker can be found [here](https://emotracker.net).
 
 ### EmoTracker
 
-Just download the source or lastest release and put it under "Documents/EmoTracker/packs/" (as a zip or unpacked, both work).
+Just download the lastest release and put it under "Documents/EmoTracker/packs/" (as a zip or unpacked, both work).
