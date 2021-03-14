@@ -186,5 +186,8 @@ function OrbItem:propertyChanged(key, value)
             self:setState(0)
         end
     end
+    if (key == "isSpriteDisabled" or key == "isGirlDisabled") and self.isGirlDisabled == 1 and self.isSpriteDisabled == 1 then
+        self:setState(0)
+    end
     self:updateIcon()
 end
