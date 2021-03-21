@@ -29,8 +29,8 @@ function CharacterItem:setState(state)
     self:propertyChanged("state",state)
 end
 
-function CharacterItem:advanceState()    
-    if self.state == 2 then        
+function CharacterItem:advanceState()
+    if self.state == 2 then
     else     
         self:setState(self.state + 1)
     end
@@ -91,7 +91,7 @@ end
 function CharacterItem:advanceToCode(code)
 end
 
-function CharacterItem:save()    
+function CharacterItem:save()
     local saveData = {}
     saveData["state"] = self:getState()
     return saveData
@@ -104,7 +104,7 @@ function CharacterItem:load(data)
     return true
 end
 
-function CharacterItem:propertyChanged(key, value)    
+function CharacterItem:propertyChanged(key, value)
     if key == "state" then
         self.state = value
     end
