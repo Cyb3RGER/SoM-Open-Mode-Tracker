@@ -97,7 +97,7 @@ function OrbItem:decreaseState()
     self:setState(nextState)
 end
 
-function OrbItem:setActive(active)    
+function OrbItem:setActive(active)
     if active ~= true then
         self:setState(0)
     elseif self.state == 0 then
@@ -157,7 +157,7 @@ end
 function OrbItem:advanceToCode(code)
 end
 
-function OrbItem:save()    
+function OrbItem:save()
     local saveData = {}
     saveData["state"] = self:getState()
     return saveData
