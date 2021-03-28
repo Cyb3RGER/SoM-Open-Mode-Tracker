@@ -1,981 +1,951 @@
 [
+	//Potos
 	{
-		"name": "All Locations",
+		"name": "Potos",
+		"map_locations": [
+			{
+				"map": "overworld",
+				"x": 2425,
+				"y": 3045
+			}
+		],
+		"sections": [
+			{
+				"name": "Potos Chest",
+				"chest_unopened_img": "images/chest.png",
+				"chest_opened_img": "images/chest_open.png",
+				"item_count": 1
+			},
+			{
+				"name": "Potos Boss",
+				"chest_unopened_img": "images/boss.png",
+				"chest_opened_img": "images/boss_done.png",
+				"item_count": 1
+			}
+		]
+	},
+	//Potos - END
+	//Pandora
+	{
+		"name": "Pandora",
+		"map_locations": [
+			{
+				"map": "overworld",
+				"x": 2425,
+				"y": 3475
+			}
+		],
+		"sections": [
+			{
+				"name": "Pandora Castle Girl",
+				"chest_unopened_img": "images/check.png",
+				"chest_opened_img": "images/check_clear.png",
+				"item_count": 1
+			},
+			{
+				"name": "Pandora Ruins Boss",
+				"chest_unopened_img": "images/boss.png",
+				"chest_opened_img": "images/boss_done.png",
+				"item_count": 1
+			},
+			{
+				"name": "Pandora Castle Chests",
+				"chest_unopened_img": "images/chest.png",
+				"chest_opened_img": "images/chest_open.png",
+				"item_count": 6
+			}
+		]
+	},
+	//Pandora - END
+	//Water Palace
+	{
+		"name": "Water Palace",
+		"map_locations": [
+			{
+				"map": "overworld",
+				"x": 2125,
+				"y": 2925
+			}
+		],
+		"sections": [
+			{
+				"name": "Water Palace Mana Seed",
+				"access_rules": [
+					"$hasWaterPalaceAccess"
+				],
+				"chest_unopened_img": "images/boss.png",
+				"chest_opened_img": "images/boss_done.png",
+				"item_count": 2
+			},
+			{
+				"name": "Undine",
+				"chest_unopened_img": "images/boss.png",
+				"chest_opened_img": "images/boss_done.png",
+				"item_count": 2
+			}
+		]
+	},
+	//Water Palace - END
+	//Gaia's Navel
+	{
+		"name": "Gaia's Navel",
+		"map_locations": [
+			{
+				"map": "overworld",
+				"x": 2180,
+				"y": 3235
+			}
+		],
+		"sections": [
+			{
+				"name": "Gaia's Navel Cave Chest",
+				"chest_unopened_img": "images/chest.png",
+				"chest_opened_img": "images/chest_open.png",
+				"item_count": 1
+			},
+			{
+				"name": "Watts",
+				"chest_unopened_img": "images/check.png",
+				"chest_opened_img": "images/check_clear.png",
+				"item_count": 1
+			},
+			{
+				"name": "Dwarf Elder",
+				"chest_unopened_img": "images/check.png",
+				"chest_opened_img": "images/check_clear.png",
+				"item_count": 1
+			},
+			{
+				"name": "Dwarf Village Boss",
+				"chest_unopened_img": "images/boss.png",
+				"chest_opened_img": "images/boss_done.png",
+				"item_count": 2
+			},
+			{
+				"name": "Underground Ship Chest",
+				"chest_unopened_img": "images/chest.png",
+				"chest_opened_img": "images/chest_open.png",
+				"item_count": 1
+			},
+			{
+				"name": "Underground Ship Boss",
+				"chest_unopened_img": "images/boss.png",
+				"chest_opened_img": "images/boss_done.png",
+				"item_count": 1
+			},
+			{
+				"name": "Earth Temple Orb",
+				"hosted_item": "et_orb",
+				"access_rules": [
+					"$canDestroyETOrb",
+					"{}"
+				]
+			},
+			{
+				"name": "Earth Palace Mana Seed",
+				"chest_unopened_img": "images/boss.png",
+				"chest_opened_img": "images/boss_done.png",
+				"access_rules": [
+					"$hasWhip, $canDestroyETOrb, $hasEarthPalaceAccess"
+				],
+				"item_count": 2
+			}
+		]
+	},
+	//Gaia's Navel - END
+	//Elinee's Castle
+	{
+		"name": "Elinee's Castle",
+		"map_locations": [
+			{
+				"map": "overworld",
+				"x": 2010,
+				"y": 2955
+			}
+		],
+		"sections": [
+			{
+				"name": "Elinee's Castle Reward (Chests)",
+				"chest_unopened_img": "images/boss.png",
+				"chest_opened_img": "images/boss_done.png",
+				"access_rules": [
+					"$hasAxe",
+					"$hasWhip, $canCutStuff"
+				],
+				"item_count": 2
+			}
+		]
+	},
+	//Elinee's Castle - END
+	//Kakkara Desert
+	{
+		"name": "Kakkara Desert",
 		"children": [
-			//Potos
 			{
-				"name": "Potos",
-				"map_locations": [
-					{
-						"map": "overworld",
-						"x": 2425,
-						"y": 3045
-					}
+				"name": "Kakkara",
+				"chest_unopened_img": "images/check.png",
+				"chest_opened_img": "images/check_clear.png",
+				"access_rules": [
+					"$hasTail"
 				],
-				"sections": [
-					{
-						"name": "Potos Chest",
-						"chest_unopened_img": "images/chest.png",
-						"chest_opened_img": "images/chest_open.png",
-						"item_count": 1
-					},
-					{
-						"name": "Potos Boss",
-						"chest_unopened_img": "images/boss.png",
-						"chest_opened_img": "images/boss_done.png",
-						"item_count": 1
-					}
-				]
-			},
-			//Potos - END
-			//Pandora
-			{
-				"name": "Pandora",
-				"map_locations": [
-					{
-						"map": "overworld",
-						"x": 2425,
-						"y": 3475
-					}
-				],
-				"sections": [
-					{
-						"name": "Pandora Castle Girl",
-						"chest_unopened_img": "images/check.png",
-						"chest_opened_img": "images/check_clear.png",
-						"item_count": 1
-					},
-					{
-						"name": "Pandora Ruins Boss",
-						"chest_unopened_img": "images/boss.png",
-						"chest_opened_img": "images/boss_done.png",
-						"item_count": 1
-					},
-					{
-						"name": "Pandora Castle Chests",
-						"chest_unopened_img": "images/chest.png",
-						"chest_opened_img": "images/chest_open.png",
-						"item_count": 6
-					}
-				]
-			},
-			//Pandora - END
-			//Water Palace
-			{
-				"name": "Water Palace",
-				"map_locations": [
-					{
-						"map": "overworld",
-						"x": 2125,
-						"y": 2925
-					}
-				],
-				"sections": [
-					{
-						"name": "Water Palace Mana Seed",
-						"access_rules": [
-							"$hasWaterPalaceAccess"
-						],
-						"chest_unopened_img": "images/boss.png",
-						"chest_opened_img": "images/boss_done.png",
-						"item_count": 2
-					},
-					{
-						"name": "Undine",
-						"chest_unopened_img": "images/boss.png",
-						"chest_opened_img": "images/boss_done.png",
-						"item_count": 2
-					}
-				]
-			},
-			//Water Palace - END
-			//Gaia's Navel
-			{
-				"name": "Gaia's Navel",
-				"map_locations": [
-					{
-						"map": "overworld",
-						"x": 2180,
-						"y": 3235
-					}
-				],
-				"sections": [
-					{
-						"name": "Gaia's Navel Cave Chest",
-						"chest_unopened_img": "images/chest.png",
-						"chest_opened_img": "images/chest_open.png",
-						"item_count": 1
-					},
-					{
-						"name": "Watts",
-						"chest_unopened_img": "images/check.png",
-						"chest_opened_img": "images/check_clear.png",
-						"item_count": 1
-					},
-					{
-						"name": "Dwarf Elder",
-						"chest_unopened_img": "images/check.png",
-						"chest_opened_img": "images/check_clear.png",
-						"item_count": 1
-					},
-					{
-						"name": "Dwarf Village Boss",
-						"chest_unopened_img": "images/boss.png",
-						"chest_opened_img": "images/boss_done.png",
-						"item_count": 2
-					},
-					{
-						"name": "Underground Ship Chest",
-						"chest_unopened_img": "images/chest.png",
-						"chest_opened_img": "images/chest_open.png",
-						"item_count": 1
-					},
-					{
-						"name": "Underground Ship Boss",
-						"chest_unopened_img": "images/boss.png",
-						"chest_opened_img": "images/boss_done.png",
-						"item_count": 1
-					},
-					{
-						"name": "Earth Temple Orb",
-						"hosted_item": "et_orb",
-						"access_rules": [
-							"$canDestroyETOrb",
-							"{}"
-						]
-					},
-					{
-						"name": "Earth Palace Mana Seed",
-						"chest_unopened_img": "images/boss.png",
-						"chest_opened_img": "images/boss_done.png",
-						"access_rules": [
-							"$hasWhip, $canDestroyETOrb, $hasEarthPalaceAccess"
-						],
-						"item_count": 2
-					}
-				]
-			},
-			//Gaia's Navel - END
-			//Elinee's Castle
-			{
-				"name": "Elinee's Castle",
-				"map_locations": [
-					{
-						"map": "overworld",
-						"x": 2010,
-						"y": 2955
-					}
-				],
-				"sections": [
-					{
-						"name": "Elinee's Castle Reward (Chests)",
-						"chest_unopened_img": "images/boss.png",
-						"chest_opened_img": "images/boss_done.png",
-						"access_rules": [
-							"$hasAxe",
-							"$hasWhip, $canCutStuff"
-						],
-						"item_count": 2
-					}
-				]
-			},
-			//Elinee's Castle - END
-			//Kakkara Desert
-			{
-				"name": "Kakkara Desert",
-				"children": [
-					{
-						"name": "Kakkara",
-						"children": [
-							{
-								"name": "Kakkara NPC",
-								"chest_unopened_img": "images/check.png",
-								"chest_opened_img": "images/check_clear.png",
-								"access_rules": [
-									"$hasTail"
-								],
-								"map_locations": [
-									{
-										"map": "overworld",
-										"x": 660,
-										"y": 1484
-									}
-								],
-								"sections": [
-									{
-										"name": "Kakkara NPC",
-										"item_count": 1
-									}
-								]
-							}
-						]
-					},
-					{
-						"name": "Fire Palace",
-						"children": [
-							{
-								"name": "Fire Palace",
-								"map_locations": [
-									{
-										"map": "overworld",
-										"x": 415,
-										"y": 1690
-									}
-								],
-								"sections": [
-									{
-										"name": "Fire Palace Orb 1",
-										"hosted_item": "fp_orb1",
-										"access_rules": [
-											"$canDestroyFPOrb1",
-											"{}"
-										]
-									},
-									{
-										"name": "Fire Palace Near Entrance Chest",
-										"chest_unopened_img": "images/chest.png",
-										"chest_opened_img": "images/chest_open.png",
-										"access_rules": [
-											"$canDestroyFPOrb1",
-											"[$canDestroyFPOrb1], undine, girl"
-										],
-										"item_count": 1
-									},
-									{
-										"name": "Fire Palace Orb 2",
-										"hosted_item": "fp_orb2",
-										"access_rules": [
-											"$canDestroyFPOrb1, $canDestroyFPOrb2",
-											"{$canDestroyFPOrb1}",
-											"[$canDestroyFPOrb1], $canDestroyFPOrb2, undine, girl",
-											"{undine, girl}"
-										]
-									},
-									{
-										"name": "Fire Palace Near Orb 2",
-										"chest_unopened_img": "images/chest.png",
-										"chest_opened_img": "images/chest_open.png",
-										"access_rules": [
-											"$canDestroyFPOrb1, $canDestroyFPOrb2",
-											"[$canDestroyFPOrb1], $canDestroyFPOrb2, undine, girl"
-										],
-										"item_count": 1
-									},
-									{
-										"name": "Fire Palace After Little Maze",
-										"chest_unopened_img": "images/chest.png",
-										"chest_opened_img": "images/chest_open.png",
-										"access_rules": [
-											"$canDestroyFPOrb1, $canDestroyFPOrb2",
-											"[$canDestroyFPOrb1], $canDestroyFPOrb2, undine, girl"
-										],
-										"item_count": 1
-									},
-									{
-										"name": "Fire Palace Orb 3",
-										"hosted_item": "fp_orb3",
-										"access_rules": [
-											"$canDestroyFPOrb1, $canDestroyFPOrb2, $canDestroyFPOrb3, $hasWhip",
-											"{$canDestroyFPOrb1, $canDestroyFPOrb2, $hasWhip}",
-											"[$canDestroyFPOrb1], $canDestroyFPOrb2, $canDestroyFPOrb3, $hasWhip, undine, girl",
-											"{$canDestroyFPOrb2, $hasWhip, undine, girl}"
-										]
-									},
-									{
-										"name": "Fire Palace Reward",
-										"chest_unopened_img": "images/boss.png",
-										"chest_opened_img": "images/boss_done.png",
-										"access_rules": [
-											"$canDestroyFPOrb1, $canDestroyFPOrb2, $canDestroyFPOrb3, $hasFirePalaceAccess, $hasWhip",
-											"[$canDestroyFPOrb1], $canDestroyFPOrb2, $canDestroyFPOrb3, $hasFirePalaceAccess, $hasWhip, undine, girl"
-										],
-										"item_count": 1
-									}
-								]
-							}
-						]
-					},
-					{
-						"name": "Moon Palace",
-						"map_locations": [
-							{
-								"map": "overworld",
-								"x": 925,
-								"y": 1435
-							}
-						],
-						"sections": [
-							{
-								"name": "Moon Palace Orb",
-								"hosted_item": "mp_orb",
-								"access_rules": [
-									"$canDestroyMPOrb",
-									"{}"
-								]
-							},
-							{
-								"name": "Moon Palace Seed",
-								"chest_unopened_img": "images/mana_seed.png",
-								"chest_opened_img": "images/mana_seed_disabled.png",
-								"access_rules": [
-									"$canDestroyMPOrb, $hasMoonPalaceAccess"
-								],
-								"item_count": 2
-							}
-						]
-					}
-				]
-			},
-			//Kakkara Desert - END
-			{
-				"name": "Lighthouse",
-				"children": [
-					{
-						"name": "Lighthouse NPC",
-						"chest_unopened_img": "images/check.png",
-						"chest_opened_img": "images/check_clear.png",
-						"map_locations": [
-							{
-								"map": "overworld",
-								"x": 2459,
-								"y": 3987
-							}
-						],
-						"sections": [
-							{
-								"name": "Lighthouse NPC",
-								"item_count": 1
-							}
-						]
-					}
-				]
-			},
-			{
-				"name": "Tasnica",
-				"map_locations": [
-					{
-						"map": "overworld",
-						"x": 388,
-						"y": 3203
-					}
-				],
-				"sections": [
-					{
-						"name": "Tasnica Miniboss",
-						"chest_unopened_img": "images/boss.png",
-						"chest_opened_img": "images/boss_done.png",
-						"item_count": 1
-					}
-				]
-			},
-			{
-				"name": "Turtle Island",
-				"children": [
-					{
-						"name": "Turtle Island NPC",
-						"chest_unopened_img": "images/check.png",
-						"chest_opened_img": "images/check_clear.png",
-						"map_locations": [
-							{
-								"map": "overworld",
-								"x": 412,
-								"y": 2459
-							}
-						],
-						"sections": [
-							{
-								"name": "Turtle Island NPC",
-								"item_count": 1
-							}
-						]
-					}
-				]
-			},
-			//Vandole Empire
-			{
-				"name": "Vandole Empire",
-				"children": [
-					{
-						"name": "South Town",
-						"chest_unopened_img": "images/check.png",
-						"chest_opened_img": "images/check_clear.png",
-						"map_locations": [
-							{
-								"map": "overworld",
-								"x": 3530,
-								"y": 1660
-							}
-						],
-						"sections": [
-							{
-								"name": "South Town Mara",
-								"item_count": 1
-							}
-						]
-					},
-					{
-						"name": "North Town",
-						"children": [
-							{
-								"name": "North Town Castle",
-								"map_locations": [
-									{
-										"map": "overworld",
-										"x": 3195,
-										"y": 1075
-									}
-								],
-								"sections": [
-									{
-										"name": "Castle Double Chest",
-										"chest_unopened_img": "images/chest.png",
-										"chest_opened_img": "images/chest_open.png",
-										"item_count": 2
-									},
-									{
-										"name": "Inside Boss",
-										"chest_unopened_img": "images/boss.png",
-										"chest_opened_img": "images/boss_done.png",
-										"item_count": 1
-									},
-									{
-										"name": "Castle Chest",
-										"chest_unopened_img": "images/chest.png",
-										"chest_opened_img": "images/chest_open.png",
-										"item_count": 1
-									},
-									{
-										"name": "Outside Boss",
-										"chest_unopened_img": "images/boss.png",
-										"chest_opened_img": "images/boss_done.png",
-										"item_count": 1
-									}
-								]
-							},
-							{
-								"name": "North Town Ruins",
-								"map_locations": [
-									{
-										"map": "overworld",
-										"x": 3420,
-										"y": 1075
-									}
-								],
-								"sections": [
-									{
-										"name": "North Town Ruins Left Chest",
-										"chest_unopened_img": "images/chest.png",
-										"chest_opened_img": "images/chest_open.png",
-										"item_count": 1
-									},
-									{
-										"name": "North Town Ruins Right Chest",
-										"chest_unopened_img": "images/chest.png",
-										"chest_opened_img": "images/chest_open.png",
-										"item_count": 1
-									},
-									{
-										"name": "North Town Ruins Inner Chest",
-										"chest_unopened_img": "images/chest.png",
-										"chest_opened_img": "images/chest_open.png",
-										"item_count": 1
-									},
-									{
-										"name": "North Town Ruins Boss 1",
-										"chest_unopened_img": "images/boss.png",
-										"chest_opened_img": "images/boss_done.png",
-										"item_count": 1
-									},
-									{
-										"name": "North Town Ruins Boss 2",
-										"chest_unopened_img": "images/boss.png",
-										"chest_opened_img": "images/boss_done.png",
-										"item_count": 1
-									}
-								]
-							}
-						]
-					},
-					{
-						"name": "Gold City",
-						"children": [
-							{
-								"name": "Gold Tower ",
-								"map_locations": [
-									{
-										"map": "overworld",
-										"x": 2200,
-										"y": 1400
-									}
-								],
-								"sections": [
-									{
-										"name": "Gold Tower Chest 1",
-										"chest_unopened_img": "images/chest.png",
-										"chest_opened_img": "images/chest_open.png",
-										"access_rules": [
-											"$hasKey"
-										],
-										"item_count": 1
-									},
-									{
-										"name": "Gold Tower Chest 2",
-										"chest_unopened_img": "images/boss.png",
-										"chest_opened_img": "images/boss_done.png",
-										"access_rules": [
-											"$hasKey"
-										],
-										"item_count": 1
-									},
-									{
-										"name": "Gold Tower Reward",
-										"chest_unopened_img": "images/boss.png",
-										"chest_opened_img": "images/boss_done.png",
-										"access_rules": [
-											"$hasKey, $hasLightPalaceAccess"
-										],
-										"item_count": 2
-									}
-								]
-							}
-						]
-					}
-				]
-			},
-			//Vandole Empire - END
-			//Ice Country
-			{
-				"name": "Ice Country",
-				"children": [
-					{
-						"name": "Santas House",
-						"map_locations": [
-							{
-								"map": "overworld",
-								"x": 2625,
-								"y": 625
-							}
-						],
-						"sections": [
-							{
-								"name": "Santas House Chest",
-								"chest_unopened_img": "images/chest.png",
-								"chest_opened_img": "images/chest_open.png",
-								"item_count": 1
-							}
-						]
-					},
-					{
-						"name": "Tropical Town",
-						"children": [
-							{
-								"name": "Tropical Town Boss",
-								"map_locations": [
-									{
-										"map": "overworld",
-										"x": 2280,
-										"y": 420
-									}
-								],
-								"sections": [
-									{
-										"name": "Salamando",
-										"chest_unopened_img": "images/boss.png",
-										"chest_opened_img": "images/boss_done.png",
-										"item_count": 1
-									}
-								]
-							}
-						]
-					},
-					{
-						"name": "Ice Castle",
-						"children": [
-							{
-								"name": "Ice Castle Chest",
-								"map_locations": [
-									{
-										"map": "overworld",
-										"x": 2395,
-										"y": 220
-									}
-								],
-								"sections": [
-									{
-										"name": "Ice Castle Chest",
-										"chest_unopened_img": "images/chest.png",
-										"chest_opened_img": "images/chest_open.png",
-										"item_count": 1
-									},
-									{
-										"name": "Ice Castle Boss 1",
-										"chest_unopened_img": "images/boss.png",
-										"chest_opened_img": "images/boss_done.png",
-										"item_count": 1
-									},
-									{
-										"name": "Ice Castle Boss 2",
-										"chest_unopened_img": "images/boss.png",
-										"chest_opened_img": "images/boss_done.png",
-										"access_rules": [
-											"$hasWhip"
-										],
-										"item_count": 1
-									}
-								]
-							}
-						]
-					}
-				]
-			},
-			//Ice Country - END
-			//Pure Land
-			{
-				"name": "Pure Land",
 				"map_locations": [
 					{
 						"map": "overworld",
 						"x": 660,
-						"y": 410
+						"y": 1484
 					}
 				],
 				"sections": [
 					{
-						"name": "Pure Land Boss 1",
-						"chest_unopened_img": "images/boss.png",
-						"chest_opened_img": "images/boss_done.png",
+						"name": "Kakkara NPC",
 						"item_count": 1
-					},
+					}
+				]
+			},
+			{
+				"name": "Fire Palace",
+				"map_locations": [
 					{
-						"name": "Pure Land Boss 2",
-						"chest_unopened_img": "images/boss.png",
-						"chest_opened_img": "images/boss_done.png",
-						"item_count": 1
-					},
+						"map": "overworld",
+						"x": 415,
+						"y": 1690
+					}
+				],
+				"sections": [
 					{
-						"name": "Pure Land Boss 3",
-						"chest_unopened_img": "images/boss.png",
-						"chest_opened_img": "images/boss_done.png",
-						"item_count": 1
-					},
-					{
-						"name": "Pure Land Boss 4",
-						"chest_unopened_img": "images/boss.png",
-						"chest_opened_img": "images/boss_done.png",
+						"name": "Fire Palace Orb 1",
+						"hosted_item": "fp_orb1",
 						"access_rules": [
-							"$canCutStuff"
+							"$canDestroyFPOrb1",
+							"{}"
+						]
+					},
+					{
+						"name": "Fire Palace Near Entrance Chest",
+						"chest_unopened_img": "images/chest.png",
+						"chest_opened_img": "images/chest_open.png",
+						"access_rules": [
+							"$canDestroyFPOrb1",
+							"[$canDestroyFPOrb1], undine, girl"
 						],
 						"item_count": 1
 					},
 					{
-						"name": "Pure Land Boss 5",
-						"chest_unopened_img": "images/boss.png",
-						"chest_opened_img": "images/boss_done.png",
+						"name": "Fire Palace Orb 2",
+						"hosted_item": "fp_orb2",
 						"access_rules": [
-							"$canCutStuff"
+							"$canDestroyFPOrb1, $canDestroyFPOrb2",
+							"{$canDestroyFPOrb1}",
+							"[$canDestroyFPOrb1], $canDestroyFPOrb2, undine, girl",
+							"{undine, girl}"
+						]
+					},
+					{
+						"name": "Fire Palace Near Orb 2",
+						"chest_unopened_img": "images/chest.png",
+						"chest_opened_img": "images/chest_open.png",
+						"access_rules": [
+							"$canDestroyFPOrb1, $canDestroyFPOrb2",
+							"[$canDestroyFPOrb1], $canDestroyFPOrb2, undine, girl"
 						],
 						"item_count": 1
 					},
 					{
-						"name": "Pure Land Boss 6",
-						"chest_unopened_img": "images/boss.png",
-						"chest_opened_img": "images/boss_done.png",
+						"name": "Fire Palace After Little Maze",
+						"chest_unopened_img": "images/chest.png",
+						"chest_opened_img": "images/chest_open.png",
 						"access_rules": [
-							"$canCutStuff"
+							"$canDestroyFPOrb1, $canDestroyFPOrb2",
+							"[$canDestroyFPOrb1], $canDestroyFPOrb2, undine, girl"
 						],
 						"item_count": 1
 					},
 					{
-						"name": "Pure Land Mana Tree",
-						"chest_unopened_img": "images/check.png",
-						"chest_opened_img": "images/check_clear.png",
+						"name": "Fire Palace Orb 3",
+						"hosted_item": "fp_orb3",
 						"access_rules": [
-							"$canCutStuff, $isVanillaShort",
-							"$canCutStuff, $isVanillaLong",
-							"$canCutStuff, $isReviveTheTree, $manaTreeRevive"
+							"$canDestroyFPOrb1, $canDestroyFPOrb2, $canDestroyFPOrb3, $hasWhip",
+							"{$canDestroyFPOrb1, $canDestroyFPOrb2, $hasWhip}",
+							"[$canDestroyFPOrb1], $canDestroyFPOrb2, $canDestroyFPOrb3, $hasWhip, undine, girl",
+							"{$canDestroyFPOrb2, $hasWhip, undine, girl}"
+						]
+					},
+					{
+						"name": "Fire Palace Reward",
+						"chest_unopened_img": "images/boss.png",
+						"chest_opened_img": "images/boss_done.png",
+						"access_rules": [
+							"$canDestroyFPOrb1, $canDestroyFPOrb2, $canDestroyFPOrb3, $hasFirePalaceAccess, $hasWhip",
+							"[$canDestroyFPOrb1], $canDestroyFPOrb2, $canDestroyFPOrb3, $hasFirePalaceAccess, $hasWhip, undine, girl"
 						],
 						"item_count": 1
 					}
 				]
 			},
-			//Pure Land - END	
-			//Upper Land
 			{
-				"name": "Upper Land",
+				"name": "Moon Palace",
+				"map_locations": [
+					{
+						"map": "overworld",
+						"x": 925,
+						"y": 1435
+					}
+				],
+				"sections": [
+					{
+						"name": "Moon Palace Orb",
+						"hosted_item": "mp_orb",
+						"access_rules": [
+							"$canDestroyMPOrb",
+							"{}"
+						]
+					},
+					{
+						"name": "Moon Palace Seed",
+						"chest_unopened_img": "images/mana_seed.png",
+						"chest_opened_img": "images/mana_seed_disabled.png",
+						"access_rules": [
+							"$canDestroyMPOrb, $hasMoonPalaceAccess"
+						],
+						"item_count": 2
+					}
+				]
+			}
+		]
+	},
+	//Kakkara Desert - END
+	{
+		"name": "Lighthouse",
+		"chest_unopened_img": "images/check.png",
+		"chest_opened_img": "images/check_clear.png",
+		"map_locations": [
+			{
+				"map": "overworld",
+				"x": 2459,
+				"y": 3987
+			}
+		],
+		"sections": [
+			{
+				"name": "Lighthouse NPC",
+				"item_count": 1
+			}
+		]
+	},
+	{
+		"name": "Tasnica",
+		"map_locations": [
+			{
+				"map": "overworld",
+				"x": 388,
+				"y": 3203
+			}
+		],
+		"sections": [
+			{
+				"name": "Tasnica Miniboss",
+				"chest_unopened_img": "images/boss.png",
+				"chest_opened_img": "images/boss_done.png",
+				"item_count": 1
+			}
+		]
+	},
+	{
+		"name": "Turtle Island",
+		"chest_unopened_img": "images/check.png",
+		"chest_opened_img": "images/check_clear.png",
+		"map_locations": [
+			{
+				"map": "overworld",
+				"x": 412,
+				"y": 2459
+			}
+		],
+		"sections": [
+			{
+				"name": "Turtle Island NPC",
+				"item_count": 1
+			}
+		]
+	},
+	//Vandole Empire
+	{
+		"name": "Vandole Empire",
+		"children": [
+			{
+				"name": "South Town",
+				"chest_unopened_img": "images/check.png",
+				"chest_opened_img": "images/check_clear.png",
+				"map_locations": [
+					{
+						"map": "overworld",
+						"x": 3530,
+						"y": 1660
+					}
+				],
+				"sections": [
+					{
+						"name": "South Town Mara",
+						"item_count": 1
+					}
+				]
+			},
+			{
+				"name": "North Town",
 				"children": [
 					{
-						"name": "Moogle Village",
+						"name": "North Town Castle",
+						"map_locations": [
+							{
+								"map": "overworld",
+								"x": 3195,
+								"y": 1075
+							}
+						],
+						"sections": [
+							{
+								"name": "Castle Double Chest",
+								"chest_unopened_img": "images/chest.png",
+								"chest_opened_img": "images/chest_open.png",
+								"item_count": 2
+							},
+							{
+								"name": "Inside Boss",
+								"chest_unopened_img": "images/boss.png",
+								"chest_opened_img": "images/boss_done.png",
+								"item_count": 1
+							},
+							{
+								"name": "Castle Chest",
+								"chest_unopened_img": "images/chest.png",
+								"chest_opened_img": "images/chest_open.png",
+								"item_count": 1
+							},
+							{
+								"name": "Outside Boss",
+								"chest_unopened_img": "images/boss.png",
+								"chest_opened_img": "images/boss_done.png",
+								"item_count": 1
+							}
+						]
+					},
+					{
+						"name": "North Town Ruins",
+						"map_locations": [
+							{
+								"map": "overworld",
+								"x": 3420,
+								"y": 1075
+							}
+						],
+						"sections": [
+							{
+								"name": "North Town Ruins Left Chest",
+								"chest_unopened_img": "images/chest.png",
+								"chest_opened_img": "images/chest_open.png",
+								"item_count": 1
+							},
+							{
+								"name": "North Town Ruins Right Chest",
+								"chest_unopened_img": "images/chest.png",
+								"chest_opened_img": "images/chest_open.png",
+								"item_count": 1
+							},
+							{
+								"name": "North Town Ruins Inner Chest",
+								"chest_unopened_img": "images/chest.png",
+								"chest_opened_img": "images/chest_open.png",
+								"item_count": 1
+							},
+							{
+								"name": "North Town Ruins Boss 1",
+								"chest_unopened_img": "images/boss.png",
+								"chest_opened_img": "images/boss_done.png",
+								"item_count": 1
+							},
+							{
+								"name": "North Town Ruins Boss 2",
+								"chest_unopened_img": "images/boss.png",
+								"chest_opened_img": "images/boss_done.png",
+								"item_count": 1
+							}
+						]
+					}
+				]
+			},
+			{
+				"name": "Gold City",
+				"children": [
+					{
+						"name": "Gold Tower",
+						"map_locations": [
+							{
+								"map": "overworld",
+								"x": 2200,
+								"y": 1400
+							}
+						],
+						"sections": [
+							{
+								"name": "Gold Tower Chest 1",
+								"chest_unopened_img": "images/chest.png",
+								"chest_opened_img": "images/chest_open.png",
+								"access_rules": [
+									"$hasKey"
+								],
+								"item_count": 1
+							},
+							{
+								"name": "Gold Tower Chest 2",
+								"chest_unopened_img": "images/boss.png",
+								"chest_opened_img": "images/boss_done.png",
+								"access_rules": [
+									"$hasKey"
+								],
+								"item_count": 1
+							},
+							{
+								"name": "Gold Tower Reward",
+								"chest_unopened_img": "images/boss.png",
+								"chest_opened_img": "images/boss_done.png",
+								"access_rules": [
+									"$hasKey, $hasLightPalaceAccess"
+								],
+								"item_count": 2
+							}
+						]
+					}
+				]
+			}
+		]
+	},
+	//Vandole Empire - END
+	//Ice Country
+	{
+		"name": "Ice Country",
+		"children": [
+			{
+				"name": "Santas House",
+				"map_locations": [
+					{
+						"map": "overworld",
+						"x": 2625,
+						"y": 625
+					}
+				],
+				"sections": [
+					{
+						"name": "Santas House Chest",
+						"chest_unopened_img": "images/chest.png",
+						"chest_opened_img": "images/chest_open.png",
+						"item_count": 1
+					}
+				]
+			},
+			{
+				"name": "Tropical Town",
+				"children": [
+					{
+						"name": "Tropical Town Boss",
 						"map_locations": [
 							{
 								"map": "overworld",
 								"x": 2280,
-								"y": 2550
+								"y": 420
 							}
 						],
 						"sections": [
 							{
-								"name": "Moogle Village Double Chest",
-								"chest_unopened_img": "images/chest.png",
-								"chest_opened_img": "images/chest_open.png",
-								"item_count": 2
-							}
-						]
-					},
-					{
-						"name": "Sprite Village",
-						"map_locations": [
-							{
-								"map": "overworld",
-								"x": 1930,
-								"y": 2695
-							}
-						],
-						"sections": [
-							{
-								"name": "Wind Palace Reward",
-								"access_rules": [
-									"$hasWindPalaceAccess"
-								],
+								"name": "Salamando",
 								"chest_unopened_img": "images/boss.png",
 								"chest_opened_img": "images/boss_done.png",
-								"item_count": 2
-							}
-						]
-					},
-					{
-						"name": "Matango",
-						"map_locations": [
-							{
-								"map": "overworld",
-								"x": 1685,
-								"y": 2165
-							}
-						],
-						"sections": [
-							{
-								"name": "Matango Palace Chest",
-								"chest_unopened_img": "images/chest.png",
-								"chest_opened_img": "images/chest_open.png",
-								"item_count": 1
-							},
-							{
-								"name": "Matango Cave Orb",
-								"hosted_item": "mc_orb",
-								"access_rules": [
-									"$hasWhip, $canDestroyMCOrb",
-									"{$hasWhip}"
-								]
-							},
-							{
-								"name": "Flammie",
-								"chest_unopened_img": "images/boss.png",
-								"chest_opened_img": "images/boss_done.png",
-								"access_rules": [
-									"$hasWhip, $canDestroyMCOrb"
-								],
 								"item_count": 1
 							}
 						]
 					}
 				]
 			},
-			//Upper Land - END
-			//Lofty Mountains
 			{
-				"name": "Lofty Mountains",
-				"children": [
-					{
-						"name": "Palace of Darkness",
-						"map_locations": [
-							{
-								"map": "overworld",
-								"x": 1260,
-								"y": 2915
-							}
-						],
-						"sections": [
-							{
-								"name": "Palace of Darkness Walkway Chest",
-								"chest_unopened_img": "images/chest.png",
-								"chest_opened_img": "images/chest_open.png",
-								"access_rules": [
-									"$hasAxe"
-								],
-								"item_count": 1
-							},
-							{
-								"name": "Palace of Darkness Chest behind bars",
-								"chest_unopened_img": "images/chest.png",
-								"chest_opened_img": "images/chest_open.png",
-								"access_rules": [
-									"$hasAxe"
-								],
-								"item_count": 1
-							},
-							{
-								"name": "Palace of Darkness Reward",
-								"chest_unopened_img": "images/boss.png",
-								"chest_opened_img": "images/boss_done.png",
-								"access_rules": [
-									"$hasAxe, $hasWhip, $hasDarkPalaceAccess"
-								],
-								"item_count": 2
-							}
-						]
-					},
-					{
-						"name": "Joch's Cave",
-						"map_locations": [
-							{
-								"map": "overworld",
-								"x": 1360,
-								"y": 2915
-							}
-						],
-						"sections": [
-							{
-								"name": "Doppelgangers",
-								"chest_unopened_img": "images/boss.png",
-								"chest_opened_img": "images/boss_done.png",
-								"access_rules": [
-									"$hasAxe, $hasWhip"
-								],
-								"item_count": 1
-							}
-						]
-					}
-				]
-			},
-			//Lofty Mountains - END
-			//Lost Continent
-			{
-				"name": "Lost Continent",
-				"children": [
-					{
-						"name": "Tree Palace",
-						"map_locations": [
-							{
-								"map": "overworld",
-								"x": 3500,
-								"y": 3450
-							}
-						],
-						"sections": [
-							{
-								"name": "Tree Palace Reward (Mana Seed)",
-								"chest_unopened_img": "images/boss.png",
-								"chest_opened_img": "images/boss_done.png",
-								"access_rules": [
-									"$hasTreePalaceAccess"
-								],
-								"item_count": 2
-							},
-							{
-								"name": "Tree Palace Boss after seed",
-								"chest_unopened_img": "images/boss.png",
-								"chest_opened_img": "images/boss_done.png",
-								"item_count": 1
-							},
-							{
-								"name": "Tree Palace Aegagropilon",
-								"chest_unopened_img": "images/boss.png",
-								"chest_opened_img": "images/boss_done.png",
-								"item_count": 1
-							},
-							{
-								"name": "Grand Palace Chest",
-								"chest_unopened_img": "images/chest.png",
-								"chest_opened_img": "images/chest_open.png",
-								"access_rules": [
-									"$hasWhip"
-								],
-								"item_count": 1
-							},
-							{
-								"name": "Grand Palace Boss",
-								"chest_unopened_img": "images/boss.png",
-								"chest_opened_img": "images/boss_done.png",
-								"access_rules": [
-									"$grandPalaceBoss"
-								],
-								"item_count": 1
-							}
-						]
-					},
-					{
-						"name": "Undersea Palace",
-						"map_locations": [
-							{
-								"map": "overworld",
-								"x": 3400,
-								"y": 3575
-							}
-						],
-						"sections": [
-							{
-								"name": "Undersea Palace Chest",
-								"chest_unopened_img": "images/chest.png",
-								"chest_opened_img": "images/chest_open.png",
-								"access_rules": [
-									"$hasAxe"
-								],
-								"item_count": 1
-							},
-							{
-								"name": "Undersea Palace Boss",
-								"chest_unopened_img": "images/boss.png",
-								"chest_opened_img": "images/boss_done.png",
-								"access_rules": [
-									"$hasAxe"
-								],
-								"item_count": 1
-							},
-							{
-								"name": "Undergound Boss",
-								"chest_unopened_img": "images/boss.png",
-								"chest_opened_img": "images/boss_done.png",
-								"access_rules": [
-									"$hasAxe"
-								],
-								"item_count": 1
-							}
-						]
-					}
-				]
-			},
-			//Lost Continent - END
-			//Mana Fortress
-			{
-				"name": "Mana Fortress",
+				"name": "Ice Castle",
 				"map_locations": [
 					{
 						"map": "overworld",
-						"x": 3850,
-						"y": 250
+						"x": 2395,
+						"y": 220
 					}
 				],
 				"sections": [
 					{
-						"name": "Mana Fortress Boss 1",
-						"chest_unopened_img": "images/boss.png",
-						"chest_opened_img": "images/boss_done.png",
-						"access_rules": [
-							"$hasManaFortressAccess"
-						],
+						"name": "Ice Castle Chest",
+						"chest_unopened_img": "images/chest.png",
+						"chest_opened_img": "images/chest_open.png",
 						"item_count": 1
 					},
 					{
-						"name": "Mana Fortress Boss 2",
+						"name": "Ice Castle Boss 1",
+						"chest_unopened_img": "images/boss.png",
+						"chest_opened_img": "images/boss_done.png",
+						"item_count": 1
+					},
+					{
+						"name": "Ice Castle Boss 2",
 						"chest_unopened_img": "images/boss.png",
 						"chest_opened_img": "images/boss_done.png",
 						"access_rules": [
-							"$hasManaFortressAccess"
+							"$hasWhip"
 						],
 						"item_count": 1
 					}
 				]
 			}
-			//Mana Fortress - END
+		]
+	},
+	//Ice Country - END
+	//Pure Land
+	{
+		"name": "Pure Land",
+		"map_locations": [
+			{
+				"map": "overworld",
+				"x": 660,
+				"y": 410
+			}
+		],
+		"sections": [
+			{
+				"name": "Pure Land Boss 1",
+				"chest_unopened_img": "images/boss.png",
+				"chest_opened_img": "images/boss_done.png",
+				"item_count": 1
+			},
+			{
+				"name": "Pure Land Boss 2",
+				"chest_unopened_img": "images/boss.png",
+				"chest_opened_img": "images/boss_done.png",
+				"item_count": 1
+			},
+			{
+				"name": "Pure Land Boss 3",
+				"chest_unopened_img": "images/boss.png",
+				"chest_opened_img": "images/boss_done.png",
+				"item_count": 1
+			},
+			{
+				"name": "Pure Land Boss 4",
+				"chest_unopened_img": "images/boss.png",
+				"chest_opened_img": "images/boss_done.png",
+				"access_rules": [
+					"$canCutStuff"
+				],
+				"item_count": 1
+			},
+			{
+				"name": "Pure Land Boss 5",
+				"chest_unopened_img": "images/boss.png",
+				"chest_opened_img": "images/boss_done.png",
+				"access_rules": [
+					"$canCutStuff"
+				],
+				"item_count": 1
+			},
+			{
+				"name": "Pure Land Boss 6",
+				"chest_unopened_img": "images/boss.png",
+				"chest_opened_img": "images/boss_done.png",
+				"access_rules": [
+					"$canCutStuff"
+				],
+				"item_count": 1
+			},
+			{
+				"name": "Pure Land Mana Tree",
+				"chest_unopened_img": "images/check.png",
+				"chest_opened_img": "images/check_clear.png",
+				"access_rules": [
+					"$canCutStuff, $isVanillaShort",
+					"$canCutStuff, $isVanillaLong",
+					"$canCutStuff, $isReviveTheTree, $manaTreeRevive"
+				],
+				"item_count": 1
+			}
+		]
+	},
+	//Pure Land - END	
+	//Upper Land
+	{
+		"name": "Upper Land",
+		"children": [
+			{
+				"name": "Moogle Village",
+				"map_locations": [
+					{
+						"map": "overworld",
+						"x": 2280,
+						"y": 2550
+					}
+				],
+				"sections": [
+					{
+						"name": "Moogle Village Double Chest",
+						"chest_unopened_img": "images/chest.png",
+						"chest_opened_img": "images/chest_open.png",
+						"item_count": 2
+					}
+				]
+			},
+			{
+				"name": "Sprite Village",
+				"map_locations": [
+					{
+						"map": "overworld",
+						"x": 1930,
+						"y": 2695
+					}
+				],
+				"sections": [
+					{
+						"name": "Wind Palace Reward",
+						"access_rules": [
+							"$hasWindPalaceAccess"
+						],
+						"chest_unopened_img": "images/boss.png",
+						"chest_opened_img": "images/boss_done.png",
+						"item_count": 2
+					}
+				]
+			},
+			{
+				"name": "Matango",
+				"map_locations": [
+					{
+						"map": "overworld",
+						"x": 1685,
+						"y": 2165
+					}
+				],
+				"sections": [
+					{
+						"name": "Matango Palace Chest",
+						"chest_unopened_img": "images/chest.png",
+						"chest_opened_img": "images/chest_open.png",
+						"item_count": 1
+					},
+					{
+						"name": "Matango Cave Orb",
+						"hosted_item": "mc_orb",
+						"access_rules": [
+							"$hasWhip, $canDestroyMCOrb",
+							"{$hasWhip}"
+						]
+					},
+					{
+						"name": "Flammie",
+						"chest_unopened_img": "images/boss.png",
+						"chest_opened_img": "images/boss_done.png",
+						"access_rules": [
+							"$hasWhip, $canDestroyMCOrb"
+						],
+						"item_count": 1
+					}
+				]
+			}
+		]
+	},
+	//Upper Land - END
+	//Lofty Mountains
+	{
+		"name": "Lofty Mountains",
+		"children": [
+			{
+				"name": "Palace of Darkness",
+				"map_locations": [
+					{
+						"map": "overworld",
+						"x": 1260,
+						"y": 2915
+					}
+				],
+				"sections": [
+					{
+						"name": "Palace of Darkness Walkway Chest",
+						"chest_unopened_img": "images/chest.png",
+						"chest_opened_img": "images/chest_open.png",
+						"access_rules": [
+							"$hasAxe"
+						],
+						"item_count": 1
+					},
+					{
+						"name": "Palace of Darkness Chest behind bars",
+						"chest_unopened_img": "images/chest.png",
+						"chest_opened_img": "images/chest_open.png",
+						"access_rules": [
+							"$hasAxe"
+						],
+						"item_count": 1
+					},
+					{
+						"name": "Palace of Darkness Reward",
+						"chest_unopened_img": "images/boss.png",
+						"chest_opened_img": "images/boss_done.png",
+						"access_rules": [
+							"$hasAxe, $hasWhip, $hasDarkPalaceAccess"
+						],
+						"item_count": 2
+					}
+				]
+			},
+			{
+				"name": "Joch's Cave",
+				"map_locations": [
+					{
+						"map": "overworld",
+						"x": 1360,
+						"y": 2915
+					}
+				],
+				"sections": [
+					{
+						"name": "Doppelgangers",
+						"chest_unopened_img": "images/boss.png",
+						"chest_opened_img": "images/boss_done.png",
+						"access_rules": [
+							"$hasAxe, $hasWhip"
+						],
+						"item_count": 1
+					}
+				]
+			}
+		]
+	},
+	//Lofty Mountains - END
+	//Lost Continent
+	{
+		"name": "Lost Continent",
+		"children": [
+			{
+				"name": "Tree Palace",
+				"map_locations": [
+					{
+						"map": "overworld",
+						"x": 3500,
+						"y": 3450
+					}
+				],
+				"sections": [
+					{
+						"name": "Tree Palace Reward (Mana Seed)",
+						"chest_unopened_img": "images/boss.png",
+						"chest_opened_img": "images/boss_done.png",
+						"access_rules": [
+							"$hasTreePalaceAccess"
+						],
+						"item_count": 2
+					},
+					{
+						"name": "Tree Palace Boss after seed",
+						"chest_unopened_img": "images/boss.png",
+						"chest_opened_img": "images/boss_done.png",
+						"item_count": 1
+					},
+					{
+						"name": "Tree Palace Aegagropilon",
+						"chest_unopened_img": "images/boss.png",
+						"chest_opened_img": "images/boss_done.png",
+						"item_count": 1
+					},
+					{
+						"name": "Grand Palace Chest",
+						"chest_unopened_img": "images/chest.png",
+						"chest_opened_img": "images/chest_open.png",
+						"access_rules": [
+							"$hasWhip"
+						],
+						"item_count": 1
+					},
+					{
+						"name": "Grand Palace Boss",
+						"chest_unopened_img": "images/boss.png",
+						"chest_opened_img": "images/boss_done.png",
+						"access_rules": [
+							"$grandPalaceBoss"
+						],
+						"item_count": 1
+					}
+				]
+			},
+			{
+				"name": "Undersea Palace",
+				"map_locations": [
+					{
+						"map": "overworld",
+						"x": 3400,
+						"y": 3575
+					}
+				],
+				"sections": [
+					{
+						"name": "Undersea Palace Chest",
+						"chest_unopened_img": "images/chest.png",
+						"chest_opened_img": "images/chest_open.png",
+						"access_rules": [
+							"$hasAxe"
+						],
+						"item_count": 1
+					},
+					{
+						"name": "Undersea Palace Boss",
+						"chest_unopened_img": "images/boss.png",
+						"chest_opened_img": "images/boss_done.png",
+						"access_rules": [
+							"$hasAxe"
+						],
+						"item_count": 1
+					},
+					{
+						"name": "Undergound City Boss",
+						"chest_unopened_img": "images/boss.png",
+						"chest_opened_img": "images/boss_done.png",
+						"access_rules": [
+							"$hasAxe"
+						],
+						"item_count": 1
+					}
+				]
+			}
+		]
+	},
+	//Lost Continent - END
+	//Mana Fortress
+	{
+		"name": "Mana Fortress",
+		"map_locations": [
+			{
+				"map": "overworld",
+				"x": 3850,
+				"y": 250
+			}
+		],
+		"sections": [
+			{
+				"name": "Mana Fortress Boss 1",
+				"chest_unopened_img": "images/boss.png",
+				"chest_opened_img": "images/boss_done.png",
+				"access_rules": [
+					"$hasManaFortressAccess"
+				],
+				"item_count": 1
+			},
+			{
+				"name": "Mana Fortress Boss 2",
+				"chest_unopened_img": "images/boss.png",
+				"chest_opened_img": "images/boss_done.png",
+				"access_rules": [
+					"$hasManaFortressAccess"
+				],
+				"item_count": 1
+			}
 		]
 	}
+	//Mana Fortress - END
 ]

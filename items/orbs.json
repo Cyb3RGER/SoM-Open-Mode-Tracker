@@ -45,11 +45,11 @@
         "codes": "orb_undine"
     },
     {
-        "name": "Rocky Orb",
+        "name": "Gnome Orb",
         "type": "static",
         "capturable": true,
-        "img": "images/orb_rocky.png",
-        "codes": "orb_rocky"
+        "img": "images/orb_gnome.png",
+        "codes": "orb_gnome"
     },
     {
         "name": "Sylphid Orb",
@@ -113,8 +113,8 @@
                 "inherit_codes": false,
             },
             {
-                "img": "images/orb_rocky.png",
-                "codes": "earth_temple,earth_temple_orb,et_orb,et_orb_rocky",
+                "img": "images/orb_gnome.png",
+                "codes": "earth_temple,earth_temple_orb,et_orb,et_orb_gnome",
                 "inherit_codes": false,
             },
             {
@@ -168,8 +168,8 @@
                 "inherit_codes": false,
             },
             {
-                "img": "images/orb_rocky.png",
-                "codes": "matango_cave,earth_temple_orb,mc_orb,mc_orb_rocky",
+                "img": "images/orb_gnome.png",
+                "codes": "matango_cave,earth_temple_orb,mc_orb,mc_orb_gnome",
                 "inherit_codes": false,
             },
             {
@@ -222,8 +222,8 @@
                 "inherit_codes": false,
             },
             {
-                "img": "images/orb_rocky.png",
-                "codes": "fire_palace,fire_palace_orb1,fp_orb1,fp_orb1_rocky",
+                "img": "images/orb_gnome.png",
+                "codes": "fire_palace,fire_palace_orb1,fp_orb1,fp_orb1_gnome",
                 "inherit_codes": false,
             },
             {
@@ -276,8 +276,8 @@
                 "inherit_codes": false,
             },
             {
-                "img": "images/orb_rocky.png",
-                "codes": "fire_palace,fire_palace_orb2,fp_orb2,fp_orb2_rocky",
+                "img": "images/orb_gnome.png",
+                "codes": "fire_palace,fire_palace_orb2,fp_orb2,fp_orb2_gnome",
                 "inherit_codes": false,
             },
             {
@@ -330,8 +330,8 @@
                 "inherit_codes": false,
             },
             {
-                "img": "images/orb_rocky.png",
-                "codes": "fire_palace,fire_palace_orb3,fp_orb3,fp_orb3_rocky",
+                "img": "images/orb_gnome.png",
+                "codes": "fire_palace,fire_palace_orb3,fp_orb3,fp_orb3_gnome",
                 "inherit_codes": false,
             },
             {
@@ -384,8 +384,8 @@
                 "inherit_codes": false,
             },
             {
-                "img": "images/orb_rocky.png",
-                "codes": "moon_palace,moon_palace_orb,mp_orb,mp_orb_rocky",
+                "img": "images/orb_gnome.png",
+                "codes": "moon_palace,moon_palace_orb,mp_orb,mp_orb_gnome",
                 "inherit_codes": false,
             },
             {

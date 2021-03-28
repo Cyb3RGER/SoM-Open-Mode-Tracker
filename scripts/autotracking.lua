@@ -14,7 +14,7 @@ if AUTOTRACKER_ENABLE_ITEM_TRACKING then
     ScriptHost:LoadScript("scripts/autotracking/items/weapons.lua")
 end
 if AUTOTRACKER_ENABLE_LOCATION_TRACKING then
-    
+    ScriptHost:LoadScript("scripts/autotracking/locations.lua")
 end
 -------------------------------------------------------
 
@@ -54,4 +54,13 @@ if AUTOTRACKER_ENABLE_LOCATION_TRACKING then
     if AUTOTRACKER_ENABLE_DEBUG_LOGGING then
         print("Adding location tracker watches")
     end
+    ScriptHost:AddMemoryWatch("EventPointerTableAddr",EVENT_POINTER_TABLE_ADDR_ADDR,0x3,updateEventPointerTableAddr)
+    ScriptHost:AddMemoryWatch("EventFlags",EVENT_FLAGS_ADDR,0xFF,updateEventFlags)
+    ScriptHost:AddMemoryWatch("CurrentEventPointer",CURRENT_EVENT_POINTER_ADDR,0x3,updateCurrentEventPointer)
+    --ScriptHost:AddMemoryWatch("VanillaEventDataBank9",0x90000,0xF2D6,updateEventData)
+    --ScriptHost:AddMemoryWatch("VanillaEventDataBankA",0xA0000,0xB574,updateEventData)
+    --ScriptHost:AddMemoryWatch("CustomEventData",0x240000,0x1ffff,updateEventData)
+end
+if AUTOTRACKER_ENABLE_DEBUG_LOGGING then
+    print("Autotracking finished initializing!")
 end

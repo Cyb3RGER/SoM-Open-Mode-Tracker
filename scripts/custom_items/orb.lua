@@ -3,7 +3,7 @@ OrbItem = class(CustomItemOrb)
 -- states
 -- 0 => unknown
 -- 1 => undine
--- 2 => rocky
+-- 2 => gnome
 -- 3 => sylphid
 -- 4 => salamando
 -- 5 => shade
@@ -23,7 +23,7 @@ function OrbItem:init(name, code)
 
     self.ImageUnknown = ImageReference:FromPackRelativePath("images/orb.png")
     self.ImageUndine = ImageReference:FromPackRelativePath("images/orb_undine.png")
-    self.ImageRocky = ImageReference:FromPackRelativePath("images/orb_rocky.png")
+    self.ImageGnome = ImageReference:FromPackRelativePath("images/orb_gnome.png")
     self.ImageSylphid = ImageReference:FromPackRelativePath("images/orb_sylphid.png")
     self.ImageSalamando = ImageReference:FromPackRelativePath("images/orb_salamando.png")
     self.ImageShade = ImageReference:FromPackRelativePath("images/orb_shade.png")
@@ -115,7 +115,7 @@ function OrbItem:updateIcon()
     elseif self.state == 1 then
         self.ItemInstance.Icon = self.ImageUndine
     elseif self.state == 2 then
-        self.ItemInstance.Icon = self.ImageRocky
+        self.ItemInstance.Icon = self.ImageGnome
     elseif self.state == 3 then
         self.ItemInstance.Icon = self.ImageSylphid
     elseif self.state == 4 then

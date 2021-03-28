@@ -21,7 +21,7 @@
                 "water_seed"
             ],
             [
-                "rocky",
+                "gnome",
                 "earth_seed"
             ],
             [
@@ -324,9 +324,9 @@
                     "belt"
                 ],
                 [
-                    "rocky",
+                    "gnome",
                     "earth_seed",
-                    "orb_rocky",
+                    "orb_gnome",
                     "axe_generic",
                     "spear_generic",
                     "tail",

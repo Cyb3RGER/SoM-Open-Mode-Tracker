@@ -2,3 +2,4 @@ todo.*
 .~lock.*
 scripts/custom_items/Examples
 TrackerFlags.cs
+files/

@@ -115,8 +115,8 @@ function hasUndine()
     return 0
 end
 
-function hasRocky()
-    local value = Tracker:ProviderCountForCode("rocky")
+function hasGnome()
+    local value = Tracker:ProviderCountForCode("gnome")
 
     if (value == 1) then return 1 end
 
@@ -306,13 +306,13 @@ function canDestroyOrb(name)
                 return 0
             end
         elseif isGirlDisabled() == 1 then
-            if hasUndine() == 1 and hasRocky() == 1 and hasSylphid() == 1 and hasSalamando() == 1 and 
+            if hasUndine() == 1 and hasGnome() == 1 and hasSylphid() == 1 and hasSalamando() == 1 and 
                 hasShade() == 1 and hasLuna() == 1 and hasDryad() == 1 and hasSprite() == 1 then
                 return 1
             else
                 return 0
             end    
-        elseif hasUndine() == 1 and hasRocky() == 1 and hasSylphid() == 1 and hasSalamando() == 1 and 
+        elseif hasUndine() == 1 and hasGnome() == 1 and hasSylphid() == 1 and hasSalamando() == 1 and 
             hasShade() == 1 and hasLumina() == 1 and hasLuna() == 1 and hasDryad() == 1 and 
             hasGirl() == 1 and hasSprite() == 1 then
             return 1
@@ -321,7 +321,7 @@ function canDestroyOrb(name)
         end
     elseif (Tracker:ProviderCountForCode(name) == 1 and hasUndine() == 1 and hasSprite() == 1) then
         return 1
-    elseif (Tracker:ProviderCountForCode(name) == 2 and hasRocky() == 1 and hasSprite() == 1) then
+    elseif (Tracker:ProviderCountForCode(name) == 2 and hasGnome() == 1 and hasSprite() == 1) then
         return 1
     elseif (Tracker:ProviderCountForCode(name) == 3 and hasSylphid() == 1 and (hasSprite() == 1 or hasGirl() == 1)) then
         return 1
@@ -476,7 +476,7 @@ function grandPalaceBoss()
 
     if hasWhip() == 1 and 
         ((hasGirl() == 1 and hasLumina() == 1 and hasSylphid() == 1 and hasSalamando() == 1) or isGirlDisabled() == 1) and
-        ((hasSprite() == 1 and hasUndine() == 1 and hasRocky() == 1 and hasSylphid() == 1 and hasSalamando() == 1 and hasShade() == 1 and hasLuna() == 1) or isSpriteDisabled() == 1) then
+        ((hasSprite() == 1 and hasUndine() == 1 and hasGnome() == 1 and hasSylphid() == 1 and hasSalamando() == 1 and hasShade() == 1 and hasLuna() == 1) or isSpriteDisabled() == 1) then
         return 1
     end
 

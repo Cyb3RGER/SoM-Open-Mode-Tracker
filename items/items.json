@@ -108,11 +108,11 @@
     "codes": "undine"
   },
   {
-    "name": "Rocky",
+    "name": "Gnome",
     "type": "toggle",
     "capturable": true,
-    "img": "images/rocky.png",
-    "codes": "rocky"
+    "img": "images/gnome.png",
+    "codes": "gnome"
   },
   {
     "name": "Sylphid",
