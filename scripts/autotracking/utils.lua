@@ -18,7 +18,7 @@ function checkFlagsInSegmentUsingTable(segment, table, checkmode)
             elseif checkmode == 2 then
                 if readResult > 0 then
                     obj:Set("state", 2)
-                elseif obj:Get("state") then
+                elseif obj:Get("state") == 2 then
                     obj:Set("state", 1)
                 end
             end
