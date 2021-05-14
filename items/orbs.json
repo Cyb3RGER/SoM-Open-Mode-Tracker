@@ -28,7 +28,14 @@
         "capturable": false,
         "img": "images/overlay_mp.png",
         "codes": "header_mp"
-    },    
+    },
+    {
+        "name": "Grand Palace",
+        "type": "static",
+        "capturable": false,
+        "img": "images/overlay_gp.png",
+        "codes": "header_gp"
+    },
     //generics
     {
         "name": "Unanalysed Orb",

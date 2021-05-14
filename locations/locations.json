@@ -855,6 +855,22 @@
 						"item_count": 1
 					},
 					{
+						"name": "Grand Palace Orb 1",
+						"hosted_item": "gp_orb1",
+						"access_rules": [
+							"$canDestroyGPOrb1",
+							"{}"
+						]
+					},
+					{
+						"name": "Grand Palace Orb 2",
+						"hosted_item": "gp_orb2",
+						"access_rules": [
+							"$canDestroyGPOrb2",
+							"{}"
+						]
+					},
+					{
 						"name": "Grand Palace Chest",
 						"chest_unopened_img": "images/chest.png",
 						"chest_opened_img": "images/chest_open.png",
@@ -862,6 +878,46 @@
 							"$hasWhip"
 						],
 						"item_count": 1
+					},
+					{
+						"name": "Grand Palace Orb 3",
+						"hosted_item": "gp_orb3",
+						"access_rules": [
+							"$hasWhip, $canDestroyGPOrb1, $canDestroyGPOrb3",
+							"{$hasWhip, $canDestroyGPOrb1}"
+						]
+					},
+					{
+						"name": "Grand Palace Orb 4",
+						"hosted_item": "gp_orb4",
+						"access_rules": [
+							"$hasWhip, $canDestroyGPOrb2, $canDestroyGPOrb4",
+							"{$hasWhip, $canDestroyGPOrb2}"
+						]
+					},
+					{
+						"name": "Grand Palace Orb 5",
+						"hosted_item": "gp_orb5",
+						"access_rules": [
+							"$hasWhip, $canDestroyGPOrb1, $canDestroyGPOrb3, $canDestroyGPOrb5",
+							"{$hasWhip, $canDestroyGPOrb1, $canDestroyGPOrb3}"
+						]
+					},
+					{
+						"name": "Grand Palace Orb 6",
+						"hosted_item": "gp_orb6",
+						"access_rules": [
+							"$hasWhip, $canDestroyGPOrb2, $canDestroyGPOrb4, $canDestroyGPOrb6",
+							"{$hasWhip, $canDestroyGPOrb3, $canDestroyGPOrb4}"
+						]
+					},
+					{
+						"name": "Grand Palace Orb 7",
+						"hosted_item": "gp_orb7",
+						"access_rules": [
+							"$hasWhip, $canDestroyGPOrb1, $canDestroyGPOrb2, $canDestroyGPOrb3, $canDestroyGPOrb4, $canDestroyGPOrb5, $canDestroyGPOrb6, $canDestroyGPOrb7",
+							"{$hasWhip, $canDestroyGPOrb1, $canDestroyGPOrb2, $canDestroyGPOrb3, $canDestroyGPOrb4, $canDestroyGPOrb5, $canDestroyGPOrb6}"
+						]
 					},
 					{
 						"name": "Grand Palace Boss",

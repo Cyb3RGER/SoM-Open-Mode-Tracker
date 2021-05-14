@@ -1,12 +1,18 @@
-[  
+[
   //orb count
   {
-		"name": "Orb Count",
+    "name": "MTR Orb Count",
     "type": "progressive",
     "capturable": false,
     "loop": true,
     "allow_disabled": false,
-		"stages": [
+    "stages": [
+      {
+        "img": "images/seed_grey.png",
+        "img_mods": "overlay|images/overlay_unknown.png",
+        "codes": "orb_count,orb_count_unknown, orb_count8",
+        "secondary_codes": "orb_count_unknown, orb_count8"
+      },
       {
         "img": "images/seed_grey.png",
         "img_mods": "overlay|images/overlay_8.png",
@@ -54,46 +60,46 @@
         "img_mods": "overlay|images/overlay_1.png",
         "codes": "orb_count,orb_count1",
         "secondary_codes": "orb_count1"
-      }   
-		]
+      }
+    ]
   },
-	//key items
-	{
+  //key items
+  {
     "name": "Midge Mallet",
     "type": "toggle",
     "capturable": true,
     "img": "images/midge_mallet.png",
     "codes": "mallet"
   },
-	{
+  {
     "name": "Moogle Belt",
     "type": "toggle",
     "capturable": true,
     "img": "images/moogle_belt.png",
     "codes": "belt"
   },
-	{
+  {
     "name": "Sea Hare Tail",
     "type": "toggle",
     "capturable": true,
     "img": "images/sea_hare_tail.png",
     "codes": "tail"
   },
-	{
+  {
     "name": "Gold Tower Key",
     "type": "toggle",
     "capturable": true,
     "img": "images/gold_tower_key.png",
     "codes": "key"
   },
-	//"key" items
-	{
+  //"key" items
+  {
     "name": "Flammie Drum",
     "type": "static",
     "img": "images/flammie_drum.png",
     "codes": "drum"
   },
-	{
+  {
     "name": "Magic Rope",
     "type": "static",
     "img": "images/magic_rope.png",
@@ -148,7 +154,7 @@
     "capturable": true,
     "img": "images/luna.png",
     "codes": "luna"
-  },  
+  },
   {
     "name": "Dryad",
     "type": "toggle",
@@ -219,7 +225,7 @@
     "disabled_img": "images/moon_seed_clear.png",
     "disabled_img_mods": "",
     "codes": "moon_seed"
-  },  
+  },
   {
     "name": "Tree Seed",
     "type": "toggle",
@@ -229,14 +235,14 @@
     "disabled_img_mods": "",
     "codes": "tree_seed"
   },
-	//weapons
-	{
-		"name": "Gloves",
+  //weapons
+  {
+    "name": "Gloves",
     "type": "progressive_toggle",
     "capturable": false,
     "loop": true,
     "allow_disabled": false,
-		"stages": [
+    "stages": [
       {
         "img": "images/gloves.png",
         "img_mods": "overlay|images/overlay_0.png",
@@ -249,7 +255,7 @@
         "codes": "gloves,orb1",
         "secondary_codes": "orb1"
       },
-      {    
+      {
         "img": "images/gloves.png",
         "img_mods": "overlay|images/overlay_2.png",
         "codes": "gloves,orb2",
@@ -297,15 +303,15 @@
         "codes": "gloves,orb9",
         "secondary_codes": "orb9"
       }
-		]
+    ]
   },
   {
-		"name": "Sword",
+    "name": "Sword",
     "type": "progressive_toggle",
     "capturable": false,
     "loop": true,
     "allow_disabled": false,
-		"stages": [
+    "stages": [
       {
         "img": "images/sword.png",
         "img_mods": "overlay|images/overlay_0.png",
@@ -318,7 +324,7 @@
         "codes": "sword,orb1",
         "secondary_codes": "orb1"
       },
-      {    
+      {
         "img": "images/sword.png",
         "img_mods": "overlay|images/overlay_2.png",
         "codes": "sword,orb2",
@@ -359,22 +365,22 @@
         "img_mods": "overlay|images/overlay_8.png",
         "codes": "sword,orb8",
         "secondary_codes": "orb8"
-			},
+      },
       {
         "img": "images/sword.png",
         "img_mods": "overlay|images/overlay_9.png",
         "codes": "sword,orb9",
         "secondary_codes": "orb9"
       }
-		]
+    ]
   },
   {
-		"name": "Axe",
+    "name": "Axe",
     "type": "progressive_toggle",
     "capturable": false,
     "loop": true,
     "allow_disabled": false,
-		"stages": [
+    "stages": [
       {
         "img": "images/axe.png",
         "img_mods": "overlay|images/overlay_0.png",
@@ -387,7 +393,7 @@
         "codes": "axe,orb1",
         "secondary_codes": "orb1"
       },
-      {    
+      {
         "img": "images/axe.png",
         "img_mods": "overlay|images/overlay_2.png",
         "codes": "axe,orb2",
@@ -428,22 +434,22 @@
         "img_mods": "overlay|images/overlay_8.png",
         "codes": "axe,orb8",
         "secondary_codes": "orb8"
-			},
+      },
       {
         "img": "images/axe.png",
         "img_mods": "overlay|images/overlay_9.png",
         "codes": "axe,orb9",
         "secondary_codes": "orb9"
       }
-		]
+    ]
   },
   {
-		"name": "Spear",
+    "name": "Spear",
     "type": "progressive_toggle",
     "capturable": false,
     "loop": true,
     "allow_disabled": false,
-		"stages": [
+    "stages": [
       {
         "img": "images/spear.png",
         "img_mods": "overlay|images/overlay_0.png",
@@ -456,7 +462,7 @@
         "codes": "spear,orb1",
         "secondary_codes": "orb1"
       },
-      {    
+      {
         "img": "images/spear.png",
         "img_mods": "overlay|images/overlay_2.png",
         "codes": "spear,orb2",
@@ -497,22 +503,22 @@
         "img_mods": "overlay|images/overlay_8.png",
         "codes": "spear,orb8",
         "secondary_codes": "orb8"
-			},
+      },
       {
         "img": "images/spear.png",
         "img_mods": "overlay|images/overlay_9.png",
         "codes": "spear,orb9",
         "secondary_codes": "orb9"
       }
-		]
+    ]
   },
   {
-		"name": "Whip",
+    "name": "Whip",
     "type": "progressive_toggle",
     "capturable": false,
     "loop": true,
     "allow_disabled": false,
-		"stages": [
+    "stages": [
       {
         "img": "images/whip.png",
         "img_mods": "overlay|images/overlay_0.png",
@@ -525,7 +531,7 @@
         "codes": "whip,orb1",
         "secondary_codes": "orb1"
       },
-      {    
+      {
         "img": "images/whip.png",
         "img_mods": "overlay|images/overlay_2.png",
         "codes": "whip,orb2",
@@ -566,22 +572,22 @@
         "img_mods": "overlay|images/overlay_8.png",
         "codes": "whip,orb8",
         "secondary_codes": "orb8"
-			},
+      },
       {
         "img": "images/whip.png",
         "img_mods": "overlay|images/overlay_9.png",
         "codes": "whip,orb9",
         "secondary_codes": "orb9"
       }
-		]
+    ]
   },
   {
-		"name": "Bow and Arrow",
+    "name": "Bow and Arrow",
     "type": "progressive_toggle",
     "capturable": false,
     "loop": true,
     "allow_disabled": false,
-		"stages": [
+    "stages": [
       {
         "img": "images/bow.png",
         "img_mods": "overlay|images/overlay_0.png",
@@ -594,7 +600,7 @@
         "codes": "bow,orb1",
         "secondary_codes": "orb1"
       },
-      {    
+      {
         "img": "images/bow.png",
         "img_mods": "overlay|images/overlay_2.png",
         "codes": "bow,orb2",
@@ -635,22 +641,22 @@
         "img_mods": "overlay|images/overlay_8.png",
         "codes": "bow,orb8",
         "secondary_codes": "orb8"
-			},
+      },
       {
         "img": "images/bow.png",
         "img_mods": "overlay|images/overlay_9.png",
         "codes": "bow,orb9",
         "secondary_codes": "orb9"
       }
-		]
+    ]
   },
   {
-		"name": "Boomerang",
+    "name": "Boomerang",
     "type": "progressive_toggle",
     "capturable": false,
     "loop": true,
     "allow_disabled": false,
-		"stages": [
+    "stages": [
       {
         "img": "images/boomerang.png",
         "img_mods": "overlay|images/overlay_0.png",
@@ -663,7 +669,7 @@
         "codes": "boomerang,orb1",
         "secondary_codes": "orb1"
       },
-      {    
+      {
         "img": "images/boomerang.png",
         "img_mods": "overlay|images/overlay_2.png",
         "codes": "boomerang,orb2",
@@ -704,22 +710,22 @@
         "img_mods": "overlay|images/overlay_8.png",
         "codes": "boomerang,orb8",
         "secondary_codes": "orb8"
-			},
+      },
       {
         "img": "images/boomerang.png",
         "img_mods": "overlay|images/overlay_9.png",
         "codes": "boomerang,orb9",
         "secondary_codes": "orb9"
       }
-		]
+    ]
   },
   {
-		"name": "Javelin",
+    "name": "Javelin",
     "type": "progressive_toggle",
     "capturable": false,
     "loop": true,
     "allow_disabled": false,
-		"stages": [
+    "stages": [
       {
         "img": "images/javelin.png",
         "img_mods": "overlay|images/overlay_0.png",
@@ -732,7 +738,7 @@
         "codes": "javelin,orb1",
         "secondary_codes": "orb1"
       },
-      {    
+      {
         "img": "images/javelin.png",
         "img_mods": "overlay|images/overlay_2.png",
         "codes": "javelin,orb2",
@@ -773,70 +779,70 @@
         "img_mods": "overlay|images/overlay_8.png",
         "codes": "javelin,orb8",
         "secondary_codes": "orb8"
-			},
+      },
       {
         "img": "images/javelin.png",
         "img_mods": "overlay|images/overlay_9.png",
         "codes": "javelin,orb9",
         "secondary_codes": "orb9"
       }
-		]
-	},
+    ]
+  },
   //generics
-	{
+  {
     "name": "Gloves",
     "type": "static",
     "capturable": true,
-    "img": "images/gloves.png",        
+    "img": "images/gloves.png",
     "codes": "gloves_generic"
   },
   {
     "name": "Sword",
     "type": "static",
     "capturable": true,
-    "img": "images/sword.png",        
+    "img": "images/sword.png",
     "codes": "sword_generic"
   },
   {
     "name": "Axe",
     "type": "static",
     "capturable": true,
-    "img": "images/axe.png",        
+    "img": "images/axe.png",
     "codes": "axe_generic"
   },
   {
     "name": "Spear",
     "type": "static",
     "capturable": true,
-    "img": "images/spear.png",        
+    "img": "images/spear.png",
     "codes": "spear_generic"
   },
   {
     "name": "Whip",
     "type": "static",
     "capturable": true,
-    "img": "images/whip.png",        
+    "img": "images/whip.png",
     "codes": "whip_generic"
   },
   {
     "name": "Bow and Arrow",
     "type": "static",
     "capturable": true,
-    "img": "images/bow.png",        
+    "img": "images/bow.png",
     "codes": "bow_generic"
   },
   {
     "name": "Boomerang",
     "type": "static",
     "capturable": true,
-    "img": "images/boomerang.png",        
+    "img": "images/boomerang.png",
     "codes": "boomerang_generic"
   },
   {
     "name": "Javelin",
     "type": "static",
     "capturable": true,
-    "img": "images/javelin.png",        
+    "img": "images/javelin.png",
     "codes": "javelin_generic"
   }
 ]

@@ -23,6 +23,14 @@ local fpOrb1 = OrbItem("Fire Palace Orb 1", "fp_orb1")
 local fpOrb2 = OrbItem("Fire Palace Orb 2", "fp_orb2")
 local fpOrb3 = OrbItem("Fire Palace Orb 3", "fp_orb3")
 local mpOrb = OrbItem("Moon Palace Orb", "mp_orb")
+local gpOrb1 = OrbItem("Grand Palace Orb", "gp_orb1")
+local gpOrb2 = OrbItem("Grand Palace Orb", "gp_orb2")
+local gpOrb3 = OrbItem("Grand Palace Orb", "gp_orb3")
+local gpOrb4 = OrbItem("Grand Palace Orb", "gp_orb4")
+local gpOrb5 = OrbItem("Grand Palace Orb", "gp_orb5")
+local gpOrb6 = OrbItem("Grand Palace Orb", "gp_orb6")
+local gpOrb7 = OrbItem("Grand Palace Orb", "gp_orb7")
+
 
 
 ScriptHost:LoadScript("scripts/settings.lua")

@@ -283,10 +283,17 @@ function updateOrbCharacterStates()
         Tracker:FindObjectForCode("fp_orb1"),
         Tracker:FindObjectForCode("fp_orb2"),
         Tracker:FindObjectForCode("fp_orb3"),
-        Tracker:FindObjectForCode("mp_orb")
+        Tracker:FindObjectForCode("mp_orb"),
+        Tracker:FindObjectForCode("gp_orb1"),
+        Tracker:FindObjectForCode("gp_orb2"),
+        Tracker:FindObjectForCode("gp_orb3"),
+        Tracker:FindObjectForCode("gp_orb4"),
+        Tracker:FindObjectForCode("gp_orb5"),
+        Tracker:FindObjectForCode("gp_orb6"),
+        Tracker:FindObjectForCode("gp_orb7"),
     }
-    
-    for _,obj in ipairs(objs) do        
+
+    for _,obj in ipairs(objs) do
         obj.ItemState:setProperty("isSpriteDisabled", isSpriteDisabled())
         obj.ItemState:setProperty("isGirlDisabled", isGirlDisabled())        
     end
@@ -367,6 +374,35 @@ end
 
 function canDestroyMPOrb()
     if (canDestroyOrb("mp_orb") == 1) then return 1 end
+    return 0
+end
+
+function canDestroyGPOrb1()
+    if (canDestroyOrb("gp_orb1") == 1) then return 1 end
+    return 0
+end
+function canDestroyGPOrb2()
+    if (canDestroyOrb("gp_orb2") == 1) then return 1 end
+    return 0
+end
+function canDestroyGPOrb3()
+    if (canDestroyOrb("gp_orb3") == 1) then return 1 end
+    return 0
+end
+function canDestroyGPOrb4()
+    if (canDestroyOrb("gp_orb4") == 1) then return 1 end
+    return 0
+end
+function canDestroyGPOrb5()
+    if (canDestroyOrb("gp_orb5") == 1) then return 1 end
+    return 0
+end
+function canDestroyGPOrb6()
+    if (canDestroyOrb("gp_orb6") == 1) then return 1 end
+    return 0
+end
+function canDestroyGPOrb7()
+    if (canDestroyOrb("gp_orb7") == 1) then return 1 end
     return 0
 end
 
@@ -475,8 +511,8 @@ function always() return 1 end
 function grandPalaceBoss()
 
     if hasWhip() == 1 and 
-        ((hasGirl() == 1 and hasLumina() == 1 and hasSylphid() == 1 and hasSalamando() == 1) or isGirlDisabled() == 1) and
-        ((hasSprite() == 1 and hasUndine() == 1 and hasGnome() == 1 and hasSylphid() == 1 and hasSalamando() == 1 and hasShade() == 1 and hasLuna() == 1) or isSpriteDisabled() == 1) then
+        canDestroyGPOrb1() == 1 and canDestroyGPOrb2() == 1 and canDestroyGPOrb3() == 1 and canDestroyGPOrb4() == 1 
+        and canDestroyGPOrb5() == 1 and canDestroyGPOrb6() == 1 and canDestroyGPOrb7() == 1 then
         return 1
     end
 
