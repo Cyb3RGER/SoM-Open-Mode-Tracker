@@ -226,7 +226,7 @@
 						"chest_opened_img": "images/chest_open.png",
 						"access_rules": [
 							"$canDestroyFPOrb1",
-							"[$canDestroyFPOrb1], undine, girl"
+							"[$canDestroyFPOrb1]"
 						],
 						"item_count": 1
 					},
@@ -236,8 +236,8 @@
 						"access_rules": [
 							"$canDestroyFPOrb1, $canDestroyFPOrb2",
 							"{$canDestroyFPOrb1}",
-							"[$canDestroyFPOrb1], $canDestroyFPOrb2, undine, girl",
-							"{undine, girl}"
+							"[$canDestroyFPOrb1], $canDestroyFPOrb2",
+							"{}"
 						]
 					},
 					{
@@ -246,7 +246,7 @@
 						"chest_opened_img": "images/chest_open.png",
 						"access_rules": [
 							"$canDestroyFPOrb1, $canDestroyFPOrb2",
-							"[$canDestroyFPOrb1], $canDestroyFPOrb2, undine, girl"
+							"[$canDestroyFPOrb1], $canDestroyFPOrb2"
 						],
 						"item_count": 1
 					},
@@ -256,7 +256,7 @@
 						"chest_opened_img": "images/chest_open.png",
 						"access_rules": [
 							"$canDestroyFPOrb1, $canDestroyFPOrb2",
-							"[$canDestroyFPOrb1], $canDestroyFPOrb2, undine, girl"
+							"[$canDestroyFPOrb1], $canDestroyFPOrb2"
 						],
 						"item_count": 1
 					},
@@ -266,8 +266,8 @@
 						"access_rules": [
 							"$canDestroyFPOrb1, $canDestroyFPOrb2, $canDestroyFPOrb3, $hasWhip",
 							"{$canDestroyFPOrb1, $canDestroyFPOrb2, $hasWhip}",
-							"[$canDestroyFPOrb1], $canDestroyFPOrb2, $canDestroyFPOrb3, $hasWhip, undine, girl",
-							"{$canDestroyFPOrb2, $hasWhip, undine, girl}"
+							"[$canDestroyFPOrb1], $canDestroyFPOrb2, $canDestroyFPOrb3, $hasWhip",
+							"{$canDestroyFPOrb2, $hasWhip}"
 						]
 					},
 					{
@@ -276,7 +276,7 @@
 						"chest_opened_img": "images/boss_done.png",
 						"access_rules": [
 							"$canDestroyFPOrb1, $canDestroyFPOrb2, $canDestroyFPOrb3, $hasFirePalaceAccess, $hasWhip",
-							"[$canDestroyFPOrb1], $canDestroyFPOrb2, $canDestroyFPOrb3, $hasFirePalaceAccess, $hasWhip, undine, girl"
+							"[$canDestroyFPOrb1], $canDestroyFPOrb2, $canDestroyFPOrb3, $hasFirePalaceAccess, $hasWhip"
 						],
 						"item_count": 1
 					}
