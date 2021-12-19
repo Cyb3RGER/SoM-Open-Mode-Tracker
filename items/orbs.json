@@ -36,6 +36,43 @@
         "img": "images/overlay_gp.png",
         "codes": "header_gp"
     },
+    //header short
+    {
+        "name": "Earth Temple",
+        "type": "static",
+        "capturable": false,
+        "img": "images/overlay_et_short.png",
+        "img_mods": "stretch",
+        "codes": "header_et_short"
+    },
+    {
+        "name": "Matango Cave",
+        "type": "static",
+        "capturable": false,
+        "img": "images/overlay_mc_short.png",
+        "codes": "header_mc_short"
+    },
+    {
+        "name": "Fire Palace",
+        "type": "static",
+        "capturable": false,
+        "img": "images/overlay_fp_short.png",
+        "codes": "header_fp_short"
+    },
+    {
+        "name": "Moon Palace",
+        "type": "static",
+        "capturable": false,
+        "img": "images/overlay_mp_short.png",
+        "codes": "header_mp_short"
+    },
+    {
+        "name": "Grand Palace",
+        "type": "static",
+        "capturable": false,
+        "img": "images/overlay_gp_short.png",
+        "codes": "header_gp_short"
+    },
     //generics
     {
         "name": "Unanalysed Orb",

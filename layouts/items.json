@@ -271,9 +271,9 @@
                 "item_height": 32,
                 "rows": [
                     [
-                        "header_et",
-                        "header_mc",
-                        "header_gp"
+                        "header_et_short",
+                        "header_mc_short",
+                        "header_gp_short"
                     ],
                     [
                         "et_orb",
@@ -281,8 +281,8 @@
                         "gp_orb1"
                     ],
                     [
-                        "header_fp",
-                        "header_mp",
+                        "header_fp_short",
+                        "header_mp_short",
                         "gp_orb2"
                     ],
                     [
