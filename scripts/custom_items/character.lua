@@ -5,6 +5,12 @@ CharacterItem = class(CustomItemCharacter)
 -- 1 => not found
 -- 2 => found
 
+-- roles
+-- 0 => unknown
+-- 1 => boy/warrior
+-- 2 => girl/light mage
+-- 3 => sprite/dark mage
+
 function CharacterItem:init(name, code)
     self:createItem(name)
     self.code = code
@@ -20,7 +26,8 @@ function CharacterItem:init(name, code)
     self.OverlayImageSprite = "images/sprite_overlay.png"
     self.OverlayImageUnknown = "images/overlay_unknown.png"
     self.ItemInstance.PotentialIcon = self.ImageNotFound
-    self.ItemInstance.IconMods = "overlay|"..self.OverlayImageUnknown
+    self.ItemInstance.IconMods = ""
+    self.isRoleRando = false
     self:updateIcon()    
 end
 
@@ -33,12 +40,33 @@ function CharacterItem:setState(state)
 end
 
 function CharacterItem:getRole()
-    return self.role
+    if isRoleRando then
+        return self.role
+    else
+        if self.code == "boy" then
+            return 1
+        elseif self.code == "girl" then
+            return 2
+        elseif self.code == "sprite" then
+            return 3
+        else
+            return 0
+        end
+    end
 end
 
 function CharacterItem:setRole(role)
     self:propertyChanged("role",role)
 end
+
+function CharacterItem:getIsRoleRando()
+    return self.isRoleRando
+end
+
+function CharacterItem:setIsRoleRando(value)
+    self:propertyChanged("isRoleRando",value)
+end
+
 
 function CharacterItem:advanceState()
     if self.state == 2 then
@@ -83,15 +111,18 @@ function CharacterItem:updateIcon()
     elseif self.state == 0 then
         self.ItemInstance.Icon = self.ImageDisabled
     end
-
-    if self.role == 0 then
-        self.ItemInstance.IconMods = "overlay|"..self.OverlayImageUnknown
-    elseif self.role == 1 then
-        self.ItemInstance.IconMods = "overlay|"..self.OverlayImageBoy
-    elseif self.role == 2 then
-        self.ItemInstance.IconMods = "overlay|"..self.OverlayImageGirl
-    elseif self.role == 3 then
-        self.ItemInstance.IconMods = "overlay|"..self.OverlayImageSprite
+    if self.isRoleRando == true then
+        if self.role == 0 then
+            self.ItemInstance.IconMods = "overlay|"..self.OverlayImageUnknown
+        elseif self.role == 1 then
+            self.ItemInstance.IconMods = "overlay|"..self.OverlayImageBoy
+        elseif self.role == 2 then
+            self.ItemInstance.IconMods = "overlay|"..self.OverlayImageGirl
+        elseif self.role == 3 then
+            self.ItemInstance.IconMods = "overlay|"..self.OverlayImageSprite
+        end
+    else
+        self.ItemInstance.IconMods = ""
     end
 end
 
@@ -100,6 +131,7 @@ function CharacterItem:onLeftClick()
 end
 
 function CharacterItem:onRightClick()
+    if not self.isRoleRando or self.state == 0 then return end
     self:advanceRole()
 end
 
@@ -121,13 +153,13 @@ function CharacterItem:providesCode(code)
     if code == self.code then
         return self.state
     end
-    if code == "role_boy" and self.role == 1 and self:getActive() then
+    if code == "role_boy" and self:getRole() == 1 and self:getActive() then
         return self.state
     end
-    if code == "role_girl" and self.role == 2 and self:getActive() then
+    if code == "role_girl" and self:getRole() == 2 and self:getActive() then
         return self.state
     end
-    if code == "role_sprite" and self.role == 3 and self:getActive() then
+    if code == "role_sprite" and self:getRole() == 3 and self:getActive() then
         return self.state
     end
     return 0
@@ -158,8 +190,10 @@ function CharacterItem:propertyChanged(key, value)
         self.state = value
     end
     if key == "role" then
-        print("changing role to "..value)
         self.role = value
+    end
+    if key == "isRoleRando" then
+        self.isRoleRando = value
     end
     self:updateIcon()
 end

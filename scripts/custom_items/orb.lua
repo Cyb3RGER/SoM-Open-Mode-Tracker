@@ -19,6 +19,7 @@ function OrbItem:init(name, code)
     self:setProperty("active", false)
     self.isSpriteDisabled = 0
     self.isGirlDisabled = 0
+    self.isRoleRando = 0
     self.state = 0
 
     self.ImageUnknown = ImageReference:FromPackRelativePath("images/orb.png")
@@ -61,7 +62,7 @@ end
 
 function OrbItem:advanceState()  
     if self.isSpriteDisabled == 1 and self.isGirlDisabled == 1 then
-        if(self.state ~= 0 ) then self:setState(0) end
+        if(self.state ~= 0 and self.isRoleRando == 0) then self:setState(0) end
         return
     end 
     local nextState = self:getNextState(self.state)
@@ -80,7 +81,7 @@ end
 
 function OrbItem:decreaseState()
     if self.isSpriteDisabled == 1 and self.isGirlDisabled == 1 then
-        if(self.state ~= 0 ) then self:setState(0) end
+        if(self.state ~= 0 and self.isRoleRando == 0) then self:setState(0) end
         return
     end 
     local nextState = self:getPrevState(self.state)
@@ -176,18 +177,21 @@ function OrbItem:propertyChanged(key, value)
     end
     if key == "isSpriteDisabled" then
         self.isSpriteDisabled = value
-        if self.state == 1 or self.state == 2 or self.state == 5 or self.state == 7 or self.state == 8 then
+        if (self.state == 1 or self.state == 2 or self.state == 5 or self.state == 7 or self.state == 8) and self.isRoleRando == 0 then
             self:setState(0)
         end
     end
     if key == "isGirlDisabled" then
         self.isGirlDisabled = value
-        if self.state == 6 then
+        if self.state == 6 and self.isRoleRando == 0 then
             self:setState(0)
         end
     end
-    if (key == "isSpriteDisabled" or key == "isGirlDisabled") and self.isGirlDisabled == 1 and self.isSpriteDisabled == 1 then
+    if (key == "isSpriteDisabled" or key == "isGirlDisabled") and self.isGirlDisabled == 1 and self.isSpriteDisabled == 1 and self.isRoleRando == 0 then
         self:setState(0)
+    end
+    if key == "isRoleRando" then
+        self.isRoleRando = value
     end
     self:updateIcon()
 end

@@ -33,8 +33,8 @@ local gpOrb7 = OrbItem("Grand Palace Orb", "gp_orb7")
 
 
 
-ScriptHost:LoadScript("scripts/settings.lua")
 ScriptHost:LoadScript("scripts/logic.lua")
+ScriptHost:LoadScript("scripts/watches.lua")
 --items
 Tracker:AddItems("items/items.json")
 Tracker:AddItems("items/orbs.json")

@@ -975,6 +975,10 @@
 	//Mana Fortress
 	{
 		"name": "Mana Fortress",
+		"visibility_rules":[
+			"$isVanillaShort",
+			"$isVanillaLong"
+		],
 		"map_locations": [
 			{
 				"map": "overworld",

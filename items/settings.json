@@ -51,6 +51,7 @@
     "capturable": false,
     "allow_disabled": false,
     "initial_stage_idx": 0,
+    "codes": "roles",
     "stages": [
       {
         "img": "images/normal.png",

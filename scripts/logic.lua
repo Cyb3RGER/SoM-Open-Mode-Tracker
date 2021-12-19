@@ -62,7 +62,7 @@ end
 function hasBoyRole()
     local value = Tracker:ProviderCountForCode("role_boy")
 
-    if (value == 2) then return 1 end
+    if (value >= 2) then return 1 end
 
     return 0
 end
@@ -76,7 +76,7 @@ function isBoyDisabled()
 end
 
 function isBoyRoleDisabled()
-    if hasBoyRole() == 0 and hasCharactersWithUnknownRoleAvaiable() == 0 then return 1 end
+    if hasBoyRole() == 0 and hasCharactersWithRoleAvaiable("boy") == 0 then return 1 end
     
     return 0
 end
@@ -92,7 +92,7 @@ end
 function hasGirlRole()
     local value = Tracker:ProviderCountForCode("role_girl")
 
-    if (value == 2) then return 1 end
+    if (value >= 2) then return 1 end
 
     return 0
 end
@@ -106,7 +106,7 @@ function isGirlDisabled()
 end
 
 function isGirlRoleDisabled()
-    if hasGirlRole() == 0 and hasCharactersWithUnknownRoleAvaiable() == 0 then return 1 end
+    if hasGirlRole() == 0 and hasCharactersWithRoleAvaiable("girl") == 0 then return 1 end
     
     return 0
 end
@@ -122,7 +122,7 @@ end
 function hasSpriteRole()
     local value = Tracker:ProviderCountForCode("role_sprite")
 
-    if (value == 2) then return 1 end
+    if (value >= 2) then return 1 end
 
     return 0
 end
@@ -136,19 +136,25 @@ function isSpriteDisabled()
 end
 
 function isSpriteRoleDisabled()
-    if hasSpriteRole() == 0 and hasCharactersWithUnknownRoleAvaiable() == 0 then return 1 end
+    if hasSpriteRole() == 0 and hasCharactersWithRoleAvaiable("sprite") == 0 then return 1 end
 
     return 0
 end
 
-function hasCharactersWithUnknownRoleAvaiable()
+function hasCharactersWithRoleAvaiable(code)
     local obj_boy = Tracker:FindObjectForCode("boy")
     local obj_girl = Tracker:FindObjectForCode("girl")
     local obj_sprite = Tracker:FindObjectForCode("sprite")
+    local map = {
+        ['boy']=1,
+        ['girl']=2,
+        ['sprite']=3
+    }
+    local mapValue = map[code]
 
-    if (obj_boy:Get("state") == 1 and obj_boy:Get("role") == 0) or
-        (obj_girl:Get("state") == 1 and obj_girl:Get("role") == 0) or
-        (obj_sprite:Get("state") == 1 and obj_sprite:Get("role") == 0) then
+    if (obj_boy:Get("state") == 1 and (obj_boy:Get("role") == 0 or obj_boy:Get("role") == mapValue)) or
+        (obj_girl:Get("state") == 1 and (obj_girl:Get("role") == 0 or obj_girl:Get("role") == mapValue)) or
+        (obj_sprite:Get("state") == 1 and (obj_sprite:Get("role") == 0 or obj_sprite:Get("role") == mapValue)) then
         return 1 
     end
             
@@ -369,16 +375,16 @@ function canDestroyOrb(name)
 
     updateOrbCharacterStates()
 
-    if isSpriteDisabled() == 1 and isGirlDisabled() == 1 then return 1 end
+    if isSpriteRoleDisabled() == 1 and isGirlRoleDisabled() == 1 then return 1 end
 
     if (Tracker:ProviderCountForCode(name) == 0) then
-        if isSpriteDisabled() == 1 then
+        if isSpriteRoleDisabled() == 1 then
             if hasSylphid() == 1 and hasSalamando() == 1 and hasLumina() == 1 and hasGirlRole() == 1 then
                 return 1
             else
                 return 0
             end
-        elseif isGirlDisabled() == 1 then
+        elseif isGirlRoleDisabled() == 1 then
             if hasUndine() == 1 and hasGnome() == 1 and hasSylphid() == 1 and hasSalamando() == 1 and 
                 hasShade() == 1 and hasLuna() == 1 and hasDryad() == 1 and hasSpriteRole() == 1 then
                 return 1
