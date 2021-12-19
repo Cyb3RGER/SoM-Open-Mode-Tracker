@@ -43,5 +43,25 @@
         "codes": "restrictive"
       }
     ]
+  },
+  {
+    "name": "Roles",
+    "type": "progressive",
+    "loop": true,
+    "capturable": false,
+    "allow_disabled": false,
+    "initial_stage_idx": 0,
+    "stages": [
+      {
+        "img": "images/normal.png",
+        "inherit_codes": false,
+        "codes": "roles_normal"
+      },
+      {
+        "img": "images/random.png",
+        "inherit_codes": false,
+        "codes": "roles_random"
+      }
+    ]
   }
 ]

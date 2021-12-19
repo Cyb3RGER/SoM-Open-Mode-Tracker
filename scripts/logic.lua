@@ -40,9 +40,27 @@ function isRestrictedLogic()
     return 0
 end
 
+-- role
+function isRoleRando()
+    local value = Tracker:ProviderCountForCode("roles_random")
+
+    if (value == 1) then return 1 end
+
+    return 0
+end
+
+
 -- character
 function hasBoy()
     local value = Tracker:ProviderCountForCode("boy")
+
+    if (value == 2) then return 1 end
+
+    return 0
+end
+
+function hasBoyRole()
+    local value = Tracker:ProviderCountForCode("role_boy")
 
     if (value == 2) then return 1 end
 
@@ -57,8 +75,22 @@ function isBoyDisabled()
     return 0
 end
 
+function isBoyRoleDisabled()
+    if hasBoyRole() == 0 and hasCharactersWithUnknownRoleAvaiable() == 0 then return 1 end
+    
+    return 0
+end
+
 function hasGirl()
     local value = Tracker:ProviderCountForCode("girl")
+
+    if (value == 2) then return 1 end
+
+    return 0
+end
+
+function hasGirlRole()
+    local value = Tracker:ProviderCountForCode("role_girl")
 
     if (value == 2) then return 1 end
 
@@ -73,8 +105,22 @@ function isGirlDisabled()
     return 0
 end
 
+function isGirlRoleDisabled()
+    if hasGirlRole() == 0 and hasCharactersWithUnknownRoleAvaiable() == 0 then return 1 end
+    
+    return 0
+end
+
 function hasSprite()
     local value = Tracker:ProviderCountForCode("sprite")
+
+    if (value == 2) then return 1 end
+
+    return 0
+end
+
+function hasSpriteRole()
+    local value = Tracker:ProviderCountForCode("role_sprite")
 
     if (value == 2) then return 1 end
 
@@ -86,6 +132,26 @@ function isSpriteDisabled()
 
     if (value == 0) then return 1 end
 
+    return 0
+end
+
+function isSpriteRoleDisabled()
+    if hasSpriteRole() == 0 and hasCharactersWithUnknownRoleAvaiable() == 0 then return 1 end
+
+    return 0
+end
+
+function hasCharactersWithUnknownRoleAvaiable()
+    local obj_boy = Tracker:FindObjectForCode("boy")
+    local obj_girl = Tracker:FindObjectForCode("girl")
+    local obj_sprite = Tracker:FindObjectForCode("sprite")
+
+    if (obj_boy:Get("state") == 1 and obj_boy:Get("role") == 0) or
+        (obj_girl:Get("state") == 1 and obj_girl:Get("role") == 0) or
+        (obj_sprite:Get("state") == 1 and obj_sprite:Get("role") == 0) then
+        return 1 
+    end
+            
     return 0
 end
 
@@ -294,8 +360,8 @@ function updateOrbCharacterStates()
     }
 
     for _,obj in ipairs(objs) do
-        obj.ItemState:setProperty("isSpriteDisabled", isSpriteDisabled())
-        obj.ItemState:setProperty("isGirlDisabled", isGirlDisabled())        
+        obj.ItemState:setProperty("isSpriteDisabled", isSpriteRoleDisabled())
+        obj.ItemState:setProperty("isGirlDisabled", isGirlRoleDisabled())        
     end
 end
 
@@ -307,40 +373,40 @@ function canDestroyOrb(name)
 
     if (Tracker:ProviderCountForCode(name) == 0) then
         if isSpriteDisabled() == 1 then
-            if hasSylphid() == 1 and hasSalamando() == 1 and hasLumina() == 1 and hasGirl() == 1 then
+            if hasSylphid() == 1 and hasSalamando() == 1 and hasLumina() == 1 and hasGirlRole() == 1 then
                 return 1
             else
                 return 0
             end
         elseif isGirlDisabled() == 1 then
             if hasUndine() == 1 and hasGnome() == 1 and hasSylphid() == 1 and hasSalamando() == 1 and 
-                hasShade() == 1 and hasLuna() == 1 and hasDryad() == 1 and hasSprite() == 1 then
+                hasShade() == 1 and hasLuna() == 1 and hasDryad() == 1 and hasSpriteRole() == 1 then
                 return 1
             else
                 return 0
             end    
         elseif hasUndine() == 1 and hasGnome() == 1 and hasSylphid() == 1 and hasSalamando() == 1 and 
             hasShade() == 1 and hasLumina() == 1 and hasLuna() == 1 and hasDryad() == 1 and 
-            hasGirl() == 1 and hasSprite() == 1 then
+            hasGirlRole() == 1 and hasSpriteRole() == 1 then
             return 1
         else
             return 0
         end
-    elseif (Tracker:ProviderCountForCode(name) == 1 and hasUndine() == 1 and hasSprite() == 1) then
+    elseif (Tracker:ProviderCountForCode(name) == 1 and hasUndine() == 1 and hasSpriteRole() == 1) then
         return 1
-    elseif (Tracker:ProviderCountForCode(name) == 2 and hasGnome() == 1 and hasSprite() == 1) then
+    elseif (Tracker:ProviderCountForCode(name) == 2 and hasGnome() == 1 and hasSpriteRole() == 1) then
         return 1
-    elseif (Tracker:ProviderCountForCode(name) == 3 and hasSylphid() == 1 and (hasSprite() == 1 or hasGirl() == 1)) then
+    elseif (Tracker:ProviderCountForCode(name) == 3 and hasSylphid() == 1 and (hasSpriteRole() == 1 or hasGirlRole() == 1)) then
         return 1
-    elseif (Tracker:ProviderCountForCode(name) == 4 and hasSalamando() == 1 and (hasSprite() == 1 or hasGirl() == 1)) then
+    elseif (Tracker:ProviderCountForCode(name) == 4 and hasSalamando() == 1 and (hasSpriteRole() == 1 or hasGirlRole() == 1)) then
         return 1
-    elseif (Tracker:ProviderCountForCode(name) == 5 and hasShade() == 1 and hasSprite() == 1) then
+    elseif (Tracker:ProviderCountForCode(name) == 5 and hasShade() == 1 and hasSpriteRole() == 1) then
         return 1
-    elseif (Tracker:ProviderCountForCode(name) == 6 and hasLumina() == 1 and hasGirl() == 1) then
+    elseif (Tracker:ProviderCountForCode(name) == 6 and hasLumina() == 1 and hasGirlRole() == 1) then
         return 1
-    elseif (Tracker:ProviderCountForCode(name) == 7 and hasLuna() == 1 and hasSprite() == 1) then
+    elseif (Tracker:ProviderCountForCode(name) == 7 and hasLuna() == 1 and hasSpriteRole() == 1) then
         return 1
-    elseif (Tracker:ProviderCountForCode(name) == 8 and hasDryad() == 1 and hasSprite() == 1) then
+    elseif (Tracker:ProviderCountForCode(name) == 8 and hasDryad() == 1 and hasSpriteRole() == 1) then
         return 1
     end
 
