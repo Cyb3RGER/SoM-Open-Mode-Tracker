@@ -31,6 +31,6 @@ function updateRoleRando(code)
     end
 end
 
-if PopVersion > "0.1.0" then
+if PopVersion and PopVersion >= "0.11.0" then
     ScriptHost:AddWatchForCode("updateRoleRando","roles",updateRoleRando)
 end

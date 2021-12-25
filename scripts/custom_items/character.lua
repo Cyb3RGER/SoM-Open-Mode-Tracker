@@ -26,7 +26,9 @@ function CharacterItem:init(name, code)
     self.OverlayImageSprite = "images/sprite_overlay.png"
     self.OverlayImageUnknown = "images/overlay_unknown.png"
     self.ItemInstance.PotentialIcon = self.ImageNotFound
-    self.ItemInstance.IconMods = ""
+    if PopVersion and PopVersion >= "0.11.0" then
+        self.ItemInstance.IconMods = ""
+    end
     self.isRoleRando = false
     self:updateIcon()    
 end
@@ -111,18 +113,20 @@ function CharacterItem:updateIcon()
     elseif self.state == 0 then
         self.ItemInstance.Icon = self.ImageDisabled
     end
-    if self.isRoleRando == true then
-        if self.role == 0 then
-            self.ItemInstance.IconMods = "overlay|"..self.OverlayImageUnknown
-        elseif self.role == 1 then
-            self.ItemInstance.IconMods = "overlay|"..self.OverlayImageBoy
-        elseif self.role == 2 then
-            self.ItemInstance.IconMods = "overlay|"..self.OverlayImageGirl
-        elseif self.role == 3 then
-            self.ItemInstance.IconMods = "overlay|"..self.OverlayImageSprite
+    if PopVersion and PopVersion >= "0.11.0" then
+        if self.isRoleRando == true then
+            if self.role == 0 then
+                self.ItemInstance.IconMods = "overlay|"..self.OverlayImageUnknown
+            elseif self.role == 1 then
+                self.ItemInstance.IconMods = "overlay|"..self.OverlayImageBoy
+            elseif self.role == 2 then
+                self.ItemInstance.IconMods = "overlay|"..self.OverlayImageGirl
+            elseif self.role == 3 then
+                self.ItemInstance.IconMods = "overlay|"..self.OverlayImageSprite
+            end
+        else
+            self.ItemInstance.IconMods = ""
         end
-    else
-        self.ItemInstance.IconMods = ""
     end
 end
 
