@@ -51,9 +51,11 @@ end
 
 
 -- character
-function hasBoy()
+function hasBoy()    
     local value = Tracker:ProviderCountForCode("boy")
-
+    if ENABLE_DEBUG_LOG then
+        print(string.format("hasBoy: %s",value))
+    end
     if (value == 2) then return 1 end
 
     return 0
@@ -61,7 +63,9 @@ end
 
 function hasBoyRole()
     local value = Tracker:ProviderCountForCode("role_boy")
-
+    if ENABLE_DEBUG_LOG then
+        print(string.format("hasBoyRole: %s",value))
+    end
     if (value >= 2) then return 1 end
 
     return 0
@@ -69,21 +73,28 @@ end
 
 function isBoyDisabled()
     local value = Tracker:ProviderCountForCode("boy")
-
+    if ENABLE_DEBUG_LOG then
+        print(string.format("isBoyDisabled: %s",value))
+    end
     if (value == 0) then return 1 end
 
     return 0
 end
 
 function isBoyRoleDisabled()
-    if hasBoyRole() == 0 and hasCharactersWithRoleAvaiable("boy") == 0 then return 1 end
+    if ENABLE_DEBUG_LOG then
+        print(string.format("isBoyRoleDisabled: %s",hasBoyRole() == 0 and hasCharactersWithRoleAvaiable("boy") == 0))
+    end
+    if hasBoyRole() == 0 and hasCharactersWithRoleAvaiable("boy") == 0 and isRoleRando() == 1 then return 1 end
     
     return 0
 end
 
 function hasGirl()
     local value = Tracker:ProviderCountForCode("girl")
-
+    if ENABLE_DEBUG_LOG then
+        print(string.format("hasGirl: %s",value))
+    end
     if (value == 2) then return 1 end
 
     return 0
@@ -91,7 +102,9 @@ end
 
 function hasGirlRole()
     local value = Tracker:ProviderCountForCode("role_girl")
-
+    if ENABLE_DEBUG_LOG then
+        print(string.format("hasGirlRole: %s",value))
+    end
     if (value >= 2) then return 1 end
 
     return 0
@@ -99,21 +112,28 @@ end
 
 function isGirlDisabled()
     local value = Tracker:ProviderCountForCode("girl")
-
+    if ENABLE_DEBUG_LOG then
+        print(string.format("isGirlDisabled: %s",value))
+    end
     if (value == 0) then return 1 end
 
     return 0
 end
 
 function isGirlRoleDisabled()
-    if hasGirlRole() == 0 and hasCharactersWithRoleAvaiable("girl") == 0 then return 1 end
+    if ENABLE_DEBUG_LOG then
+        print(string.format("isGirlRoleDisabled: %s",hasGirlRole() == 0 and hasCharactersWithRoleAvaiable("girl") == 0))
+    end
+    if hasGirlRole() == 0 and hasCharactersWithRoleAvaiable("girl") == 0 and isRoleRando() == 1 then return 1 end
     
     return 0
 end
 
 function hasSprite()
     local value = Tracker:ProviderCountForCode("sprite")
-
+    if ENABLE_DEBUG_LOG then
+        print(string.format("hasSprite: %s",value))
+    end
     if (value == 2) then return 1 end
 
     return 0
@@ -121,7 +141,9 @@ end
 
 function hasSpriteRole()
     local value = Tracker:ProviderCountForCode("role_sprite")
-
+    if ENABLE_DEBUG_LOG then
+        print(string.format("hasSpriteRole: %s",value))
+    end
     if (value >= 2) then return 1 end
 
     return 0
@@ -129,14 +151,19 @@ end
 
 function isSpriteDisabled()
     local value = Tracker:ProviderCountForCode("sprite")
-
+    if ENABLE_DEBUG_LOG then
+        print(string.format("isSpriteDisabled: %s",value))
+    end
     if (value == 0) then return 1 end
 
     return 0
 end
 
 function isSpriteRoleDisabled()
-    if hasSpriteRole() == 0 and hasCharactersWithRoleAvaiable("sprite") == 0 then return 1 end
+    if ENABLE_DEBUG_LOG then
+        print(string.format("isSpriteRoleDisabled: %s",hasSpriteRole() == 0 and hasCharactersWithRoleAvaiable("sprite") == 0))    
+    end
+    if hasSpriteRole() == 0 and hasCharactersWithRoleAvaiable("sprite") == 0 and isRoleRando() == 1 then return 1 end
 
     return 0
 end
@@ -152,9 +179,9 @@ function hasCharactersWithRoleAvaiable(code)
     }
     local mapValue = map[code]
 
-    if (obj_boy:Get("state") == 1 and (obj_boy:Get("role") == 0 or obj_boy:Get("role") == mapValue)) or
-        (obj_girl:Get("state") == 1 and (obj_girl:Get("role") == 0 or obj_girl:Get("role") == mapValue)) or
-        (obj_sprite:Get("state") == 1 and (obj_sprite:Get("role") == 0 or obj_sprite:Get("role") == mapValue)) then
+    if (obj_boy:Get("state") >= 1 and (obj_boy:Get("role") == 0 or obj_boy:Get("role") == mapValue)) or
+        (obj_girl:Get("state") >= 1 and (obj_girl:Get("role") == 0 or obj_girl:Get("role") == mapValue)) or
+        (obj_sprite:Get("state") >= 1 and (obj_sprite:Get("role") == 0 or obj_sprite:Get("role") == mapValue)) then
         return 1 
     end
             
