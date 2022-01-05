@@ -60,7 +60,11 @@ function OrbItem:getPrevState(state)
     end
 end
 
-function OrbItem:advanceState()  
+function OrbItem:advanceState() 
+    if ENABLE_DEBUG_LOG then
+        print(string.format("OrbItem:advanceState: self.isSpriteDisabled %s  self.isGirlDisabled %s  self.state %s  self.isRoleRando %s"
+        ,self.isSpriteDisabled, self.isGirlDisabled, self.state, self.isRoleRando))
+    end 
     if self.isSpriteDisabled == 1 and self.isGirlDisabled == 1 then
         if(self.state ~= 0 and self.isRoleRando == 0) then self:setState(0) end
         return
@@ -107,6 +111,9 @@ function OrbItem:setActive(active)
 end
 
 function OrbItem:getActive()
+    if ENABLE_DEBUG_LOG then
+        print(string.format("OrbItem:getActive: state: %s, isSpriteDisabled: %s, isGirlDisabled: %s",self.state, self.isSpriteDisabled, self.isGirlDisabled))    
+    end
     return (self.state > 0 or (self.isSpriteDisabled == 1 and self.isGirlDisabled == 1))
 end
 
@@ -187,11 +194,11 @@ function OrbItem:propertyChanged(key, value)
             self:setState(0)
         end
     end
-    if (key == "isSpriteDisabled" or key == "isGirlDisabled") and self.isGirlDisabled == 1 and self.isSpriteDisabled == 1 and self.isRoleRando == 0 then
-        self:setState(0)
-    end
     if key == "isRoleRando" then
         self.isRoleRando = value
     end
+    if (key == "isSpriteDisabled" or key == "isGirlDisabled") and self.isGirlDisabled == 1 and self.isSpriteDisabled == 1 and self.isRoleRando == 0 then
+        self:setState(0)
+    end    
     self:updateIcon()
 end

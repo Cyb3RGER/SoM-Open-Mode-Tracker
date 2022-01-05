@@ -142,18 +142,18 @@ end
 function CharacterItem:canProvideCode(code)
     if code == self.code then
         return true
-    elseif  code == "role_boy" and self.role == 1 and self:getActive() then
+    elseif  code == "role_boy" and self:getRole() == 1 and self:getActive() then
         return true
-    elseif code == "role_girl" and self.role == 2 and self:getActive() then
+    elseif code == "role_girl" and self:getRole() == 2 and self:getActive() then
         return true
-    elseif code == "role_sprite" and self.role == 3 and self:getActive() then
+    elseif code == "role_sprite" and self:getRole() == 3 and self:getActive() then
         return true
     else
         return false
     end
 end
 
-function CharacterItem:providesCode(code)
+function CharacterItem:providesCode(code)    
     if code == self.code then
         return self.state
     end

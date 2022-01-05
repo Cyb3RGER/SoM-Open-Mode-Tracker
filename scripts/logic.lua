@@ -62,6 +62,10 @@ function hasBoy()
 end
 
 function hasBoyRole()
+    if ENABLE_DEBUG_LOG then
+        print(string.format("hasSpriteRole: isRoleRando %s",isRoleRando()))
+    end
+    if isRoleRando() == 0 then return hasBoy() end
     local value = Tracker:ProviderCountForCode("role_boy")
     if ENABLE_DEBUG_LOG then
         print(string.format("hasBoyRole: %s",value))
@@ -85,7 +89,7 @@ function isBoyRoleDisabled()
     if ENABLE_DEBUG_LOG then
         print(string.format("isBoyRoleDisabled: %s",hasBoyRole() == 0 and hasCharactersWithRoleAvaiable("boy") == 0))
     end
-    if hasBoyRole() == 0 and hasCharactersWithRoleAvaiable("boy") == 0 and isRoleRando() == 1 then return 1 end
+    if hasBoyRole() == 0 and hasCharactersWithRoleAvaiable("boy") == 0 then return 1 end
     
     return 0
 end
@@ -101,6 +105,10 @@ function hasGirl()
 end
 
 function hasGirlRole()
+    if ENABLE_DEBUG_LOG then
+        print(string.format("hasGirlRole: isRoleRando %s",isRoleRando()))
+    end
+    if isRoleRando() == 0 then return hasGirl() end
     local value = Tracker:ProviderCountForCode("role_girl")
     if ENABLE_DEBUG_LOG then
         print(string.format("hasGirlRole: %s",value))
@@ -124,7 +132,7 @@ function isGirlRoleDisabled()
     if ENABLE_DEBUG_LOG then
         print(string.format("isGirlRoleDisabled: %s",hasGirlRole() == 0 and hasCharactersWithRoleAvaiable("girl") == 0))
     end
-    if hasGirlRole() == 0 and hasCharactersWithRoleAvaiable("girl") == 0 and isRoleRando() == 1 then return 1 end
+    if hasGirlRole() == 0 and hasCharactersWithRoleAvaiable("girl") == 0 then return 1 end
     
     return 0
 end
@@ -140,6 +148,10 @@ function hasSprite()
 end
 
 function hasSpriteRole()
+    if ENABLE_DEBUG_LOG then
+        print(string.format("hasSpriteRole: isRoleRando %s",isRoleRando()))
+    end
+    if isRoleRando() == 0 then return hasSprite() end
     local value = Tracker:ProviderCountForCode("role_sprite")
     if ENABLE_DEBUG_LOG then
         print(string.format("hasSpriteRole: %s",value))
@@ -163,7 +175,7 @@ function isSpriteRoleDisabled()
     if ENABLE_DEBUG_LOG then
         print(string.format("isSpriteRoleDisabled: %s",hasSpriteRole() == 0 and hasCharactersWithRoleAvaiable("sprite") == 0))    
     end
-    if hasSpriteRole() == 0 and hasCharactersWithRoleAvaiable("sprite") == 0 and isRoleRando() == 1 then return 1 end
+    if hasSpriteRole() == 0 and hasCharactersWithRoleAvaiable("sprite") == 0 then return 1 end   
 
     return 0
 end
@@ -178,7 +190,20 @@ function hasCharactersWithRoleAvaiable(code)
         ['sprite']=3
     }
     local mapValue = map[code]
-
+    if ENABLE_DEBUG_LOG then
+        print(string.format("hasCharactersWithRoleAvaiable: code: %s, isRoleRando: %s, obj_boy.state: %s, obj_girl.state: %s, obj_sprite.state: %s",code, isRoleRando(), obj_boy:Get("state"),obj_girl:Get("state"),obj_sprite:Get("state")))    
+    end
+    if isRoleRando() == 0 then
+        if code == "boy" and obj_boy:Get("state") == 1 then
+            return 1
+        elseif code == "girl" and obj_girl:Get("state") == 1 then
+            return 1
+        elseif code == "sprite" and obj_sprite:Get("state") == 1 then
+            return 1
+        else
+            return 0
+        end
+    end
     if (obj_boy:Get("state") >= 1 and (obj_boy:Get("role") == 0 or obj_boy:Get("role") == mapValue)) or
         (obj_girl:Get("state") >= 1 and (obj_girl:Get("role") == 0 or obj_girl:Get("role") == mapValue)) or
         (obj_sprite:Get("state") >= 1 and (obj_sprite:Get("role") == 0 or obj_sprite:Get("role") == mapValue)) then
@@ -391,7 +416,9 @@ function updateOrbCharacterStates()
         Tracker:FindObjectForCode("gp_orb6"),
         Tracker:FindObjectForCode("gp_orb7"),
     }
-
+    if ENABLE_DEBUG_LOG then
+        print(string.format("updateOrbCharacterStates: isSpriteDisabled: %s, isGirlDisabled: %s",isSpriteRoleDisabled(),isGirlRoleDisabled()))
+    end
     for _,obj in ipairs(objs) do
         obj.ItemState:setProperty("isSpriteDisabled", isSpriteRoleDisabled())
         obj.ItemState:setProperty("isGirlDisabled", isGirlRoleDisabled())        
