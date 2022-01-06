@@ -156,8 +156,8 @@ function OrbItem:canProvideCode(code)
 end
 
 function OrbItem:providesCode(code)
-    if code == self.code then
-        return self.state
+    if code == self.code and self:getActive() then
+        return 1
     end
     return 0
 end

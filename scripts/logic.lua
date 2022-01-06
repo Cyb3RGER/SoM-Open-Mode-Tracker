@@ -426,12 +426,14 @@ function updateOrbCharacterStates()
 end
 
 function canDestroyOrb(name)
-
+    
     updateOrbCharacterStates()
+
+    local obj = Tracker:FindObjectForCode(name)
 
     if isSpriteRoleDisabled() == 1 and isGirlRoleDisabled() == 1 then return 1 end
 
-    if (Tracker:ProviderCountForCode(name) == 0) then
+    if (obj:Get("state") == 0) then
         if isSpriteRoleDisabled() == 1 then
             if hasSylphid() == 1 and hasSalamando() == 1 and hasLumina() == 1 and hasGirlRole() == 1 then
                 return 1
@@ -452,21 +454,21 @@ function canDestroyOrb(name)
         else
             return 0
         end
-    elseif (Tracker:ProviderCountForCode(name) == 1 and hasUndine() == 1 and hasSpriteRole() == 1) then
+    elseif (obj:Get("state") == 1 and hasUndine() == 1 and hasSpriteRole() == 1) then
         return 1
-    elseif (Tracker:ProviderCountForCode(name) == 2 and hasGnome() == 1 and hasSpriteRole() == 1) then
+    elseif (obj:Get("state") == 2 and hasGnome() == 1 and hasSpriteRole() == 1) then
         return 1
-    elseif (Tracker:ProviderCountForCode(name) == 3 and hasSylphid() == 1 and (hasSpriteRole() == 1 or hasGirlRole() == 1)) then
+    elseif (obj:Get("state") == 3 and hasSylphid() == 1 and (hasSpriteRole() == 1 or hasGirlRole() == 1)) then
         return 1
-    elseif (Tracker:ProviderCountForCode(name) == 4 and hasSalamando() == 1 and (hasSpriteRole() == 1 or hasGirlRole() == 1)) then
+    elseif (obj:Get("state") == 4 and hasSalamando() == 1 and (hasSpriteRole() == 1 or hasGirlRole() == 1)) then
         return 1
-    elseif (Tracker:ProviderCountForCode(name) == 5 and hasShade() == 1 and hasSpriteRole() == 1) then
+    elseif (obj:Get("state") == 5 and hasShade() == 1 and hasSpriteRole() == 1) then
         return 1
-    elseif (Tracker:ProviderCountForCode(name) == 6 and hasLumina() == 1 and hasGirlRole() == 1) then
+    elseif (obj:Get("state") == 6 and hasLumina() == 1 and hasGirlRole() == 1) then
         return 1
-    elseif (Tracker:ProviderCountForCode(name) == 7 and hasLuna() == 1 and hasSpriteRole() == 1) then
+    elseif (obj:Get("state") == 7 and hasLuna() == 1 and hasSpriteRole() == 1) then
         return 1
-    elseif (Tracker:ProviderCountForCode(name) == 8 and hasDryad() == 1 and hasSpriteRole() == 1) then
+    elseif (obj:Get("state") == 8 and hasDryad() == 1 and hasSpriteRole() == 1) then
         return 1
     end
 
