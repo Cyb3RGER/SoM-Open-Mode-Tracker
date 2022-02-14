@@ -76,17 +76,16 @@ function updateEventFlags(segment)
             if obj then
                 if readResult >= target_val then
                     obj.AvailableChestCount = 0
-                else
+                else                    
                     obj.AvailableChestCount = obj.ChestCount
                 end
             end
         else
-            if readResult >= target_val then
-                if vals[code] then
-                    vals[code] = vals[code] + 1
-                else
-                    vals[code] = 1
-                end
+            if not vals[code] then                
+                vals[code] = 0
+            end
+            if readResult >= target_val then                
+                vals[code] = vals[code] + 1
             end
         end
     end
@@ -280,8 +279,8 @@ function updateCurrentEventPointer()
                 if obj then
                     if EVENT_MAPPING[k][2] then
                         obj.AvailableChestCount = 0
-                    elseif not EVENT_MAPPING[k][3] and obj.AvailableChestCount > 0 then
-                        EVENT_MAPPING[k][3] = true
+                    elseif not EVENT_MAPPING[k][4] and obj.AvailableChestCount > 0 then
+                        EVENT_MAPPING[k][4] = true
                         obj.AvailableChestCount = obj.AvailableChestCount - 1
                     end
                 end

@@ -70,7 +70,7 @@ EVENT_FLAGS_ADDR = 0x7ECF00
     }
     EVENT_FLAG_MAPPING = {}
     EVENT_MAPPING = {
-        --[eventNr] = {code,clearAll,target_val}
+        --[eventNr] = {code,clearAll,target_val,has_nothing_check}
         [0x4a4] = {"@Lost Continent/Tree Palace/Grand Palace Boss",true},
         [0x422] = {"@Mana Fortress/Mana Fortress Boss 1",true},
         [0x425] = {"@Mana Fortress/Mana Fortress Boss 2",true},
