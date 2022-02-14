@@ -664,7 +664,11 @@
 				"access_rules": [
 					"$canCutStuff, $isVanillaShort",
 					"$canCutStuff, $isVanillaLong",
-					"$canCutStuff, $isReviveTheTree, $manaTreeRevive"
+					//"$canCutStuff, $isReviveTheTree, $manaTreeRevive"
+				],
+				"visibility_rules":[
+					"$isVanillaShort",
+					"$isVanillaLong"
 				],
 				"item_count": 1
 			}
