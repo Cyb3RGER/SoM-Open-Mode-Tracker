@@ -70,14 +70,14 @@ EVENT_FLAGS_ADDR = 0x7ECF00
     }
     EVENT_FLAG_MAPPING = {}
     EVENT_MAPPING = {
-        --[eventNr] = {code,clearAll}
+        --[eventNr] = {code,clearAll,target_val}
         [0x4a4] = {"@Lost Continent/Tree Palace/Grand Palace Boss",true},
         [0x422] = {"@Mana Fortress/Mana Fortress Boss 1",true},
         [0x425] = {"@Mana Fortress/Mana Fortress Boss 2",true},
         [0x22e] = {"@Gaia's Navel/Earth Palace Mana Seed",true},
         [0x589] = {"@Kakkara Desert/Fire Palace/Fire Palace Reward",true},
         [0x584] = {"@Kakkara Desert/Moon Palace/Moon Palace Seed",true},
-        [0x2b2] = {"@Kakkara Desert/Kakkara/Kakkara NPC",true},
+        [0x2b2] = {"@Kakkara Desert/Kakkara/Kakkara NPC",true,2},
         [0x587] = {"@Vandole Empire/Gold City/Gold Tower/Gold Tower Reward",true},
         [0x688] = {"@Elinee's Castle/Elinee's Castle Reward (Chests)",false},
         [0x672] = {"@Lofty Mountains/Palace of Darkness/Palace of Darkness Chest behind bars",true},

@@ -1,3 +1,10 @@
+-- for downward compatibility we have to adjust for diffrently mapped rom addresses
+-- since v0.18.2 PopTracker uses the "correct" mapping and we dont need an offset anymore
+ROM_ADRESS_OFFSET = 0xc00000
+if PopVersion and PopVersion >= '0.18.2' then
+    ROM_ADRESS_OFFSET = 0
+end
+
 function updateGameState()
     --ToDo
     IS_GAME_RUNNING = true
@@ -57,20 +64,24 @@ function updateEventFlags(segment)
         local addr = EVENT_FLAGS_ADDR + v
         local readResult = AutoTracker:ReadU8(addr)
         local code = EVENT_MAPPING[k][1]
+        local target_val = 1
+        if EVENT_MAPPING[k][3] then
+            target_val = EVENT_MAPPING[k][3]
+        end
         if AUTOTRACKER_ENABLE_DEBUG_LOGGING then
             print(string.format("Updating location %s with val %x from addr %x",code,readResult,addr))
         end
         if EVENT_MAPPING[k][2] then
             local obj = Tracker:FindObjectForCode(code)
             if obj then
-                if readResult > 0 then
+                if readResult >= target_val then
                     obj.AvailableChestCount = 0
                 else
                     obj.AvailableChestCount = obj.ChestCount
                 end
             end
         else
-            if readResult > 0 then
+            if readResult >= target_val then
                 if vals[code] then
                     vals[code] = vals[code] + 1
                 else
@@ -89,10 +100,10 @@ end
 
 function getEventPointer(eventNr)
     local addr = EVENT_POINTER_TABLE_ADDR + eventNr * 3
-    local readResult = AutoTracker:ReadU24(addr) - 0xc00000
-    --if AUTOTRACKER_ENABLE_DEBUG_LOGGING then
-        --print(string.format("Got Pointer for Event %x from addr %x: %x",eventNr,addr,readResult))
-    --end
+    local readResult = AutoTracker:ReadU24(addr) - ROM_ADRESS_OFFSET
+    if AUTOTRACKER_ENABLE_DEBUG_LOGGING then
+        print(string.format("Got Pointer for Event %x from addr %x: %x (%x)",eventNr,addr,readResult,readResult+ROM_ADRESS_OFFSET))
+    end
     return readResult
 end
 
@@ -161,7 +172,7 @@ function updateEvent(eventNr)
 end
 
 function updateEventPointerTableAddr(segment)
-    local tableAddr = AutoTracker:ReadU24(EVENT_POINTER_TABLE_ADDR_ADDR) - 0xc00000
+    local tableAddr = AutoTracker:ReadU24(EVENT_POINTER_TABLE_ADDR_ADDR) - ROM_ADRESS_OFFSET
     if tableAddr > 0 then
         if AUTOTRACKER_ENABLE_DEBUG_LOGGING then
             print(string.format("Event pointer table at %x",tableAddr))
@@ -186,7 +197,7 @@ function canPullAllPointers()
     end
     for k,_ in pairs(EVENT_MAPPING) do
         local addr = getEventPointer(k)
-        if addr <= 0 then
+        if addr <= ROM_ADRESS_OFFSET then
             if AUTOTRACKER_ENABLE_DEBUG_LOGGING then
                 print(string.format("can not pull all pointers yet"))
             end
@@ -254,7 +265,7 @@ function updateCurrentEventPointer()
     if not NOTHING_EVENTS then
         return
     end
-    local readResult = AutoTracker:ReadU24(CURRENT_EVENT_POINTER_ADDR) - 0xC00000
+    local readResult = AutoTracker:ReadU24(CURRENT_EVENT_POINTER_ADDR) - ROM_ADRESS_OFFSET
     if readResult > 0 then
         if AUTOTRACKER_ENABLE_DEBUG_LOGGING then
             print(string.format("Currently running event at %x",readResult))
