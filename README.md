@@ -38,3 +38,7 @@ For Customization in EmoTracker you overwrite the pack's file by placing the fil
 
 This pack supports autotracking for items and locations in PopTracker.
 Requirements for Autotracking in PopTracker can be found [here](https://github.com/black-sliver/PopTracker/#auto-tracking).
+
+## Known Issues
+
+Role randomizer features are not supported in EmoTracker.
