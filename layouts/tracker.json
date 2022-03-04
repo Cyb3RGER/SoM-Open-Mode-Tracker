@@ -1,7 +1,7 @@
 {
 	"settings_popup": {
         "type": "array",
-        "margin": "5",
+        "margin": "0",
         "content": [
             {
                 "type": "group",
@@ -10,7 +10,7 @@
                 "content":[
                     {
                         "type": "item",
-                        "margin": "-5,-1,-5,-5",
+                        "margin": "0",
                         "item": "vanilla_short"
                     }
                 ]
@@ -22,7 +22,7 @@
                 "content":[
                     {
                         "type": "item",
-                        "margin": "-5,-1,-5,-5",
+                        "margin": "0",
                         "item": "basic"
                     }
                 ]
@@ -34,7 +34,7 @@
                 "content":[
                     {
                         "type": "item",
-                        "margin": "-5,-1,-5,-5",
+                        "margin": "0",
                         "item": "roles_normal"
                     }
                 ]
