@@ -1,8 +1,6 @@
 # Secret of Mana Open World Tracker Package for PopTracker
 
-This a tracker package for  PopTracker or other comapible programms to use with the Open World Mode of the [Secret of Mana Randomizer](https://secretofmanaancientcave.blogspot.com).
-
-The Evermizer can be found [here](https://evermizer.com).
+This a tracker package for PopTracker or other comapible programms to use with the Open World Mode of the [Secret of Mana Randomizer](https://secretofmanaancientcave.blogspot.com).
 
 Also check out the Secret of Mana Randomizer Discord [here](https://discord.gg/YfmUHqU).
 
