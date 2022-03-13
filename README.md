@@ -40,3 +40,11 @@ Requirements for Autotracking in PopTracker can be found [here](https://github.c
 ## Known Issues
 
 Role randomizer features are not supported in EmoTracker.
+
+## Troubleshooting
+
+### My Items are being tracked correctly but the Locations are not being tracked
+
+If you are using an emulator it is most likely that you are using an emulator that does not allow the tracker to access the ROM. For example snes9x 1.5X and below does not allow that. Update to snes9x 1.60+ in that case.
+
+If you are on hardware it is possible that the pack reads garbage as the event table before the game is started. Normally a reload of the pack should fix this. If not close the tracker and start it **after** the game is started.
