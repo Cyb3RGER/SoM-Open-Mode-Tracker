@@ -2,25 +2,25 @@
     "tracker_broadcast": {
         "type": "array",
         "dropshadow": false,
-        "margin": "10",
+        "margin": 10,
         "content": [
             {
                 "type": "array",
                 "orientation": "vertical",
                 "content": [
                     {
-						"type": "array",
-						"orientation": "horizontal",
-						"content": [
-							{
-								"type": "layout",
-								"key": "broadcast_item_grid"
-							},
-							{
-								"type": "layout",
-								"key": "broadcast_orbs_item_grid"
-							}
-						]
+                        "type": "array",
+                        "orientation": "horizontal",
+                        "content": [
+                            {
+                                "type": "layout",
+                                "key": "broadcast_item_grid"
+                            },
+                            {
+                                "type": "layout",
+                                "key": "broadcast_orbs_item_grid"
+                            }
+                        ]
                     }
                 ]
             }

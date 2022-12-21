@@ -1,14 +1,14 @@
 [
-	{
-    "name": "overworld",
-    "location_size": 92,
-    "location_border_thickness": 10,
-    "img": "images/overworld_map.png"
-  },
-  {
-    "name": "overworld_hints",
-    "location_size": 92,
-    "location_border_thickness": 10,
-    "img": "images/overworld_map.png"
-  }
+    {
+        "name": "overworld",
+        "location_size": 92,
+        "location_border_thickness": 10,
+        "img": "images/overworld_map.png"
+    },
+    {
+        "name": "overworld_hints",
+        "location_size": 92,
+        "location_border_thickness": 10,
+        "img": "images/overworld_map.png"
+    }
 ]

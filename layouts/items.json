@@ -188,7 +188,7 @@
     },
     "orbs_item_grid": {
         "type": "array",
-        "orientation": "hotizontal",
+        "orientation": "horizontal",
         "content": [
             {
                 "type": "itemgrid",
@@ -261,7 +261,7 @@
     },
     "broadcast_orbs_item_grid": {
         "type": "array",
-        "orientation": "hotizontal",
+        "orientation": "horizontal",
         "content": [
             {
                 "type": "itemgrid",
@@ -340,7 +340,7 @@
             {
                 "type": "group",
                 "header": "Weapons",
-                "dock": "center",
+                "dock": "left",
                 "content": {
                     "type": "layout",
                     "key": "items_weapons"
@@ -349,7 +349,7 @@
             {
                 "type": "group",
                 "header": "Key Items",
-                "dock": "center",
+                "dock": "left",
                 "content": {
                     "type": "layout",
                     "key": "items_key_items"

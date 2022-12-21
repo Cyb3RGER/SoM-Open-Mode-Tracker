@@ -1,68 +1,68 @@
 [
-  {
-    "name": "Goals",
-    "type": "progressive",
-    "loop": true,
-    "capturable": false,
-    "allow_disabled": false,
-    "initial_stage_idx": 0,
-    "stages": [
-      {
-        "img": "images/short_mode.png",
-        "inherit_codes": false,
-        "codes": "vanilla_short"
-      },
-      {
-        "img": "images/long_mode.png",
-        "inherit_codes": false,
-        "codes": "vanilla_long"
-      },
-      {
-        "img": "images/revive_the_tree.png",
-        "inherit_codes": false,
-        "codes": "revive_the_tree"
-      }
-    ]
-  },
-  {
-    "name": "Logic",
-    "type": "progressive",
-    "loop": true,
-    "capturable": false,
-    "allow_disabled": false,
-    "initial_stage_idx": 0,
-    "stages": [
-      {
-        "img": "images/basic.png",
-        "inherit_codes": false,
-        "codes": "basic"
-      },
-      {
-        "img": "images/restrictive.png",
-        "inherit_codes": false,
-        "codes": "restrictive"
-      }
-    ]
-  },
-  {
-    "name": "Roles",
-    "type": "progressive",
-    "loop": true,
-    "capturable": false,
-    "allow_disabled": false,
-    "initial_stage_idx": 0,
-    "codes": "roles",
-    "stages": [
-      {
-        "img": "images/normal.png",
-        "inherit_codes": false,
-        "codes": "roles_normal"
-      },
-      {
-        "img": "images/random.png",
-        "inherit_codes": false,
-        "codes": "roles_random"
-      }
-    ]
-  }
+    {
+        "name": "Goals",
+        "type": "progressive",
+        "loop": true,
+        "capturable": false,
+        "allow_disabled": false,
+        "initial_stage_idx": 0,
+        "stages": [
+            {
+                "img": "images/short_mode.png",
+                "inherit_codes": false,
+                "codes": "vanilla_short"
+            },
+            {
+                "img": "images/long_mode.png",
+                "inherit_codes": false,
+                "codes": "vanilla_long"
+            },
+            {
+                "img": "images/revive_the_tree.png",
+                "inherit_codes": false,
+                "codes": "revive_the_tree"
+            }
+        ]
+    },
+    {
+        "name": "Logic",
+        "type": "progressive",
+        "loop": true,
+        "capturable": false,
+        "allow_disabled": false,
+        "initial_stage_idx": 0,
+        "stages": [
+            {
+                "img": "images/basic.png",
+                "inherit_codes": false,
+                "codes": "basic"
+            },
+            {
+                "img": "images/restrictive.png",
+                "inherit_codes": false,
+                "codes": "restrictive"
+            }
+        ]
+    },
+    {
+        "name": "Roles",
+        "type": "progressive",
+        "loop": true,
+        "capturable": false,
+        "allow_disabled": false,
+        "initial_stage_idx": 0,
+        "codes": "roles",
+        "stages": [
+            {
+                "img": "images/normal.png",
+                "inherit_codes": false,
+                "codes": "roles_normal"
+            },
+            {
+                "img": "images/random.png",
+                "inherit_codes": false,
+                "codes": "roles_random"
+            }
+        ]
+    }
 ]

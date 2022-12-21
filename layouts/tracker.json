@@ -1,123 +1,122 @@
 {
-	"settings_popup": {
+    "settings_popup": {
         "type": "array",
-        "margin": "0",
+        "margin": "0, 0",
         "content": [
             {
                 "type": "group",
                 "header": "Goal",
                 "header_background": "#3e4b57",
-                "content":[
+                "content": [
                     {
                         "type": "item",
-                        "margin": "0",
+                        "margin": "0, 0",
                         "item": "vanilla_short"
                     }
                 ]
-			},
-			{
+            },
+            {
                 "type": "group",
                 "header": "Logic",
                 "header_background": "#3e4b57",
-                "content":[
+                "content": [
                     {
                         "type": "item",
-                        "margin": "0",
+                        "margin": "0, 0",
                         "item": "basic"
                     }
                 ]
             },
-			{
+            {
                 "type": "group",
                 "header": "Roles",
                 "header_background": "#3e4b57",
-                "content":[
+                "content": [
                     {
                         "type": "item",
-                        "margin": "0",
+                        "margin": "0, 0",
                         "item": "roles_normal"
                     }
                 ]
             }
         ]
-    },    
-	"tracker_default": {
-		"type": "container",
-		"background": "#877373",
-		"content": 
-		{
-			"type": "dock",
-			"dropshadow": true,
-			"content": [
-				{
-					"type": "dock",
-					"dock": "bottom",
-					"v_alignment": "stretch",
-					"margin": "0,0,3,0",
-					"content": [
-						{
-							"type": "group",
-							"header": "Items",
-							"dock": "left",	
-							"header_content": {
+    },
+    "tracker_default": {
+        "type": "container",
+        "background": "#877373",
+        "content": {
+            "type": "dock",
+            "dropshadow": true,
+            "content": [
+                {
+                    "type": "dock",
+                    "dock": "bottom",
+                    "v_alignment": "stretch",
+                    "margin": "0,0,3,0",
+                    "content": [
+                        {
+                            "type": "group",
+                            "header": "Items",
+                            "dock": "left",
+                            "header_content": {
                                 "type": "button_popup",
                                 "style": "settings",
                                 "popup_background": "#55212121",
                                 "layout": "settings_popup"
-                            },						
-							"content": {
-								"type": "layout",
-								"key": "shared_item_grid"
-							}
-						},
-						{
-							"type": "group",
-							"header": "Orbs",
-							"dock": "left",								
-							"content": {
-								"type": "layout",
-								"key": "orbs_item_grid"
-							}
-						},
-						{
-							"type": "group",
-							"header": "Pinned Locations",
-							"dock": "left",	
-							"content": {
-								"type": "recentpins",
-								"style": "wrap",
-								"h_alignment": "stretch",
-								"v_alignment": "stretch",
-								"orientation": "vertical",
-								"compact": true
-							}
-						}
-					]
-				},
-				{
-					"type": "tabbed",
-					"tabs": [
-						{
-							"title": "Items",
-							"content": {
-								"type": "map",
-								"maps": [
-									"overworld"
-								]
-							}
-						},
-						{
-							"title": "Hints",
-							"content": {
-								"type": "map",
-								"maps": [
-									"overworld_hints"
-								]
-							}
-						}
-					]
-				}
-			]
-		}
-	}
+                            },
+                            "content": {
+                                "type": "layout",
+                                "key": "shared_item_grid"
+                            }
+                        },
+                        {
+                            "type": "group",
+                            "header": "Orbs",
+                            "dock": "left",
+                            "content": {
+                                "type": "layout",
+                                "key": "orbs_item_grid"
+                            }
+                        },
+                        {
+                            "type": "group",
+                            "header": "Pinned Locations",
+                            "dock": "left",
+                            "content": {
+                                "type": "recentpins",
+                                "style": "wrap",
+                                "h_alignment": "stretch",
+                                "v_alignment": "stretch",
+                                "orientation": "vertical",
+                                "compact": true
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "tabbed",
+                    "tabs": [
+                        {
+                            "title": "Items",
+                            "content": {
+                                "type": "map",
+                                "maps": [
+                                    "overworld"
+                                ]
+                            }
+                        },
+                        {
+                            "title": "Hints",
+                            "content": {
+                                "type": "map",
+                                "maps": [
+                                    "overworld_hints"
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    }
 }

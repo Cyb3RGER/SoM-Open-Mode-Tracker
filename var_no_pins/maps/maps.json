@@ -1,7 +1,7 @@
 [
-	{
-    "name": "overworld",
-    "img": "images/overworld_map.png",
-    "location_size": 64
-  }
+    {
+        "name": "overworld",
+        "img": "images/overworld_map.png",
+        "location_size": 64
+    }
 ]
