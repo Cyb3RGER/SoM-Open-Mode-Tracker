@@ -98,6 +98,7 @@
                     "tabs": [
                         {
                             "title": "Items",
+                            "icon": "images/chest.png",
                             "content": {
                                 "type": "map",
                                 "maps": [
@@ -107,6 +108,7 @@
                         },
                         {
                             "title": "Hints",
+                            "icon": "images/hint.png",
                             "content": {
                                 "type": "map",
                                 "maps": [
