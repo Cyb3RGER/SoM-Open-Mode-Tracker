@@ -96,7 +96,8 @@
     //"key" items
     {
         "name": "Flammie Drum",
-        "type": "static",
+        "type": "toggle",
+        "capturable": true,
         "img": "images/flammie_drum.png",
         "codes": "drum"
     },

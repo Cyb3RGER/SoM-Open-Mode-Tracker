@@ -45,6 +45,13 @@ function updateMoogleBelt(segment)
     checkFlagsInSegmentUsingTable(segment, MOOGLE_BELT)
 end
 
+function updateFlammieDrum(segment)
+    if not IS_GAME_RUNNING then
+        return
+    end
+    checkFlagsInSegmentUsingTable(segment, FLAMMIE_DRUM)
+end
+
 function updateSeeds(segment)
     if not IS_GAME_RUNNING then
         return

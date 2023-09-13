@@ -278,6 +278,16 @@ function hasTail()
     return 0
 end
 
+function hasDrum()
+    local value = Tracker:ProviderCountForCode("drum")
+
+    if (value == 1) then
+        return 1
+    end
+
+    return 0
+end
+
 -- magic
 function hasUndine()
     local value = Tracker:ProviderCountForCode("undine")
@@ -525,13 +535,13 @@ end
 -- orbs
 
 function updateOrbStates()
-    local objs = {Tracker:FindObjectForCode("et_orb"), Tracker:FindObjectForCode("mc_orb"),
-                  Tracker:FindObjectForCode("fp_orb1"), Tracker:FindObjectForCode("fp_orb2"),
-                  Tracker:FindObjectForCode("fp_orb3"), Tracker:FindObjectForCode("mp_orb"),
-                  Tracker:FindObjectForCode("gp_orb1"), Tracker:FindObjectForCode("gp_orb2"),
-                  Tracker:FindObjectForCode("gp_orb3"), Tracker:FindObjectForCode("gp_orb4"),
-                  Tracker:FindObjectForCode("gp_orb5"), Tracker:FindObjectForCode("gp_orb6"),
-                  Tracker:FindObjectForCode("gp_orb7")}
+    local objs = {Tracker:FindObjectForCode("et_orb"), Tracker:FindObjectForCode("uf_orb"),
+                  Tracker:FindObjectForCode("mc_orb"), Tracker:FindObjectForCode("fp_orb1"),
+                  Tracker:FindObjectForCode("fp_orb2"), Tracker:FindObjectForCode("fp_orb3"), 
+                  Tracker:FindObjectForCode("mp_orb"), Tracker:FindObjectForCode("gp_orb1"), 
+                  Tracker:FindObjectForCode("gp_orb2"), Tracker:FindObjectForCode("gp_orb3"), 
+                  Tracker:FindObjectForCode("gp_orb4"), Tracker:FindObjectForCode("gp_orb5"), 
+                  Tracker:FindObjectForCode("gp_orb6"), Tracker:FindObjectForCode("gp_orb7")}
     if ENABLE_DEBUG_LOG then
         print(string.format(
             "updateOrbStates: isSpriteDisabled: %s, isGirlDisabled: %s, hasSpriteRole: %s, hasGirlRole: %s, hasAllElements: %s",
@@ -583,8 +593,22 @@ function canDestroyOrb(name)
     return 0
 end
 
+function canCrossUpperLandForest()
+   if (hasDrum() == 1 or canDestroyUFOrb() == 1) then
+        return 1
+   end
+   return 0
+end
+
 function canDestroyETOrb()
     if (canDestroyOrb("et_orb") == 1) then
+        return 1
+    end
+    return 0
+end
+
+function canDestroyUFOrb()
+    if (canDestroyOrb("uf_orb") == 1) then
         return 1
     end
     return 0
@@ -796,3 +820,5 @@ function manaTreeRevive()
     end
     return 0
 end
+
+

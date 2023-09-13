@@ -45,6 +45,7 @@ if AUTOTRACKER_ENABLE_ITEM_TRACKING then
     ScriptHost:AddMemoryWatch("GoldKey", GOLD_KEY.addr , #GOLD_KEY.checks+1, updateGoldKey)
     ScriptHost:AddMemoryWatch("MidgeMallet", MIDGE_MALLET.addr , #MIDGE_MALLET.checks+1, updateMidgeMallet)
     ScriptHost:AddMemoryWatch("MoogleBelt", MOOGLE_BELT.addr , #MOOGLE_BELT.checks+1, updateMoogleBelt)
+    ScriptHost:AddMemoryWatch("FlammieDrum", FLAMMIE_DRUM.addr , #FLAMMIE_DRUM.checks+1, updateFlammieDrum)
     ScriptHost:AddMemoryWatch("Seeds", SEEDS.addr , #SEEDS.checks+1, updateSeeds)
     ScriptHost:AddMemoryWatch("Magic", MAGIC.addr , #MAGIC.checks+1, updateMagic)
     ScriptHost:AddMemoryWatch("WeaponOrbs", WEAPONS_ORBS.addr , #WEAPONS_ORBS.checks+1, updateWeaponOrbs)

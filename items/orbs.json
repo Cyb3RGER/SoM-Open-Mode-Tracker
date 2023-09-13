@@ -9,6 +9,13 @@
         "codes": "header_et"
     },
     {
+        "name": "Upper Land Forest",
+        "type": "static",
+        "capturable": false,
+        "img": "images/overlay_uf.png",
+        "codes": "header_uf"
+    },
+    {
         "name": "Matango Cave",
         "type": "static",
         "capturable": false,
@@ -44,6 +51,13 @@
         "img": "images/overlay_et_short.png",
         "img_mods": "stretch",
         "codes": "header_et_short"
+    },
+    {
+        "name": "Upper Land Forest",
+        "type": "static",
+        "capturable": false,
+        "img": "images/overlay_uf_short.png",
+        "codes": "header_uf_short"
     },
     {
         "name": "Matango Cave",

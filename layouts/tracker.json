@@ -38,6 +38,18 @@
                         "item": "roles_normal"
                     }
                 ]
+            },
+            {
+                "type": "group",
+                "header": "Flammie Drum",
+                "header_background": "#3e4b57",
+                "content": [
+                    {
+                        "type": "item",
+                        "margin": "0, 0",
+                        "item": "drum_logic_normal"
+                    }
+                ]
             }
         ]
     },
@@ -77,7 +89,8 @@
                                 "type": "layout",
                                 "key": "orbs_item_grid"
                             }
-                        },
+                        }
+                        /*,
                         {
                             "type": "group",
                             "header": "Pinned Locations",
@@ -91,6 +104,7 @@
                                 "compact": true
                             }
                         }
+                        */
                     ]
                 },
                 {

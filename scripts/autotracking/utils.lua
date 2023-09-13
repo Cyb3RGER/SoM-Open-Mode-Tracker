@@ -4,7 +4,12 @@ function checkFlagsInSegmentUsingTable(segment, table, checkmode)
     end
     local addr = table.addr
     for k, v in pairs(table.checks) do
-        local readResult = segment:ReadUInt8(addr + k)
+        local readResult
+        if segment then
+            readResult = segment:ReadUInt8(addr + k)    
+        else 
+            readResult = AutoTracker:ReadU8(addr + k)
+        end
         local obj = Tracker:FindObjectForCode(v)
         if obj then
             if AUTOTRACKER_ENABLE_DEBUG_LOGGING then

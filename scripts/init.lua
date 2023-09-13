@@ -18,6 +18,7 @@ local girl = CharacterItem("Girl", "girl")
 local sprite = CharacterItem("Sprite", "sprite")
 --orbs
 local etOrb = OrbItem("Earth Temple Orb", "et_orb")
+local ufOrb = OrbItem("Upper Land Forest Orb", "uf_orb")
 local mcOrb = OrbItem("Matango Cave Orb", "mc_orb")
 local fpOrb1 = OrbItem("Fire Palace Orb 1", "fp_orb1")
 local fpOrb2 = OrbItem("Fire Palace Orb 2", "fp_orb2")
@@ -34,7 +35,6 @@ local gpOrb7 = OrbItem("Grand Palace Orb", "gp_orb7")
 
 
 ScriptHost:LoadScript("scripts/logic.lua")
-ScriptHost:LoadScript("scripts/watches.lua")
 --items
 Tracker:AddItems("items/items.json")
 Tracker:AddItems("items/orbs.json")
@@ -54,6 +54,7 @@ Tracker:AddLayouts("layouts/tracker.json")
 
 -- autotracking
 if PopVersion then
+    ScriptHost:LoadScript("scripts/watches.lua")
     ScriptHost:LoadScript("scripts/autotracking.lua")
 end
 

@@ -64,5 +64,26 @@
                 "codes": "roles_random"
             }
         ]
+    },
+    {
+        "name": "Flammie Drum",
+        "type": "progressive",
+        "loop": true,
+        "capturable": false,
+        "allow_disabled": false,
+        "initial_stage_idx": 0,
+        "codes": "drum_logic",
+        "stages": [
+            {
+                "img": "images/normal.png",
+                "inherit_codes": false,
+                "codes": "drum_logic_normal"
+            },
+            {
+                "img": "images/random.png",
+                "inherit_codes": false,
+                "codes": "drum_logic_random"
+            }
+        ]
     }
 ]

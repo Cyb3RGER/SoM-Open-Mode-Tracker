@@ -22,3 +22,10 @@ MOOGLE_BELT = {
         [0x00] = "belt",
     }
 }
+FLAMMIE_DRUM = {
+    addr = ITEMS_BASE_ADDR + 0x76,
+    checks = {
+        [0x00] = "drum"
+    }
+}
+ 
