@@ -1,0 +1,81 @@
+{
+    "versions": [
+        {
+            "package_version": "1.6.0.0",
+            "download_url": "https://github.com/Cyb3RGER/SoM-Open-Mode-Tracker/releases/download/1.6.0.0/SoM-Open-Mode-Tracker-v1_6_0_0.zip",
+            "sha256": "20d78e23870e39feb99e33b4ec797f16724fa6d403326c2b5d0a95a39d491779",
+            "changelog": [
+                "Added support for Flamie Drum in logic",
+                "Added support for automatic pack update via PopTracker"
+            ]
+        },
+        {
+            "package_version": "1.5.0.5",
+            "download_url": "https://github.com/Cyb3RGER/SoM-Open-Mode-Tracker/releases/download/1.5.0.5/SoM-Open-Mode-Tracker-v1_5_0_5.zip",
+            "sha256": "4b51e5b93423afa826e1adf9c620ca14bfc20535c42787d10d7a2da6f0c1181d",
+            "changelog": [
+                "magic orbs now always activate if all possible elements and characters are collected even if no element for the orb has been selected"
+            ]
+        },
+        {
+            "package_version": "1.5.0.4",
+            "download_url": "https://github.com/Cyb3RGER/SoM-Open-Mode-Tracker/releases/download/1.5.0.4/SoM-Open-Mode-Tracker-v1_5_0_4.zip",
+            "sha256": "936e83bb7bfcbf9eb7fbb8cbecbdb86c3e27857d84d1fff90453309d34d7d3f6",
+            "changelog": [
+                "fixed a bug where checked locations did not reset properly, most notably Elinee's Castle",
+                "fixed layout for new PopTracker version"
+            ]
+        },
+        {
+            "package_version": "1.5.0.3",
+            "download_url": "https://github.com/Cyb3RGER/SoM-Open-Mode-Tracker/releases/download/1.5.0.3/SoM-Open-Mode-Tracker-v1_5_0_3.zip",
+            "sha256": "6e6901f04e1e0352429a680666805f2e2b9c64be905a3534ee17d4b29ab83856",
+            "changelog": [
+                "magic orbs now show up as done on the location in boy-only runs",
+                "the mana tree check is now hidden on MTR",
+                "(hopefully) fixed an autotracking bug where Kakkara got checked when obtaining the sea hare's tail",
+                "adjusted autotracking for new address mapping in PopTracker v0.19.0+"
+            ]
+        },
+        {
+            "package_version": "1.5.0.2",
+            "download_url": "https://github.com/Cyb3RGER/SoM-Open-Mode-Tracker/releases/download/1.5.0.2/SoM-Open-Mode-Tracker-v1_5_0_2.zip",
+            "sha256": "4b51e5b93423afa826e1adf9c620ca14bfc20535c42787d10d7a2da6f0c1181d",
+            "changelog": [
+                "Fix magic orb logic bug",
+                "Fix crash on EmoTracker (role rando features are not supported on EmoTracker tho)"
+            ]
+        },
+        {
+            "package_version": "1.5.0.0",
+            "download_url": "https://github.com/Cyb3RGER/SoM-Open-Mode-Tracker/releases/download/1.5.0.0/SoM-Open-Mode-Tracker-1_5_0_0.zip",
+            "sha256": "753cf3a97a2a99c8ce4ffd603370c03866e0ba51798794e0d9d31efe5b9b56ef",
+            "changelog": [
+                "Added role randomizer features",
+                "Color coded magic orb headers and added short headers to broadcast view (Thanks CTG!)",
+                "the old headers are still available in the pack. just append __alt to the end of the image file names of the headers"
+            ]
+        },
+        {
+            "package_version": "1.3.0.0",
+            "download_url": "https://github.com/Cyb3RGER/SoM-Open-Mode-Tracker/releases/download/1.3.0.0/SoM-Open-Mode-Tracker-1.3.0.0.zip",
+            "sha256": "4de18f30d9aa5ce06aee328b2367130cda1dc303b5ad9ea9612c94dcf68df560",
+            "changelog": [
+                "Added autotracking support (PopTracker Only)",
+                "Added support for the girl being able to destroy salamando and sylphid orbs",
+                "Multiple smaller logic fixes"
+            ]
+        },
+        {
+            "package_version": "1.2.0.0",
+            "download_url": "https://github.com/Cyb3RGER/SoM-Open-Mode-Tracker/releases/download/1.2.0.0/SoM-Open-Mode-Tracker-1.2.0.0.zip",
+            "sha256": "5de6112162d21ecae3af840d000b050bff932061e207ed6a923a7e772fdf4cce",
+            "changelog": [
+                "Added hint support",
+                "Added random char support",
+                "Added support for changing the amount of seeds need to beat the game",
+                "Multiple fixes"
+            ]
+        }
+    ]
+}
