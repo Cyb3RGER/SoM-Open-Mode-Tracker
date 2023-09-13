@@ -3,7 +3,7 @@
         {
             "package_version": "1.6.0.0",
             "download_url": "https://github.com/Cyb3RGER/SoM-Open-Mode-Tracker/releases/download/1.6.0.0/SoM-Open-Mode-Tracker-v1_6_0_0.zip",
-            "sha256": "20d78e23870e39feb99e33b4ec797f16724fa6d403326c2b5d0a95a39d491779",
+            "sha256": "a4ef994840de35fb65eb1720c7e241f4dcb2b36e0f2061d14f05cb0803b6cf90",
             "changelog": [
                 "Added support for Flamie Drum in logic",
                 "Added support for automatic pack update via PopTracker"
