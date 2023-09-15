@@ -14,6 +14,15 @@
                 ],
                 "sections": [
                     {
+                        "name": "Sword Pedestal",
+                        "chest_unopened_img": "images/chest.png",
+                        "chest_opened_img": "images/chest_open.png",
+                        "item_count": 1,
+                        "visibility_rules": [
+                            "drum_logic_random"
+                        ]
+                    },
+                    {
                         "name": "Potos Chest",
                         "chest_unopened_img": "images/chest.png",
                         "chest_opened_img": "images/chest_open.png",
@@ -247,7 +256,7 @@
                         "name": "Matango",
                         "access_rules": [
                             "$hasDrum",
-                            "$canDestroyUFOrb, $axe"
+                            "$canDestroyUFOrb, $hasAxe"
                         ],
                         "map_locations": [
                             {
@@ -538,6 +547,9 @@
                     },
                     {
                         "name": "Gold City",
+                        "access_rules": [
+                            "$hasDrum" //late game
+                        ],
                         "children": [
                             {
                                 "name": "Gold Tower",

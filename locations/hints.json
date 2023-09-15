@@ -1,6 +1,6 @@
 [
     {
-        "name": "All Hints",
+        "name": "Early Game",
         "children": [
             {
                 "name": "Potos Area Hints",
@@ -51,93 +51,6 @@
                     },
                     {
                         "name": "Sign north of Pandora",
-                        "chest_unopened_img": "images/hint.png",
-                        "chest_opened_img": "images/hint_done.png",
-                        "item_count": 1
-                    }
-                ]
-            },
-            {
-                "name": "Mountain",
-                "map_locations": [
-                    {
-                        "map": "overworld_hints",
-                        "x": 1300,
-                        "y": 2900
-                    }
-                ],
-                "sections": [
-                    {
-                        "name": "Mandala Village Tower",
-                        "chest_unopened_img": "images/hint.png",
-                        "chest_opened_img": "images/hint_done.png",
-                        "item_count": 7
-                    },
-                    {
-                        "name": "Jehk and Johk",
-                        "chest_unopened_img": "images/hint.png",
-                        "chest_opened_img": "images/hint_done.png",
-                        "access_rules": [
-                            "$hasWhip"
-                        ],
-                        "item_count": 2
-                    }
-                ]
-            },
-            {
-                "name": "Tasnica",
-                "map_locations": [
-                    {
-                        "map": "overworld_hints",
-                        "x": 388,
-                        "y": 3203
-                    }
-                ],
-                "sections": [
-                    {
-                        "name": "Tasnica King",
-                        "chest_unopened_img": "images/hint.png",
-                        "chest_opened_img": "images/hint_done.png",
-                        "item_count": 1
-                    }
-                ]
-            },
-            {
-                "name": "North Town",
-                "map_locations": [
-                    {
-                        "map": "overworld_hints",
-                        "x": 3200,
-                        "y": 1150
-                    }
-                ],
-                "sections": [
-                    {
-                        "name": "Krissie",
-                        "chest_unopened_img": "images/hint.png",
-                        "chest_opened_img": "images/hint_done.png",
-                        "item_count": 1
-                    },
-                    {
-                        "name": "Dyluck",
-                        "chest_unopened_img": "images/hint.png",
-                        "chest_opened_img": "images/hint_done.png",
-                        "item_count": 1
-                    }
-                ]
-            },
-            {
-                "name": "Santas House",
-                "map_locations": [
-                    {
-                        "map": "overworld_hints",
-                        "x": 2625,
-                        "y": 625
-                    }
-                ],
-                "sections": [
-                    {
-                        "name": "Rudolph",
                         "chest_unopened_img": "images/hint.png",
                         "chest_opened_img": "images/hint_done.png",
                         "item_count": 1
@@ -196,7 +109,72 @@
                     }
                 ]
             },
-            //Cannon hints
+            {
+                "name": "Upper Lands Cannon",
+                "map_locations": [
+                    {
+                        "map": "overworld_hints",
+                        "x": 2620,
+                        "y": 2720
+                    }
+                ],
+                "sections": [
+                    {
+                        "hosted_item": "cannon_hint"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Mid Game",
+        "access_rules": [
+            "$hasDrum",
+            "$canDestroyUFOrb"
+        ],
+        "children": [
+            {
+                "name": "North Town",
+                "map_locations": [
+                    {
+                        "map": "overworld_hints",
+                        "x": 3200,
+                        "y": 1150
+                    }
+                ],
+                "sections": [
+                    {
+                        "name": "Krissie",
+                        "chest_unopened_img": "images/hint.png",
+                        "chest_opened_img": "images/hint_done.png",
+                        "item_count": 1
+                    },
+                    {
+                        "name": "Dyluck",
+                        "chest_unopened_img": "images/hint.png",
+                        "chest_opened_img": "images/hint_done.png",
+                        "item_count": 1
+                    }
+                ]
+            },
+            {
+                "name": "Santas House",
+                "map_locations": [
+                    {
+                        "map": "overworld_hints",
+                        "x": 2625,
+                        "y": 625
+                    }
+                ],
+                "sections": [
+                    {
+                        "name": "Rudolph",
+                        "chest_unopened_img": "images/hint.png",
+                        "chest_opened_img": "images/hint_done.png",
+                        "item_count": 1
+                    }
+                ]
+            },
             {
                 "name": "Kakara Cannon",
                 "map_locations": [
@@ -241,19 +219,57 @@
                         "hosted_item": "cannon_hint"
                     }
                 ]
-            },
+            }
+        ]
+    },
+    {
+        "name": "Late Game",
+        "access_rules": [
+            "$hasDrum"
+        ],
+        "children": [
             {
-                "name": "Upper Lands Cannon",
+                "name": "Mountain",
                 "map_locations": [
                     {
                         "map": "overworld_hints",
-                        "x": 2620,
-                        "y": 2720
+                        "x": 1300,
+                        "y": 2900
                     }
                 ],
                 "sections": [
                     {
-                        "hosted_item": "cannon_hint"
+                        "name": "Mandala Village Tower",
+                        "chest_unopened_img": "images/hint.png",
+                        "chest_opened_img": "images/hint_done.png",
+                        "item_count": 7
+                    },
+                    {
+                        "name": "Jehk and Johk",
+                        "chest_unopened_img": "images/hint.png",
+                        "chest_opened_img": "images/hint_done.png",
+                        "access_rules": [
+                            "$hasWhip"
+                        ],
+                        "item_count": 2
+                    }
+                ]
+            },
+            {
+                "name": "Tasnica",
+                "map_locations": [
+                    {
+                        "map": "overworld_hints",
+                        "x": 388,
+                        "y": 3203
+                    }
+                ],
+                "sections": [
+                    {
+                        "name": "Tasnica King",
+                        "chest_unopened_img": "images/hint.png",
+                        "chest_opened_img": "images/hint_done.png",
+                        "item_count": 1
                     }
                 ]
             }

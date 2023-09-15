@@ -146,6 +146,7 @@ EVENT_FLAGS_ADDR = 0x7ECF00
         [0x527] = {"@Vandole Empire/North Town/North Town Castle/Inside Boss",true},
         [0x2d1] = {"@Tasnica/Tasnica Miniboss",true},
         [0x66a] = {"@Ice Country/Ice Castle/Ice Castle Boss 1",true},
+        [0x532] = {"@Potos/Sword Pedestal",true},
     }
     EVENT_FLAGS = {
         0xC8, --gloves
