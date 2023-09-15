@@ -1,6 +1,16 @@
 {
     "versions": [
         {
+            "package_version": "1.6.0.1",
+            "download_url": "https://github.com/Cyb3RGER/SoM-Open-Mode-Tracker/releases/download/1.6.0.1/SoM-Open-Mode-Tracker-v1_6_0_1.zip",
+            "sha256": "cf3a9741a2eba24583dd06c2b9d1f0e3183c76645776ce5da114610e5de6663c",
+            "changelog": [
+                "Added missing location Potos Sword Pedestal for Flamie Drum in logic",                
+                "Fixed wrong access rules for Gold City",
+                "Fixed hint access rules for Flamie Drum in logic"
+            ]
+        },
+        {
             "package_version": "1.6.0.0",
             "download_url": "https://github.com/Cyb3RGER/SoM-Open-Mode-Tracker/releases/download/1.6.0.0/SoM-Open-Mode-Tracker-v1_6_0_0.zip",
             "sha256": "a4ef994840de35fb65eb1720c7e241f4dcb2b36e0f2061d14f05cb0803b6cf90",
