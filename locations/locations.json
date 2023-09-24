@@ -18,6 +18,9 @@
                         "chest_unopened_img": "images/chest.png",
                         "chest_opened_img": "images/chest_open.png",
                         "item_count": 1,
+                        "access_rules": [
+                            "$canCutStuff"
+                        ],
                         "visibility_rules": [
                             "drum_logic_random"
                         ]
