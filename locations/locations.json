@@ -32,7 +32,7 @@
                         "item_count": 1
                     },
                     {
-                        "name": "Potos Boss",
+                        "name": "Potos Boss - Mantis Ant",
                         "chest_unopened_img": "images/boss.png",
                         "chest_opened_img": "images/boss_done.png",
                         "item_count": 1
@@ -58,7 +58,7 @@
                         "item_count": 1
                     },
                     {
-                        "name": "Pandora Ruins Boss",
+                        "name": "Pandora Ruins Boss - Wall Face",
                         "chest_unopened_img": "images/boss.png",
                         "chest_opened_img": "images/boss_done.png",
                         "item_count": 1
@@ -84,7 +84,7 @@
                 ],
                 "sections": [
                     {
-                        "name": "Water Palace Mana Seed",
+                        "name": "Water Palace Mana Seed - Jabberwocky",
                         "access_rules": [
                             "$hasWaterPalaceAccess"
                         ],
@@ -93,7 +93,7 @@
                         "item_count": 2
                     },
                     {
-                        "name": "Undine",
+                        "name": "Undine - Biting Lizard",
                         "chest_unopened_img": "images/boss.png",
                         "chest_opened_img": "images/boss_done.png",
                         "item_count": 2
@@ -131,7 +131,7 @@
                         "item_count": 1
                     },
                     {
-                        "name": "Dwarf Village Boss",
+                        "name": "Dwarf Village Boss - Tropicallo",
                         "chest_unopened_img": "images/boss.png",
                         "chest_opened_img": "images/boss_done.png",
                         "item_count": 2
@@ -143,7 +143,7 @@
                         "item_count": 1
                     },
                     {
-                        "name": "Underground Ship Boss",
+                        "name": "Underground Ship Boss - Kilroy",
                         "chest_unopened_img": "images/boss.png",
                         "chest_opened_img": "images/boss_done.png",
                         "item_count": 1
@@ -157,7 +157,7 @@
                         ]
                     },
                     {
-                        "name": "Earth Palace Mana Seed",
+                        "name": "Earth Palace Mana Seed - Fire Gigas",
                         "chest_unopened_img": "images/boss.png",
                         "chest_opened_img": "images/boss_done.png",
                         "access_rules": [
@@ -180,7 +180,7 @@
                 ],
                 "sections": [
                     {
-                        "name": "Elinee's Castle Reward (Chests)",
+                        "name": "Elinee's Castle Reward (Chests) - Spikey Tiger",
                         "chest_unopened_img": "images/boss.png",
                         "chest_opened_img": "images/boss_done.png",
                         "access_rules": [
@@ -225,7 +225,7 @@
                         ],
                         "sections": [
                             {
-                                "name": "Wind Palace Reward",
+                                "name": "Wind Palace Reward - Spring Beak",
                                 "access_rules": [
                                     "$hasWindPalaceAccess"
                                 ],
@@ -284,7 +284,7 @@
                                 ]
                             },
                             {
-                                "name": "Flammie",
+                                "name": "Flammie - Great Viper",
                                 "chest_unopened_img": "images/boss.png",
                                 "chest_opened_img": "images/boss_done.png",
                                 "access_rules": [
@@ -400,7 +400,7 @@
                                 ]
                             },
                             {
-                                "name": "Fire Palace Reward",
+                                "name": "Fire Palace Reward - Minotaur",
                                 "chest_unopened_img": "images/boss.png",
                                 "chest_opened_img": "images/boss_done.png",
                                 "access_rules": [
@@ -413,6 +413,10 @@
                     },
                     {
                         "name": "Moon Palace",
+                        "access_rules": [
+                            "$hasDrum",
+                            "[$hasDrum]"
+                        ],
                         "map_locations": [
                             {
                                 "map": "overworld",
@@ -485,7 +489,7 @@
                                         "item_count": 2
                                     },
                                     {
-                                        "name": "Inside Boss",
+                                        "name": "Inside Boss - Metal Mantis",
                                         "chest_unopened_img": "images/boss.png",
                                         "chest_opened_img": "images/boss_done.png",
                                         "item_count": 1
@@ -497,7 +501,7 @@
                                         "item_count": 1
                                     },
                                     {
-                                        "name": "Outside Boss",
+                                        "name": "Outside Boss - Mech Rider II",
                                         "chest_unopened_img": "images/boss.png",
                                         "chest_opened_img": "images/boss_done.png",
                                         "item_count": 1
@@ -533,13 +537,13 @@
                                         "item_count": 1
                                     },
                                     {
-                                        "name": "North Town Ruins Boss 1",
+                                        "name": "North Town Ruins Boss 1 - Doom's Wall",
                                         "chest_unopened_img": "images/boss.png",
                                         "chest_opened_img": "images/boss_done.png",
                                         "item_count": 1
                                     },
                                     {
-                                        "name": "North Town Ruins Boss 2",
+                                        "name": "North Town Ruins Boss 2 - Vampire",
                                         "chest_unopened_img": "images/boss.png",
                                         "chest_opened_img": "images/boss_done.png",
                                         "item_count": 1
@@ -574,7 +578,7 @@
                                         "item_count": 1
                                     },
                                     {
-                                        "name": "Gold Tower Chest 2",
+                                        "name": "Gold Tower Chest 2 - Blue Spike",
                                         "chest_unopened_img": "images/boss.png",
                                         "chest_opened_img": "images/boss_done.png",
                                         "access_rules": [
@@ -583,7 +587,7 @@
                                         "item_count": 1
                                     },
                                     {
-                                        "name": "Gold Tower Reward",
+                                        "name": "Gold Tower Reward - Gorgon Bull",
                                         "chest_unopened_img": "images/boss.png",
                                         "chest_opened_img": "images/boss_done.png",
                                         "access_rules": [
@@ -624,7 +628,7 @@
                         "name": "Tropical Town",
                         "children": [
                             {
-                                "name": "Tropical Town Boss",
+                                "name": "Tropical Town Boss - Boreal Face",
                                 "map_locations": [
                                     {
                                         "map": "overworld",
@@ -660,13 +664,13 @@
                                 "item_count": 1
                             },
                             {
-                                "name": "Ice Castle Boss 1",
+                                "name": "Ice Castle Boss 1 - Biting Lizard (x3)",
                                 "chest_unopened_img": "images/boss.png",
                                 "chest_opened_img": "images/boss_done.png",
                                 "item_count": 1
                             },
                             {
-                                "name": "Ice Castle Boss 2",
+                                "name": "Ice Castle Boss 2 - Frost Gigas",
                                 "chest_unopened_img": "images/boss.png",
                                 "chest_opened_img": "images/boss_done.png",
                                 "access_rules": [
@@ -774,7 +778,7 @@
                                 "item_count": 1
                             },
                             {
-                                "name": "Palace of Darkness Reward",
+                                "name": "Palace of Darkness Reward - Lime Slime",
                                 "chest_unopened_img": "images/boss.png",
                                 "chest_opened_img": "images/boss_done.png",
                                 "access_rules": [
@@ -823,7 +827,7 @@
                         ],
                         "sections": [
                             {
-                                "name": "Tree Palace Reward (Mana Seed)",
+                                "name": "Tree Palace Reward (Mana Seed) - Snap Dragon",
                                 "chest_unopened_img": "images/boss.png",
                                 "chest_opened_img": "images/boss_done.png",
                                 "access_rules": [
@@ -832,13 +836,13 @@
                                 "item_count": 2
                             },
                             {
-                                "name": "Tree Palace Boss after seed",
+                                "name": "Tree Palace Boss 2 (after seed) - Hexas",
                                 "chest_unopened_img": "images/boss.png",
                                 "chest_opened_img": "images/boss_done.png",
                                 "item_count": 1
                             },
                             {
-                                "name": "Tree Palace Aegagropilon",
+                                "name": "Tree Palace Boss 3 - Aegagropilon",
                                 "chest_unopened_img": "images/boss.png",
                                 "chest_opened_img": "images/boss_done.png",
                                 "item_count": 1
@@ -909,7 +913,7 @@
                                 ]
                             },
                             {
-                                "name": "Grand Palace Boss",
+                                "name": "Grand Palace Boss - Mech Rider III",
                                 "chest_unopened_img": "images/boss.png",
                                 "chest_opened_img": "images/boss_done.png",
                                 "access_rules": [
@@ -939,7 +943,7 @@
                                 "item_count": 1
                             },
                             {
-                                "name": "Undersea Palace Boss",
+                                "name": "Undersea Palace Boss - Hydra",
                                 "chest_unopened_img": "images/boss.png",
                                 "chest_opened_img": "images/boss_done.png",
                                 "access_rules": [
@@ -948,7 +952,7 @@
                                 "item_count": 1
                             },
                             {
-                                "name": "Undergound City Boss",
+                                "name": "Undergound City Boss - Kettle Kin",
                                 "chest_unopened_img": "images/boss.png",
                                 "chest_opened_img": "images/boss_done.png",
                                 "access_rules": [
@@ -973,34 +977,25 @@
                 ],
                 "sections": [
                     {
-                        "name": "Pure Land Boss 1",
+                        "name": "Pure Land Boss 1 - Dragon Worm",
                         "chest_unopened_img": "images/boss.png",
                         "chest_opened_img": "images/boss_done.png",
                         "item_count": 1
                     },
                     {
-                        "name": "Pure Land Boss 2",
+                        "name": "Pure Land Boss 2 - Snow Dragon",
                         "chest_unopened_img": "images/boss.png",
                         "chest_opened_img": "images/boss_done.png",
                         "item_count": 1
                     },
                     {
-                        "name": "Pure Land Boss 3",
+                        "name": "Pure Land Boss 3 - Axe Beak",
                         "chest_unopened_img": "images/boss.png",
                         "chest_opened_img": "images/boss_done.png",
                         "item_count": 1
                     },
                     {
-                        "name": "Pure Land Boss 4",
-                        "chest_unopened_img": "images/boss.png",
-                        "chest_opened_img": "images/boss_done.png",
-                        "access_rules": [
-                            "$canCutStuff"
-                        ],
-                        "item_count": 1
-                    },
-                    {
-                        "name": "Pure Land Boss 5",
+                        "name": "Pure Land Boss 4 - Red Dragon",
                         "chest_unopened_img": "images/boss.png",
                         "chest_opened_img": "images/boss_done.png",
                         "access_rules": [
@@ -1009,7 +1004,16 @@
                         "item_count": 1
                     },
                     {
-                        "name": "Pure Land Boss 6",
+                        "name": "Pure Land Boss 5 - Thunder Gigas",
+                        "chest_unopened_img": "images/boss.png",
+                        "chest_opened_img": "images/boss_done.png",
+                        "access_rules": [
+                            "$canCutStuff"
+                        ],
+                        "item_count": 1
+                    },
+                    {
+                        "name": "Pure Land Boss 6 - Blue Dragon",
                         "chest_unopened_img": "images/boss.png",
                         "chest_opened_img": "images/boss_done.png",
                         "access_rules": [
@@ -1051,7 +1055,7 @@
                 ],
                 "sections": [
                     {
-                        "name": "Mana Fortress Boss 1",
+                        "name": "Mana Fortress Boss 1 - Buffy",
                         "chest_unopened_img": "images/boss.png",
                         "chest_opened_img": "images/boss_done.png",
                         "access_rules": [
@@ -1060,7 +1064,7 @@
                         "item_count": 1
                     },
                     {
-                        "name": "Mana Fortress Boss 2",
+                        "name": "Mana Fortress Boss 2 - Dread Slime",
                         "chest_unopened_img": "images/boss.png",
                         "chest_opened_img": "images/boss_done.png",
                         "access_rules": [
