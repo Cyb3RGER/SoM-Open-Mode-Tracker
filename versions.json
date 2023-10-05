@@ -1,6 +1,15 @@
 {
     "versions": [
         {
+            "package_version": "1.6.0.3",
+            "download_url": "https://github.com/Cyb3RGER/SoM-Open-Mode-Tracker/releases/download/1.6.0.3/SoM-Open-Mode-Tracker-v1_6_0_3.zip",
+            "sha256": "23b14bcc75a2790bf052ca932ea3a5ab963734d388637abecff9dbd9f5edf120",
+            "changelog": [
+                "Added vanilla boss names to boss location names",
+                "Fixed access for Moon Palace on drum logic mode"
+            ]
+        },
+        {
             "package_version": "1.6.0.2",
             "download_url": "https://github.com/Cyb3RGER/SoM-Open-Mode-Tracker/releases/download/1.6.0.2/SoM-Open-Mode-Tracker-v1_6_0_2.zip",
             "sha256": "66521a833117fd187c41266742579072832803da80e445708d2a72fea1960d66",
