@@ -290,7 +290,7 @@ end
 
 -- magic
 function hasUndine()
-    local value = Tracker:ProviderCountForCode("undine")
+    local value = Tracker:ProviderCountForCode("undine")    
 
     if (value == 1) then
         return 1
@@ -535,24 +535,17 @@ end
 -- orbs
 
 function updateOrbStates()
-    local objs = {Tracker:FindObjectForCode("et_orb"), Tracker:FindObjectForCode("uf_orb"),
-                  Tracker:FindObjectForCode("mc_orb"), Tracker:FindObjectForCode("fp_orb1"),
-                  Tracker:FindObjectForCode("fp_orb2"), Tracker:FindObjectForCode("fp_orb3"), 
-                  Tracker:FindObjectForCode("mp_orb"), Tracker:FindObjectForCode("gp_orb1"), 
-                  Tracker:FindObjectForCode("gp_orb2"), Tracker:FindObjectForCode("gp_orb3"), 
-                  Tracker:FindObjectForCode("gp_orb4"), Tracker:FindObjectForCode("gp_orb5"), 
-                  Tracker:FindObjectForCode("gp_orb6"), Tracker:FindObjectForCode("gp_orb7")}
     if ENABLE_DEBUG_LOG then
         print(string.format(
             "updateOrbStates: isSpriteDisabled: %s, isGirlDisabled: %s, hasSpriteRole: %s, hasGirlRole: %s, hasAllElements: %s",
             isSpriteRoleDisabled(), isGirlRoleDisabled(), hasSpriteRole(), hasGirlRole(), hasAllElements()))
     end
-    for _, obj in ipairs(objs) do
-        obj.ItemState:setProperty("isSpriteDisabled", isSpriteRoleDisabled())
-        obj.ItemState:setProperty("isGirlDisabled", isGirlRoleDisabled())
-        obj.ItemState:setProperty("hasSpriteRole", hasSpriteRole())
-        obj.ItemState:setProperty("hasGirlRole", hasGirlRole())
-        obj.ItemState:setProperty("hasAllElements", hasAllElements())
+    for code, obj in pairs(ORB_OBJS) do
+        obj.ItemInstance:Set("isSpriteDisabled", isSpriteRoleDisabled())
+        obj.ItemInstance:Set("isGirlDisabled", isGirlRoleDisabled())
+        obj.ItemInstance:Set("hasSpriteRole", hasSpriteRole())
+        obj.ItemInstance:Set("hasGirlRole", hasGirlRole())
+        obj.ItemInstance:Set("hasAllElements", hasAllElements())       
     end
 end
 

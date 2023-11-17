@@ -1,6 +1,6 @@
 [
     {
-        "name": "Early Game",
+        "name": "Early Game Hints",
         "children": [
             {
                 "name": "Potos Area Hints",
@@ -58,7 +58,7 @@
                 ]
             },
             {
-                "name": "Gaia's Navel",
+                "name": "Gaia's Navel Hints",
                 "map_locations": [
                     {
                         "map": "overworld_hints",
@@ -92,7 +92,7 @@
                 ]
             },
             {
-                "name": "Water Palace",
+                "name": "Water Palace Hints",
                 "map_locations": [
                     {
                         "map": "overworld_hints",
@@ -110,7 +110,7 @@
                 ]
             },
             {
-                "name": "Upper Lands Cannon",
+                "name": "Upper Lands Cannon Hints",
                 "map_locations": [
                     {
                         "map": "overworld_hints",
@@ -127,14 +127,14 @@
         ]
     },
     {
-        "name": "Mid Game",
+        "name": "Mid Game Hints",
         "access_rules": [
             "$hasDrum",
             "$canDestroyUFOrb"
         ],
         "children": [
             {
-                "name": "North Town",
+                "name": "North Town Hints",
                 "map_locations": [
                     {
                         "map": "overworld_hints",
@@ -158,7 +158,7 @@
                 ]
             },
             {
-                "name": "Santas House",
+                "name": "Santas House Hints",
                 "map_locations": [
                     {
                         "map": "overworld_hints",
@@ -223,13 +223,13 @@
         ]
     },
     {
-        "name": "Late Game",
+        "name": "Late Game Hints",
         "access_rules": [
             "$hasDrum"
         ],
         "children": [
             {
-                "name": "Mountain",
+                "name": "Mountain Hints",
                 "map_locations": [
                     {
                         "map": "overworld_hints",
@@ -256,7 +256,7 @@
                 ]
             },
             {
-                "name": "Tasnica",
+                "name": "Tasnica Hints",
                 "map_locations": [
                     {
                         "map": "overworld_hints",

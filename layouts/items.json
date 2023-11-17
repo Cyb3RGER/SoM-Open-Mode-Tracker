@@ -17,35 +17,35 @@
         "item_margin": "1,2",
         "rows": [
             [
-                "undine",
+                "undine_not_needed",
                 "water_seed"
             ],
             [
-                "gnome",
+                "gnome_not_needed",
                 "earth_seed"
             ],
             [
-                "sylphid",
+                "sylphid_not_needed",
                 "wind_seed"
             ],
             [
-                "salamando",
+                "salamando_not_needed",
                 "fire_seed"
             ],
             [
-                "shade",
+                "shade_not_needed",
                 "dark_seed"
             ],
             [
-                "lumina",
+                "lumina_not_needed",
                 "light_seed"
             ],
             [
-                "luna",
+                "luna_not_needed",
                 "moon_seed"
             ],
             [
-                "dryad",
+                "dryad_not_needed",
                 "tree_seed"
             ]
         ]
@@ -291,23 +291,23 @@
                         "gp_orb1"
                     ],
                     [
-                        "header_mc_short",                        
-                        "header_fp_short",                        
+                        "header_mc_short",
+                        "header_fp_short",
                         "gp_orb2"
                     ],
                     [
                         "mc_orb",
-                        "fp_orb1",                        
+                        "fp_orb1",
                         "gp_orb3"
                     ],
                     [
                         "header_mp_short",
-                        "fp_orb2",                        
+                        "fp_orb2",
                         "gp_orb4"
                     ],
                     [
                         "mp_orb",
-                        "fp_orb3",                        
+                        "fp_orb3",
                         "gp_orb5"
                     ],
                     [

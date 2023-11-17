@@ -23,6 +23,9 @@ function OrbItem:init(name, code)
     self.hasGirlRole = 0
     self.hasSpriteRole = 0
     self.state = 0
+    self.notNeeded = {}
+
+    self.disabledStates = 0 -- bitmask 
 
     self.ImageUnknown = ImageReference:FromPackRelativePath("images/orb.png")
     self.ImageUndine = ImageReference:FromPackRelativePath("images/orb_undine.png")
@@ -44,6 +47,30 @@ end
 
 function OrbItem:setState(state)
     self:propertyChanged("state", state)
+end
+
+function OrbItem:updateDisabledStates()
+    self.disabledStates = 0
+    if self.isSpriteDisabled == 1 then
+        -- 1, 2, 5, 7, 8
+        self.disabledStates = self.disabledStates | 1 << 0 | 1 << 1 | 1 << 4 | 1 << 6 | 1 << 7
+    end
+    if self.isGirlDisabled == 1 then
+        -- 6
+        self.disabledStates = self.disabledStates | 1 << 5
+    end
+    for i, v in ipairs(self.notNeeded) do
+        if v > 0 then
+            self.disabledStates = self.disabledStates | 1 << i - 1
+        end
+    end
+end
+
+function OrbItem:isStateDisabled(state)
+    if state < 1 then
+        return false
+    end
+    return self.disabledStates & 1 << (state - 1) > 0
 end
 
 function OrbItem:getNextState(state)
@@ -75,15 +102,18 @@ function OrbItem:advanceState()
         return
     end
     local nextState = self:getNextState(self.state)
-    if self.isSpriteDisabled == 1 then
-        while nextState == 1 or nextState == 2 or nextState == 5 or nextState == 7 or nextState == 8 do
-            nextState = self:getNextState(nextState)
-        end
-    elseif self.isGirlDisabled == 1 then
-        if nextState == 6 then
-            nextState = self:getNextState(nextState)
-        end
+    while self:isStateDisabled(nextState) and nextState ~= self.setState do
+        nextState = self:getNextState(nextState)
     end
+    -- if self.isSpriteDisabled == 1 then
+    --    while nextState == 1 or nextState == 2 or nextState == 5 or nextState == 7 or nextState == 8 do
+    --        nextState = self:getNextState(nextState)
+    --    end
+    -- elseif self.isGirlDisabled == 1 then
+    --    if nextState == 6 then
+    --        nextState = self:getNextState(nextState)
+    --    end
+    -- end
 
     self:setState(nextState)
 end
@@ -95,16 +125,22 @@ function OrbItem:decreaseState()
         end
         return
     end
-    local nextState = self:getPrevState(self.state)
-    if self.isSpriteDisabled == 1 then
-        while nextState == 1 or nextState == 2 or nextState == 5 or nextState == 7 or nextState == 8 do
-            nextState = self:getPrevState(nextState)
-        end
-    elseif self.isGirlDisabled == 1 then
-        if nextState == 6 then
-            nextState = self:getPrevState(nextState)
-        end
+    if self.disabledStates >= (1 << 8) - 1 then
+        return
     end
+    local nextState = self:getPrevState(self.state)
+    while self:isStateDisabled(nextState) and nextState ~= self.setState do
+        nextState = self:getPrevState(nextState)
+    end
+    -- if self.isSpriteDisabled == 1 then
+    --    while nextState == 1 or nextState == 2 or nextState == 5 or nextState == 7 or nextState == 8 do
+    --        nextState = self:getPrevState(nextState)
+    --    end
+    -- elseif self.isGirlDisabled == 1 then
+    --    if nextState == 6 then
+    --        nextState = self:getPrevState(nextState)
+    --    end
+    -- end
 
     self:setState(nextState)
 end
@@ -190,19 +226,23 @@ function OrbItem:load(data)
 end
 
 function OrbItem:propertyChanged(key, value)
-    if (key == "state") then
+    if ENABLE_DEBUG_LOG then
+        print("OrbItem:propertyChanged", key, value)
+    end
+    if key == "state" then
         self.state = value
     end
     if key == "isSpriteDisabled" then
         self.isSpriteDisabled = value
-        if (self.state == 1 or self.state == 2 or self.state == 5 or self.state == 7 or self.state == 8) and
-            self.isRoleRando == 0 then
+        self:updateDisabledStates()
+        if self:isStateDisabled(self.state) and self.isRoleRando == 0 then
             self:setState(0)
         end
     end
     if key == "isGirlDisabled" then
         self.isGirlDisabled = value
-        if self.state == 6 and self.isRoleRando == 0 then
+        self:updateDisabledStates()
+        if self:isStateDisabled(self.state) and self.isRoleRando == 0 then
             self:setState(0)
         end
     end
@@ -221,6 +261,44 @@ function OrbItem:propertyChanged(key, value)
     end
     if key == "hasSpriteRole" then
         self.hasSpriteRole = value
+    end
+    if key == "notNeeded" then
+        --print("OrbItem:propertyChanged", "notNeeded", type(value))
+        self.notNeeded = value
+        -- self:updateDisabledStates()
+        -- if self:isStateDisabled(self.state) then
+        --    self:setState(0)
+        -- end
+    end
+    if string.match(key, "not_needed") then
+        if key == "undine_not_needed" then
+            self.notNeeded[1] = value
+        end
+        if key == "gnome_not_needed" then
+            self.notNeeded[2] = value
+        end
+        if key == "sylphid_not_needed" then
+            self.notNeeded[3] = value
+        end
+        if key == "salamando_not_needed" then
+            self.notNeeded[4] = value
+        end
+        if key == "shade_not_needed" then
+            self.notNeeded[5] = value
+        end
+        if key == "lumina_not_needed" then
+            self.notNeeded[6] = value
+        end
+        if key == "luna_not_needed" then
+            self.notNeeded[7] = value
+        end
+        if key == "dryad_not_needed" then
+            self.notNeeded[8] = value
+        end
+        self:updateDisabledStates()
+        if self:isStateDisabled(self.state) then
+            self:setState(0)
+        end
     end
     self:updateIcon()
 end
