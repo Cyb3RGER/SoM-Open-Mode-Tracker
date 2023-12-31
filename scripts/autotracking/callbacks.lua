@@ -63,7 +63,7 @@ function updateMagic(segment)
     if not IS_GAME_RUNNING then
         return
     end
-    checkFlagsInSegmentUsingTable(segment, MAGIC)
+    checkFlagsInSegmentUsingTable(segment, MAGIC, 3)
 end
 
 function updateWeaponOrbs(segment)

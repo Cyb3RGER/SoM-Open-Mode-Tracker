@@ -1046,6 +1046,9 @@
                     "$isVanillaShort",
                     "$isVanillaLong"
                 ],
+                "access_rules": [
+                    "$hasManaFortressAccess"
+                ],
                 "map_locations": [
                     {
                         "map": "overworld",
@@ -1057,19 +1060,13 @@
                     {
                         "name": "Mana Fortress Boss 1 - Buffy",
                         "chest_unopened_img": "images/boss.png",
-                        "chest_opened_img": "images/boss_done.png",
-                        "access_rules": [
-                            "$hasManaFortressAccess"
-                        ],
+                        "chest_opened_img": "images/boss_done.png",                        
                         "item_count": 1
                     },
                     {
                         "name": "Mana Fortress Boss 2 - Dread Slime",
                         "chest_unopened_img": "images/boss.png",
                         "chest_opened_img": "images/boss_done.png",
-                        "access_rules": [
-                            "$hasManaFortressAccess"
-                        ],
                         "item_count": 1
                     }
                 ]

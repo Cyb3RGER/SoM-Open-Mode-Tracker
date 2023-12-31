@@ -26,6 +26,8 @@ function checkFlagsInSegmentUsingTable(segment, table, checkmode)
                 elseif obj:Get("state") == 2 then
                     obj:Set("state", 1)
                 end
+            elseif checkmode == 3 then
+                obj:Set("active", readResult > 0)            
             elseif AUTOTRACKER_ENABLE_DEBUG_LOGGING then
                 print(string.format("Unknown checkmode %s", checkmode))
             end

@@ -2,6 +2,7 @@ local variant = Tracker.ActiveVariantUID
 local items_only = variant:find("itemsonly")
 local no_pins = variant:find("no_pins")
 ENABLE_DEBUG_LOG = false
+DEBUG = false
 
 -- scripts
 ScriptHost:LoadScript("scripts/custom_items/class.lua")
@@ -9,6 +10,8 @@ ScriptHost:LoadScript("scripts/custom_items/custom_item_character.lua")
 ScriptHost:LoadScript("scripts/custom_items/character.lua")
 ScriptHost:LoadScript("scripts/custom_items/custom_item_orb.lua")
 ScriptHost:LoadScript("scripts/custom_items/orb.lua")
+ScriptHost:LoadScript("scripts/custom_items/custom_item_element.lua")
+ScriptHost:LoadScript("scripts/custom_items/element.lua")
 
 -- custom items
 -- character
@@ -33,6 +36,17 @@ ORB_OBJS = {
     gp_orb5 = OrbItem("Grand Palace Orb", "gp_orb5"),
     gp_orb6 = OrbItem("Grand Palace Orb", "gp_orb6"),
     gp_orb7 = OrbItem("Grand Palace Orb", "gp_orb7")
+}
+--elements
+ELEMENT_OBJS = {
+    undine = ElementItem("Undine", "undine"),
+    gnome = ElementItem("Gnome", "gnome"),
+    sylphid = ElementItem("Sylphid", "sylphid"),
+    salamando = ElementItem("Salamando", "salamando"),
+    shade = ElementItem("Shade", "shade"),
+    lumina = ElementItem("Lumina", "lumina"),
+    luna = ElementItem("Luna", "luna"),
+    dryad = ElementItem("Dryad", "dryad"),
 }
 
 ScriptHost:LoadScript("scripts/utils.lua")

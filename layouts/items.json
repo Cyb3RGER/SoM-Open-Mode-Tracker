@@ -17,35 +17,35 @@
         "item_margin": "1,2",
         "rows": [
             [
-                "undine_not_needed",
+                "undine",
                 "water_seed"
             ],
             [
-                "gnome_not_needed",
+                "gnome",
                 "earth_seed"
             ],
             [
-                "sylphid_not_needed",
+                "sylphid",
                 "wind_seed"
             ],
             [
-                "salamando_not_needed",
+                "salamando",
                 "fire_seed"
             ],
             [
-                "shade_not_needed",
+                "shade",
                 "dark_seed"
             ],
             [
-                "lumina_not_needed",
+                "lumina",
                 "light_seed"
             ],
             [
-                "luna_not_needed",
+                "luna",
                 "moon_seed"
             ],
             [
-                "dryad_not_needed",
+                "dryad",
                 "tree_seed"
             ]
         ]

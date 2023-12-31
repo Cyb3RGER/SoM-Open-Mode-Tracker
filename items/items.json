@@ -108,119 +108,119 @@
         "codes": "rope"
     },
     //magic sprites
-    {
-        "name": "Undine",
-        "type": "toggle",
-        "capturable": true,
-        "img": "images/undine.png",
-        "codes": "undine"
-    },
-    {
-        "name": "Gnome",
-        "type": "toggle",
-        "capturable": true,
-        "img": "images/gnome.png",
-        "codes": "gnome"
-    },
-    {
-        "name": "Sylphid",
-        "type": "toggle",
-        "capturable": true,
-        "img": "images/sylphid.png",
-        "codes": "sylphid"
-    },
-    {
-        "name": "Salamando",
-        "type": "toggle",
-        "capturable": true,
-        "img": "images/salamando.png",
-        "codes": "salamando"
-    },
-    {
-        "name": "Shade",
-        "type": "toggle",
-        "capturable": true,
-        "img": "images/shade.png",
-        "codes": "shade"
-    },
-    {
-        "name": "Lumina",
-        "type": "toggle",
-        "capturable": true,
-        "img": "images/lumina.png",
-        "codes": "lumina"
-    },
-    {
-        "name": "Luna",
-        "type": "toggle",
-        "capturable": true,
-        "img": "images/luna.png",
-        "codes": "luna"
-    },
-    {
-        "name": "Dryad",
-        "type": "toggle",
-        "capturable": true,
-        "img": "images/dryad.png",
-        "codes": "dryad"
-    },
+    // {
+    //     "name": "Undine",
+    //     "type": "toggle",
+    //     "capturable": true,
+    //     "img": "images/undine.png",
+    //     "codes": "undine"
+    // },
+    // {
+    //     "name": "Gnome",
+    //     "type": "toggle",
+    //     "capturable": true,
+    //     "img": "images/gnome.png",
+    //     "codes": "gnome"
+    // },
+    // {
+    //     "name": "Sylphid",
+    //     "type": "toggle",
+    //     "capturable": true,
+    //     "img": "images/sylphid.png",
+    //     "codes": "sylphid"
+    // },
+    // {
+    //     "name": "Salamando",
+    //     "type": "toggle",
+    //     "capturable": true,
+    //     "img": "images/salamando.png",
+    //     "codes": "salamando"
+    // },
+    // {
+    //     "name": "Shade",
+    //     "type": "toggle",
+    //     "capturable": true,
+    //     "img": "images/shade.png",
+    //     "codes": "shade"
+    // },
+    // {
+    //     "name": "Lumina",
+    //     "type": "toggle",
+    //     "capturable": true,
+    //     "img": "images/lumina.png",
+    //     "codes": "lumina"
+    // },
+    // {
+    //     "name": "Luna",
+    //     "type": "toggle",
+    //     "capturable": true,
+    //     "img": "images/luna.png",
+    //     "codes": "luna"
+    // },
+    // {
+    //     "name": "Dryad",
+    //     "type": "toggle",
+    //     "capturable": true,
+    //     "img": "images/dryad.png",
+    //     "codes": "dryad"
+    // },
     //magic sprites not needed hints
-    {
-        "name": "Undine",
-        "type": "toggle_badged",
-        "base_item": "undine",
-        "img": "images/overlay_not_gp.png",
-        "codes": "undine_not_needed,not_needed"
-    },
-    {
-        "name": "Gnome",
-        "type": "toggle_badged",
-        "base_item": "gnome",
-        "img": "images/overlay_not_gp.png",
-        "codes": "gnome_not_needed,not_needed"
-    },
-    {
-        "name": "Sylphid",
-        "type": "toggle_badged",
-        "base_item": "sylphid",
-        "img": "images/overlay_not_gp.png",
-        "codes": "sylphid_not_needed,not_needed"
-    },
-    {
-        "name": "Salamando",
-        "type": "toggle_badged",
-        "base_item": "salamando",
-        "img": "images/overlay_not_gp.png",
-        "codes": "salamando_not_needed,not_needed"
-    },
-    {
-        "name": "Shade",
-        "type": "toggle_badged",
-        "base_item": "shade",
-        "img": "images/overlay_not_gp.png",
-        "codes": "shade_not_needed,not_needed"
-    },
-    {
-        "name": "Lumina",
-        "type": "toggle_badged",
-        "base_item": "lumina",
-        "img": "images/overlay_not_gp.png",
-        "codes": "lumina_not_needed,not_needed"
-    },
-    {
-        "name": "Lumina",
-        "type": "toggle_badged",
-        "base_item": "luna",
-        "img": "images/overlay_not_gp.png",
-        "codes": "luna_not_needed,not_needed"
-    },
-    {
-        "name": "Dryad",
-        "type": "toggle_badged",
-        "base_item": "dryad",
-        "img": "images/overlay_not_gp.png",
-        "codes": "dryad_not_needed,not_needed"
-    },
+    // {
+    //     "name": "Undine",
+    //     "type": "toggle_badged",
+    //     "base_item": "undine",
+    //     "img": "images/overlay_not_gp.png",
+    //     "codes": "undine_not_needed,not_needed"
+    // },
+    // {
+    //     "name": "Gnome",
+    //     "type": "toggle_badged",
+    //     "base_item": "gnome",
+    //     "img": "images/overlay_not_gp.png",
+    //     "codes": "gnome_not_needed,not_needed"
+    // },
+    // {
+    //     "name": "Sylphid",
+    //     "type": "toggle_badged",
+    //     "base_item": "sylphid",
+    //     "img": "images/overlay_not_gp.png",
+    //     "codes": "sylphid_not_needed,not_needed"
+    // },
+    // {
+    //     "name": "Salamando",
+    //     "type": "toggle_badged",
+    //     "base_item": "salamando",
+    //     "img": "images/overlay_not_gp.png",
+    //     "codes": "salamando_not_needed,not_needed"
+    // },
+    // {
+    //     "name": "Shade",
+    //     "type": "toggle_badged",
+    //     "base_item": "shade",
+    //     "img": "images/overlay_not_gp.png",
+    //     "codes": "shade_not_needed,not_needed"
+    // },
+    // {
+    //     "name": "Lumina",
+    //     "type": "toggle_badged",
+    //     "base_item": "lumina",
+    //     "img": "images/overlay_not_gp.png",
+    //     "codes": "lumina_not_needed,not_needed"
+    // },
+    // {
+    //     "name": "Lumina",
+    //     "type": "toggle_badged",
+    //     "base_item": "luna",
+    //     "img": "images/overlay_not_gp.png",
+    //     "codes": "luna_not_needed,not_needed"
+    // },
+    // {
+    //     "name": "Dryad",
+    //     "type": "toggle_badged",
+    //     "base_item": "dryad",
+    //     "img": "images/overlay_not_gp.png",
+    //     "codes": "dryad_not_needed,not_needed"
+    // },
     //mana seeds
     {
         "name": "Water Seed",

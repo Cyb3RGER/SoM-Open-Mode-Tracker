@@ -3,12 +3,14 @@ function updateRoleRando(code)
         print("called updateRoleRando")
     end
 
+    local _isRoleRando = isRoleRando()
+
     for _, obj in pairs(CHAR_OBJS) do
-        obj.ItemInstance:Set("isRoleRando", isRoleRando() > 0)
+        obj.ItemInstance:Set("isRoleRando", _isRoleRando)
     end
 
     for _, obj in pairs(ORB_OBJS) do
-        obj.ItemInstance:Set("isRoleRando", isRoleRando())
+        obj.ItemInstance:Set("isRoleRando", _isRoleRando)
     end
 end
 
@@ -40,16 +42,26 @@ function updateNotNeeded()
     if ENABLE_DEBUG_LOG then
         print("called updateNotNeeded")
     end
+    local vals = {
+        Tracker:ProviderCountForCode("undine_not_needed"),
+        Tracker:ProviderCountForCode("gnome_not_needed"),
+        Tracker:ProviderCountForCode("sylphid_not_needed"),
+        Tracker:ProviderCountForCode("salamando_not_needed"),
+        Tracker:ProviderCountForCode("shade_not_needed"),
+        Tracker:ProviderCountForCode("lumina_not_needed"),
+        Tracker:ProviderCountForCode("luna_not_needed"),
+        Tracker:ProviderCountForCode("dryad_not_needed")
+    }
     for code, obj in pairs(ORB_OBJS) do        
         if string.match(code, "gp_orb") then            
-            obj.ItemInstance:Set("undine_not_needed", Tracker:ProviderCountForCode("undine_not_needed"))
-            obj.ItemInstance:Set("gnome_not_needed", Tracker:ProviderCountForCode("gnome_not_needed"))
-            obj.ItemInstance:Set("sylphid_not_needed", Tracker:ProviderCountForCode("sylphid_not_needed"))
-            obj.ItemInstance:Set("salamando_not_needed", Tracker:ProviderCountForCode("salamando_not_needed"))
-            obj.ItemInstance:Set("shade_not_needed", Tracker:ProviderCountForCode("shade_not_needed"))
-            obj.ItemInstance:Set("lumina_not_needed", Tracker:ProviderCountForCode("lumina_not_needed"))
-            obj.ItemInstance:Set("luna_not_needed", Tracker:ProviderCountForCode("luna_not_needed"))
-            obj.ItemInstance:Set("dryad_not_needed", Tracker:ProviderCountForCode("dryad_not_needed"))
+            obj.ItemInstance:Set("undine_not_needed", vals[1])
+            obj.ItemInstance:Set("gnome_not_needed", vals[2])
+            obj.ItemInstance:Set("sylphid_not_needed", vals[3])
+            obj.ItemInstance:Set("salamando_not_needed", vals[4])
+            obj.ItemInstance:Set("shade_not_needed", vals[5])
+            obj.ItemInstance:Set("lumina_not_needed", vals[6])
+            obj.ItemInstance:Set("luna_not_needed", vals[7])
+            obj.ItemInstance:Set("dryad_not_needed", vals[8])
             -- obj.ItemInstance:Set("notNeeded",
             --    {
             --        [1] = Tracker:ProviderCountForCode("undine_not_needed"),
