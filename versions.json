@@ -1,6 +1,16 @@
 {
     "versions": [
         {
+            "package_version": "1.6.1.0",
+            "download_url": "https://github.com/Cyb3RGER/SoM-Open-Mode-Tracker/releases/download/1.6.1.0/SoM-Open-Mode-Tracker-v1_6_1_0.zip",
+            "sha256": "0845f2462f31e59f8bd019b2909be7a89dcbbcd2a391467a6fed95d4aea9b6b7",
+            "changelog": [
+                "Added the ability to mark elements to be needed for Grand Palace by right-clicking the element",
+                "Some logic fixes",
+                "Logic rewrite"
+            ]
+        },
+        {
             "package_version": "1.6.0.4",
             "download_url": "https://github.com/Cyb3RGER/SoM-Open-Mode-Tracker/releases/download/1.6.0.4/SoM-Open-Mode-Tracker-v1_6_0_4.zip",
             "sha256": "8603f6265495ea36c79c2210868fdcdb899a2d9ea2b9670bd1130e99646bb47a",
