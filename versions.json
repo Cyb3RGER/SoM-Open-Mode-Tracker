@@ -6,7 +6,7 @@
             "sha256": "0845f2462f31e59f8bd019b2909be7a89dcbbcd2a391467a6fed95d4aea9b6b7",
             "changelog": [
                 "Added the ability to mark elements to be needed for Grand Palace by right-clicking the element",
-                "Some logic fixes",
+                "Fix magic orbs not being marked as completable when not having all character but all needed elements in some cases",
                 "Logic rewrite"
             ]
         },
