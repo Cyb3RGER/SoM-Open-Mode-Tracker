@@ -11,8 +11,21 @@ OrbItem = class(CustomItemOrb)
 -- 7 => luna
 -- 8 => dryad
 
+OrbItem.STATE_NAMES = {
+    [0] = 'unknown',    
+    [1] = 'undine',
+    [2] = 'gnome',
+    [3] = 'sylphid',
+    [4] = 'salamando',
+    [5] = 'shade',
+    [6] = 'lumina',
+    [7] = 'luna',
+    [8] = 'dryad'
+}
+
 function OrbItem:init(name, code)
     self:createItem(name)
+    self.name = name
     self.code = code
     self.baseCode = code
     self:setProperty("active", false)
@@ -39,6 +52,7 @@ function OrbItem:init(name, code)
     self.ItemInstance.PotentialIcon = self.ImageUnknown
 
     self:updateIcon()
+    self:updateName()
 end
 
 function OrbItem:getState()
@@ -206,12 +220,18 @@ function OrbItem:load(data)
     return true
 end
 
+function OrbItem:updateName()    
+    if self.ItemInstance then
+        self.ItemInstance.Name = self.name .. " (".. OrbItem.STATE_NAMES[self.state] .. ")"     
+    end
+end
+
 function OrbItem:propertyChanged(key, value)
     if ENABLE_DEBUG_LOG then
         print("OrbItem:propertyChanged", key, value)
     end
     if key == "state" then
-        self.state = value
+        self.state = value       
     end
     if key == "isSpriteDisabled" then
         self.isSpriteDisabled = value
@@ -275,6 +295,7 @@ function OrbItem:propertyChanged(key, value)
         if self:isStateDisabled(self.state) then
             self:setState(0)
         end
-    end
+    end    
     self:updateIcon()
+    self:updateName()
 end
