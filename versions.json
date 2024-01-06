@@ -1,6 +1,14 @@
 {
     "versions": [
         {
+            "package_version": "1.6.1.1",
+            "download_url": "https://github.com/Cyb3RGER/SoM-Open-Mode-Tracker/releases/download/1.6.1.1/SoM-Open-Mode-Tracker-v1_6_1_1.zip",
+            "sha256": "45f1a407bcba5eb8bcbacb338f8d074a83cca0ee47b76506868de8d704f7ca15",
+            "changelog": [
+                "Added element state to item name for magic orbs"
+            ]
+        },
+        {
             "package_version": "1.6.1.0",
             "download_url": "https://github.com/Cyb3RGER/SoM-Open-Mode-Tracker/releases/download/1.6.1.0/SoM-Open-Mode-Tracker-v1_6_1_0.zip",
             "sha256": "0845f2462f31e59f8bd019b2909be7a89dcbbcd2a391467a6fed95d4aea9b6b7",
