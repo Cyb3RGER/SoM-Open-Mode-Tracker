@@ -18,9 +18,9 @@ function CharacterItem:init(name, code)
 
     self.state = 1
     self.role = 0
-    self.ImageDisabled = ImageReference:FromPackRelativePath("images/"..code.."_disabled.png")
-    self.ImageNotFound = ImageReference:FromPackRelativePath("images/"..code.."_not_found.png")
-    self.ImageFound = ImageReference:FromPackRelativePath("images/"..code..".png")
+    self.ImageDisabled = ImageReference:FromPackRelativePath("images/" .. code .. "_disabled.png")
+    self.ImageNotFound = ImageReference:FromPackRelativePath("images/" .. code .. "_not_found.png")
+    self.ImageFound = ImageReference:FromPackRelativePath("images/" .. code .. ".png")
     self.OverlayImageBoy = "images/boy_overlay.png"
     self.OverlayImageGirl = "images/girl_overlay.png"
     self.OverlayImageSprite = "images/sprite_overlay.png"
@@ -30,7 +30,7 @@ function CharacterItem:init(name, code)
         self.ItemInstance.IconMods = ""
     end
     self.isRoleRando = false
-    self:updateIcon()    
+    self:updateIcon()
 end
 
 function CharacterItem:getState()
@@ -38,7 +38,7 @@ function CharacterItem:getState()
 end
 
 function CharacterItem:setState(state)
-    self:propertyChanged("state",state)
+    self:propertyChanged("state", state)
 end
 
 function CharacterItem:getRole()
@@ -58,7 +58,7 @@ function CharacterItem:getRole()
 end
 
 function CharacterItem:setRole(role)
-    self:propertyChanged("role",role)
+    self:propertyChanged("role", role)
 end
 
 function CharacterItem:getIsRoleRando()
@@ -66,29 +66,28 @@ function CharacterItem:getIsRoleRando()
 end
 
 function CharacterItem:setIsRoleRando(value)
-    self:propertyChanged("isRoleRando",value)
+    self:propertyChanged("isRoleRando", value)
 end
-
 
 function CharacterItem:advanceState()
     if self.state == 2 then
         self:setState(0)
-    else     
+    else
         self:setState(self.state + 1)
     end
 end
 
-function CharacterItem:advanceRole()    
-    if self.role == 3 then    
-        self:setRole(0)  
-    else 
+function CharacterItem:advanceRole()
+    if self.role == 3 then
+        self:setRole(0)
+    else
         self:setRole(self.role + 1)
     end
 end
 
 function CharacterItem:decreaseState()
-    if self.state == 0 then      
-    else 
+    if self.state == 0 then
+    else
         self:setState(self.state - 1)
     end
 end
@@ -116,13 +115,13 @@ function CharacterItem:updateIcon()
     if PopVersion and PopVersion >= "0.11.0" then
         if self.isRoleRando == true then
             if self.role == 0 then
-                self.ItemInstance.IconMods = "overlay|"..self.OverlayImageUnknown
+                self.ItemInstance.IconMods = "overlay|" .. self.OverlayImageUnknown
             elseif self.role == 1 then
-                self.ItemInstance.IconMods = "overlay|"..self.OverlayImageBoy
+                self.ItemInstance.IconMods = "overlay|" .. self.OverlayImageBoy
             elseif self.role == 2 then
-                self.ItemInstance.IconMods = "overlay|"..self.OverlayImageGirl
+                self.ItemInstance.IconMods = "overlay|" .. self.OverlayImageGirl
             elseif self.role == 3 then
-                self.ItemInstance.IconMods = "overlay|"..self.OverlayImageSprite
+                self.ItemInstance.IconMods = "overlay|" .. self.OverlayImageSprite
             end
         else
             self.ItemInstance.IconMods = ""
@@ -142,7 +141,7 @@ end
 function CharacterItem:canProvideCode(code)
     if code == self.code then
         return true
-    elseif  code == "role_boy" and self:getRole() == 1 and self:getActive() then
+    elseif code == "role_boy" and self:getRole() == 1 and self:getActive() then
         return true
     elseif code == "role_girl" and self:getRole() == 2 and self:getActive() then
         return true
@@ -153,7 +152,7 @@ function CharacterItem:canProvideCode(code)
     end
 end
 
-function CharacterItem:providesCode(code)    
+function CharacterItem:providesCode(code)
     if code == self.code then
         return self.state
     end

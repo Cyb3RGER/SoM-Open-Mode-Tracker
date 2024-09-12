@@ -12,7 +12,7 @@ OrbItem = class(CustomItemOrb)
 -- 8 => dryad
 
 OrbItem.STATE_NAMES = {
-    [0] = 'unknown',    
+    [0] = 'unknown',
     [1] = 'undine',
     [2] = 'gnome',
     [3] = 'sylphid',
@@ -38,7 +38,7 @@ function OrbItem:init(name, code)
     self.state = 0
     self.notNeeded = {}
 
-    self.disabledStates = 0 -- bitmask 
+    self.disabledStates = 0 -- bitmask
 
     self.ImageUnknown = ImageReference:FromPackRelativePath("images/orb.png")
     self.ImageUndine = ImageReference:FromPackRelativePath("images/orb_undine.png")
@@ -155,8 +155,8 @@ function OrbItem:getActive()
             self.hasAllElements, self.isSpriteDisabled, self.isGirlDisabled))
     end
     return (self.state > 0 or (self.hasAllElements and (self.isSpriteDisabled or self.hasGirlRole) and
-               (self.isSpriteDisabled or self.hasSpriteRole)) or
-               (self.isSpriteDisabled and self.isGirlDisabled))
+            (self.isSpriteDisabled or self.hasSpriteRole)) or
+        (self.isSpriteDisabled and self.isGirlDisabled))
 end
 
 function OrbItem:updateIcon()
@@ -220,9 +220,9 @@ function OrbItem:load(data)
     return true
 end
 
-function OrbItem:updateName()    
+function OrbItem:updateName()
     if self.ItemInstance then
-        self.ItemInstance.Name = self.name .. " (".. OrbItem.STATE_NAMES[self.state] .. ")"     
+        self.ItemInstance.Name = self.name .. " (" .. OrbItem.STATE_NAMES[self.state or 0] .. ")"
     end
 end
 
@@ -231,7 +231,7 @@ function OrbItem:propertyChanged(key, value)
         print("OrbItem:propertyChanged", key, value)
     end
     if key == "state" then
-        self.state = value       
+        self.state = value
     end
     if key == "isSpriteDisabled" then
         self.isSpriteDisabled = value
@@ -295,7 +295,7 @@ function OrbItem:propertyChanged(key, value)
         if self:isStateDisabled(self.state) then
             self:setState(0)
         end
-    end    
+    end
     self:updateIcon()
     self:updateName()
 end

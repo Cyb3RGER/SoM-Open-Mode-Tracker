@@ -5,9 +5,19 @@ if PopVersion and PopVersion >= '0.18.2' then
     ROM_ADRESS_OFFSET = 0
 end
 
-function updateGameState()
-    -- ToDo
-    IS_GAME_RUNNING = true
+function updateGameState(segment)
+    local current_map = AutoTracker:ReadU16(CURRENT_MAP_ADDR)
+    --check if first byte of nmi vector is not 0x40 (RTI)
+    local nmi_first_byte = AutoTracker:ReadU8(NMI_VECTOR_ADDR)
+    local in_title =  nmi_first_byte == 0x40
+    -- game is running when not_in_title and current map is not uninitalized or 0
+    IS_GAME_RUNNING = not in_title and current_map ~= 0x5555 and current_map ~= 0x0000
+    print('updateGameState', IS_GAME_RUNNING, nmi_first_byte, in_title, current_map)
+    if (IS_GAME_RUNNING and not ENABLED_WATCHES) then
+        enableWatches()
+    elseif (not IS_GAME_RUNNING and ENABLED_WATCHES) then
+        disableWatches()
+    end
 end
 
 function updateChars(segment)
@@ -81,6 +91,9 @@ function updateWeapons(segment)
 end
 
 function updateEventFlags(segment)
+    if not IS_GAME_RUNNING then
+        return
+    end
     if not EVENT_FLAG_MAPPING then
         return
     end
@@ -125,7 +138,7 @@ end
 function getEventPointer(eventNr)
     local addr = EVENT_POINTER_TABLE_ADDR + eventNr * 3
     local readResult = AutoTracker:ReadU24(addr) - ROM_ADRESS_OFFSET
-    if AUTOTRACKER_ENABLE_DEBUG_LOGGING then
+    if AUTOTRACKER_ENABLE_DEBUG_LOGGING_EVENTS then
         print(string.format("Got Pointer for Event %x from addr %x: %x (%x)", eventNr, addr, readResult,
             readResult + ROM_ADRESS_OFFSET))
     end
@@ -137,59 +150,27 @@ function updateEvent(eventNr)
     local addr = prt
     local startOfEvent = addr
     local endOfEvent = addr
-    local isNothingEvent = false
     local readResult = AutoTracker:ReadU8(addr)
     local flag = nil
-    -- if AUTOTRACKER_ENABLE_DEBUG_LOGGING then
-    -- print(string.format("============ updateEvent parsing event =============="))
-    -- print(string.format("initial read at %x: %x",addr,readResult))
-    -- end
     while readResult ~= 0x00 do
-        -- if AUTOTRACKER_ENABLE_DEBUG_LOGGING then
-        -- print(string.format("read %x at %x for event %x",readResult,addr,eventNr))
-        -- end
         if readResult == 0x29 or readResult == 0x2A or readResult == 0x30 then
             local readResult2 = AutoTracker:ReadU8(addr + 1)
-            -- if AUTOTRACKER_ENABLE_DEBUG_LOGGING then
-            -- print(string.format("found flag manipulation at %x on flag %x",addr,readResult2))
-            -- end
             for i = 1, #EVENT_FLAGS + 1 do
                 if readResult2 == EVENT_FLAGS[i] then
-                    -- if AUTOTRACKER_ENABLE_DEBUG_LOGGING then
-                    -- print(string.format("actually relevant PogChamp!"))
-                    -- end
                     flag = readResult2
                 end
             end
-            -- elseif readResult == 0x50 and isNothingEventText(addr+1) then
-            -- isNothingEvent = true
         end
         if flag then
             break
         end
         if EVENT_CMDS[readResult] then
-            -- if AUTOTRACKER_ENABLE_DEBUG_LOGGING then
-            -- print(string.format("identified %x at %x as command with %x params",readResult,addr,EVENT_CMDS[readResult]))
-            -- end
             addr = addr + EVENT_CMDS[readResult]
-        else
-            -- if AUTOTRACKER_ENABLE_DEBUG_LOGGING then
-            -- print(string.format("%x at %x is an unidentified command or text",readResult,addr))
-            -- end
         end
         addr = addr + 1
         readResult = AutoTracker:ReadU8(addr)
         endOfEvent = addr
     end
-    -- if AUTOTRACKER_ENABLE_DEBUG_LOGGING then
-    -- print(string.format("====================================================="))
-    -- end
-    -- if AUTOTRACKER_ENABLE_DEBUG_LOGGING and flag then
-    -- print(string.format("found flag %x for eventNr %x",flag,eventNr))
-    -- end
-    -- if AUTOTRACKER_ENABLE_DEBUG_LOGGING then
-    -- print(string.format("====================================================="))
-    -- end
     EVENT_FLAG_MAPPING[eventNr] = flag
     if not flag then
         NOTHING_EVENTS[eventNr] = {startOfEvent, endOfEvent}
@@ -197,6 +178,9 @@ function updateEvent(eventNr)
 end
 
 function updateEventPointerTableAddr(segment)
+    if not IS_GAME_RUNNING then
+        return
+    end
     local tableAddr = AutoTracker:ReadU24(EVENT_POINTER_TABLE_ADDR_ADDR) - ROM_ADRESS_OFFSET
     if tableAddr > 0 then
         if AUTOTRACKER_ENABLE_DEBUG_LOGGING then
@@ -233,12 +217,15 @@ function canPullAllPointers()
 end
 
 function updateEventPointerTable()
+    if not IS_GAME_RUNNING then
+        return
+    end
     if not EVENT_POINTER_TABLE_ADDR then
         ADDED_EVENT_DATA_MEMORY_WATCHES = false
         return
     end
     if not ADDED_EVENT_DATA_MEMORY_WATCHES then
-        if AUTOTRACKER_ENABLE_DEBUG_LOGGING then
+        if AUTOTRACKER_ENABLE_DEBUG_LOGGING_EVENTS then
             print(string.format("Adding event data watch now"))
         end
         if not canPullAllPointers() then
@@ -246,7 +233,7 @@ function updateEventPointerTable()
         end
         for k, _ in pairs(EVENT_MAPPING) do
             local addr = getEventPointer(k)
-            if AUTOTRACKER_ENABLE_DEBUG_LOGGING then
+            if AUTOTRACKER_ENABLE_DEBUG_LOGGING_EVENTS then
                 print(string.format("Adding Event Data Watches for eventNr %x at addr %x with size %x", k, addr,
                     EVENT_DATA_WATCH_SIZE))
             end
@@ -261,44 +248,50 @@ function updateEventData(segment)
 end
 
 function updateEvents()
+    if not IS_GAME_RUNNING then
+        return
+    end
     if not canPullAllPointers() then
         return
     end
     EVENT_FLAG_MAPPING = {}
     NOTHING_EVENTS = {}
-    if AUTOTRACKER_ENABLE_DEBUG_LOGGING then
+    if AUTOTRACKER_ENABLE_DEBUG_LOGGING_EVENTS then
         print(string.format("============ updateEvents ==========================="))
     end
     for k, _ in pairs(EVENT_MAPPING) do
         updateEvent(k)
     end
     for k, v in pairs(EVENT_FLAG_MAPPING) do
-        if AUTOTRACKER_ENABLE_DEBUG_LOGGING then
+        if AUTOTRACKER_ENABLE_DEBUG_LOGGING_EVENTS then
             print(string.format("Event %x has flag %x", k, v))
         end
     end
     for k, v in pairs(NOTHING_EVENTS) do
-        if AUTOTRACKER_ENABLE_DEBUG_LOGGING then
+        if AUTOTRACKER_ENABLE_DEBUG_LOGGING_EVENTS then
             print(string.format("Event %x @ %x to %x has no flag", k, v[1], v[2]))
         end
     end
-    if AUTOTRACKER_ENABLE_DEBUG_LOGGING then
+    if AUTOTRACKER_ENABLE_DEBUG_LOGGING_EVENTS then
         print(string.format("====================================================="))
     end
 end
 
 function updateCurrentEventPointer()
+    if not IS_GAME_RUNNING then
+        return
+    end
     if not NOTHING_EVENTS then
         return
     end
     local readResult = AutoTracker:ReadU24(CURRENT_EVENT_POINTER_ADDR) - ROM_ADRESS_OFFSET
     if readResult > 0 then
-        if AUTOTRACKER_ENABLE_DEBUG_LOGGING then
+        if AUTOTRACKER_ENABLE_DEBUG_LOGGING_EVENTS then
             print(string.format("Currently running event at %x", readResult))
         end
         for k, v in pairs(NOTHING_EVENTS) do
             if readResult >= v[1] and readResult <= v[2] then
-                if AUTOTRACKER_ENABLE_DEBUG_LOGGING then
+                if AUTOTRACKER_ENABLE_DEBUG_LOGGING_EVENTS then
                     print(string.format("Currently running location event %x", k))
                 end
                 local code = EVENT_MAPPING[k][1]

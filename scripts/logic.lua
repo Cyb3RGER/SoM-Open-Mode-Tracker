@@ -124,7 +124,7 @@ function hasSprite()
     local value = Tracker:ProviderCountForCode("sprite") == 2
     if ENABLE_DEBUG_LOG then
         print(string.format("hasSprite: %s", value))
-    end   
+    end
     return value
 end
 
@@ -148,7 +148,7 @@ function isSpriteDisabled()
 end
 
 function isSpriteRoleDisabled()
-    local value = not hasSpriteRole() and not hasCharactersWithRoleAvaiable("sprite") 
+    local value = not hasSpriteRole() and not hasCharactersWithRoleAvaiable("sprite")
     if ENABLE_DEBUG_LOG then
         print(string.format("isSpriteRoleDisabled: %s", value))
     end
@@ -183,7 +183,7 @@ function hasCharactersWithRoleAvaiable(code)
     end
     return (obj_boy:Get("state") >= 1 and (obj_boy:Get("role") == 0 or obj_boy:Get("role") == mapValue)) or
         (obj_girl:Get("state") >= 1 and (obj_girl:Get("role") == 0 or obj_girl:Get("role") == mapValue)) or
-        (obj_sprite:Get("state") >= 1 and (obj_sprite:Get("role") == 0 or obj_sprite:Get("role") == mapValue)) 
+        (obj_sprite:Get("state") >= 1 and (obj_sprite:Get("role") == 0 or obj_sprite:Get("role") == mapValue))
 end
 
 -- key items
@@ -292,7 +292,6 @@ function gnomeNotNeeded()
     return value
 end
 
-
 function sylphidNotNeeded()
     local value = Tracker:ProviderCountForCode("sylphid_not_needed") == 1
     if ENABLE_DEBUG_LOG then
@@ -300,7 +299,6 @@ function sylphidNotNeeded()
     end
     return value
 end
-
 
 function salamandoNotNeeded()
     local value = Tracker:ProviderCountForCode("salamando_not_needed") == 1
@@ -317,7 +315,6 @@ function shadeNotNeeded()
     end
     return value
 end
-
 
 function luminaNotNeeded()
     local value = Tracker:ProviderCountForCode("lumina_not_needed") == 1
@@ -347,8 +344,8 @@ function hasAllElements()
     if isSpriteRoleDisabled() then
         return hasSylphid() and hasSalamando() and hasLumina() and hasGirlRole()
     elseif isGirlRoleDisabled() or luminaNotNeeded() then
-        return hasUndine() and hasGnome() and hasSylphid() and hasSalamando() and hasShade() and 
-            hasLuna() and hasDryad() and hasSpriteRole() 
+        return hasUndine() and hasGnome() and hasSylphid() and hasSalamando() and hasShade() and
+            hasLuna() and hasDryad() and hasSpriteRole()
     else
         return hasUndine() and hasGnome() and hasSylphid() and hasSalamando() and hasShade() and
             hasLumina() and hasLuna() and hasDryad() and hasGirlRole() and hasSpriteRole()
@@ -356,18 +353,18 @@ function hasAllElements()
 end
 
 function hasAllElementsGP()
-    if isSpriteRoleDisabled() then        
+    if isSpriteRoleDisabled() then
         return (hasSylphid() or sylphidNotNeeded()) and (hasSalamando() or salamandoNotNeeded()) and
-           (hasLumina() or luminaNotNeeded()) and hasGirlRole()
+            (hasLumina() or luminaNotNeeded()) and hasGirlRole()
     elseif isGirlRoleDisabled() or luminaNotNeeded() then
-        return (hasUndine() or undineNotNeeded()) and (hasGnome() or gnomeNotNeeded()) and 
-            (hasSylphid() or sylphidNotNeeded()) and (hasSalamando() or salamandoNotNeeded()) and 
-            (hasShade() or shadeNotNeeded()) and (hasLuna() or lunaNotNeeded()) and (hasDryad() or dryadNotNeeded()) and 
-            hasSpriteRole() 
+        return (hasUndine() or undineNotNeeded()) and (hasGnome() or gnomeNotNeeded()) and
+            (hasSylphid() or sylphidNotNeeded()) and (hasSalamando() or salamandoNotNeeded()) and
+            (hasShade() or shadeNotNeeded()) and (hasLuna() or lunaNotNeeded()) and (hasDryad() or dryadNotNeeded()) and
+            hasSpriteRole()
     else
-        return (hasUndine() or undineNotNeeded()) and  (hasGnome() or gnomeNotNeeded()) and 
-            (hasSylphid() or sylphidNotNeeded()) and  (hasSalamando() or salamandoNotNeeded()) and 
-            (hasShade() or shadeNotNeeded()) and (hasLumina() or luminaNotNeeded()) and 
+        return (hasUndine() or undineNotNeeded()) and (hasGnome() or gnomeNotNeeded()) and
+            (hasSylphid() or sylphidNotNeeded()) and (hasSalamando() or salamandoNotNeeded()) and
+            (hasShade() or shadeNotNeeded()) and (hasLumina() or luminaNotNeeded()) and
             (hasLuna() or lunaNotNeeded()) and (hasDryad() or dryadNotNeeded()) and hasGirlRole() and hasSpriteRole()
     end
 end
@@ -514,12 +511,11 @@ function updateOrbStates()
         obj.ItemInstance:Set("isGirlDisabled", _isGirlRoleDisabled)
         obj.ItemInstance:Set("hasSpriteRole", _hasSpriteRole)
         obj.ItemInstance:Set("hasGirlRole", _hasGirlRole)
-        obj.ItemInstance:Set("hasAllElements", tmp)       
+        obj.ItemInstance:Set("hasAllElements", tmp)
     end
 end
 
 function canDestroyOrb(name)
-
     updateOrbStates()
 
     local obj = Tracker:FindObjectForCode(name)
@@ -533,10 +529,10 @@ function canDestroyOrb(name)
 
     if obj:Get("state") == 0 then
         if name:match("gp_") then
-           return hasAllElementsGP() 
+            return hasAllElementsGP()
         else
-            return hasAllElements()    
-        end        
+            return hasAllElements()
+        end
     elseif obj:Get("state") == 1 then
         return hasUndine() and _hasSpriteRole
     elseif obj:Get("state") == 2 then
@@ -559,7 +555,7 @@ function canDestroyOrb(name)
 end
 
 function canCrossUpperLandForest()
-   return hasDrum() or canDestroyUFOrb()
+    return hasDrum() or canDestroyUFOrb()
 end
 
 function canDestroyETOrb()
@@ -594,21 +590,27 @@ end
 function canDestroyGPOrb1()
     return canDestroyOrb("gp_orb1")
 end
+
 function canDestroyGPOrb2()
     return canDestroyOrb("gp_orb2")
 end
+
 function canDestroyGPOrb3()
     return canDestroyOrb("gp_orb3")
 end
+
 function canDestroyGPOrb4()
     return canDestroyOrb("gp_orb4")
 end
+
 function canDestroyGPOrb5()
     return canDestroyOrb("gp_orb5")
 end
+
 function canDestroyGPOrb6()
     return canDestroyOrb("gp_orb6")
 end
+
 function canDestroyGPOrb7()
     return canDestroyOrb("gp_orb7")
 end
@@ -646,12 +648,12 @@ function hasTreePalaceAccess()
     return isBasicLogic() or hasTreeSeed()
 end
 
-function hasManaFortressAccess()    
+function hasManaFortressAccess()
     return not isReviveTheTree() and canCutStuff() and hasWhip() and (isVanillaShort() or grandPalaceBoss())
 end
 
 function hasManaTreeAccess()
-    return canCutStuff() and (not isReviveTheTree() or manaTreeRevive())    
+    return canCutStuff() and (not isReviveTheTree() or manaTreeRevive())
 end
 
 -- utils
@@ -660,7 +662,7 @@ function always()
 end
 
 function grandPalaceBoss()
-    return hasWhip() and canDestroyGPOrb1() and canDestroyGPOrb2()  and canDestroyGPOrb3() and
+    return hasWhip() and canDestroyGPOrb1() and canDestroyGPOrb2() and canDestroyGPOrb3() and
         canDestroyGPOrb4() and canDestroyGPOrb5() and canDestroyGPOrb6() and canDestroyGPOrb7()
 end
 
@@ -674,5 +676,3 @@ function manaTreeRevive()
     end
     return countSeeds() >= neededSeed
 end
-
-

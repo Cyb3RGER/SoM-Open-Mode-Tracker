@@ -34,9 +34,9 @@ function CustomItemElement:createItem(name)
     self.ItemInstance.ItemState = self
     self.ItemInstance.OnLeftClickFunc = invokeLeftClick
     self.ItemInstance.OnRightClickFunc = invokeRightClick
-    self.ItemInstance.CanProvideCodeFunc = invokeCanProvideCode    
-    self.ItemInstance.ProvidesCodeFunc = invokeProvidesCode    
-    self.ItemInstance.AdvanceToCodeFunc = invokeAdvanceToCode    
+    self.ItemInstance.CanProvideCodeFunc = invokeCanProvideCode
+    self.ItemInstance.ProvidesCodeFunc = invokeProvidesCode
+    self.ItemInstance.AdvanceToCodeFunc = invokeAdvanceToCode
     self.ItemInstance.SaveFunc = invokeSave
     self.ItemInstance.LoadFunc = invokeLoad
     self.ItemInstance.PropertyChangedFunc = invokePropertyChanged
