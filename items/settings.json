@@ -51,17 +51,16 @@
         "capturable": false,
         "allow_disabled": false,
         "initial_stage_idx": 0,
-        "codes": "roles",
         "stages": [
             {
                 "img": "images/normal.png",
                 "inherit_codes": false,
-                "codes": "roles_normal"
+                "codes": "roles, roles_normal"
             },
             {
                 "img": "images/random.png",
                 "inherit_codes": false,
-                "codes": "roles_random"
+                "codes": "roles, roles_random"
             }
         ]
     },
@@ -72,17 +71,16 @@
         "capturable": false,
         "allow_disabled": false,
         "initial_stage_idx": 0,
-        "codes": "drum_logic",
         "stages": [
             {
                 "img": "images/normal.png",
                 "inherit_codes": false,
-                "codes": "drum_logic_normal"
+                "codes": "drum_logic, drum_logic_normal"
             },
             {
                 "img": "images/random.png",
                 "inherit_codes": false,
-                "codes": "drum_logic_random"
+                "codes": "drum_logic, drum_logic_random"
             }
         ]
     }
