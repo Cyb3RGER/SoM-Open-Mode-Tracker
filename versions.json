@@ -1,6 +1,15 @@
 {
     "versions": [
         {
+            "package_version": "1.7.0.2",
+            "download_url": "https://github.com/Cyb3RGER/SoM-Open-Mode-Tracker/releases/download/1.7.0.2/SoM-Open-Mode-Tracker-v1_7_0_2.zip",
+            "sha256": "9a7b69188b9ddee082fd468c4627ee91e1fd6bc83a17dbc7787bb6fdac1b9e82",
+            "changelog": [
+                "Added AP support",
+                "(Hopefully) better in-game check"
+            ]
+        },
+        {
             "package_version": "1.6.1.1",
             "download_url": "https://github.com/Cyb3RGER/SoM-Open-Mode-Tracker/releases/download/1.6.1.1/SoM-Open-Mode-Tracker-v1_6_1_1.zip",
             "sha256": "45f1a407bcba5eb8bcbacb338f8d074a83cca0ee47b76506868de8d704f7ca15",
