@@ -9,10 +9,17 @@ function updateGameState(segment)
     local current_map = AutoTracker:ReadU16(CURRENT_MAP_ADDR)
     --check if first byte of nmi vector is not 0x40 (RTI)
     local nmi_first_byte = AutoTracker:ReadU8(NMI_VECTOR_ADDR)
+    local char_flag1 = AutoTracker:ReadU8(CHARS.addr)
+    local char_flag2 = AutoTracker:ReadU8(CHARS.addr + 1)
+    local char_flag3 = AutoTracker:ReadU8(CHARS.addr + 2)
+    local has_char_setup = (char_flag1 == 0 or char_flag1 == 1) and (char_flag2 == 0 or char_flag2 == 1) and (char_flag3 == 0 or char_flag3 == 1) and char_flag1 + char_flag2 + char_flag3 > 0
     local in_title =  nmi_first_byte == 0x40
     -- game is running when not_in_title and current map is not uninitalized or 0
-    IS_GAME_RUNNING = not in_title and current_map ~= 0x5555 and current_map ~= 0x0000
-    print('updateGameState', IS_GAME_RUNNING, nmi_first_byte, in_title, current_map)
+    IS_GAME_RUNNING = not in_title and current_map ~= 0x5555 and current_map ~= 0x0000 and has_char_setup
+    IS_AP = AutoTracker:ReadU16(AP_SEED_ADDR) > 0
+    if AUTOTRACKER_ENABLE_DEBUG_LOGGING then
+        print('updateGameState', IS_GAME_RUNNING, nmi_first_byte, in_title, current_map, has_char_setup, IS_AP)
+    end
     if (IS_GAME_RUNNING and not ENABLED_WATCHES) then
         enableWatches()
     elseif (not IS_GAME_RUNNING and ENABLED_WATCHES) then
@@ -304,6 +311,42 @@ function updateCurrentEventPointer()
                         obj.AvailableChestCount = obj.AvailableChestCount - 1
                     end
                 end
+            end
+        end
+    end
+end
+
+function updateEventFlagsAP(segment)
+    if not IS_GAME_RUNNING or not IS_AP then
+        return
+    end
+    local vals = {}
+    for addr, values in pairs(EVENT_MAPPING_AP) do
+        local readResult = AutoTracker:ReadU8(EVENT_FLAGS_ADDR, addr)
+        for target_val, loc_info in pairs(values) do
+            local code = loc_info[1]
+            if readResult >= target_val then
+                if loc_info[2] then
+                    vals[code] = -1
+                else
+                    if vals[code] then
+                        vals[code] = vals[code] + 1
+                    else
+                        vals[code] = 1;
+                    end
+                end
+            elseif not vals[code] then
+                vals[code] = 0;
+            end
+        end
+    end
+    for code, count in pairs(vals) do
+        local o = Tracker:FindObjectForCode(code)
+        if o then
+            if count == -1 then
+                o.AvailableChestCount = 0
+            else
+                o.AvailableChestCount = o.ChestCount - count
             end
         end
     end

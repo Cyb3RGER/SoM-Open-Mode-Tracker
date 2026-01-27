@@ -1,5 +1,5 @@
 -- Configuration --------------------------------------
-AUTOTRACKER_ENABLE_DEBUG_LOGGING = true or ENABLE_DEBUG_LOG
+AUTOTRACKER_ENABLE_DEBUG_LOGGING = false or ENABLE_DEBUG_LOG
 AUTOTRACKER_ENABLE_ITEM_TRACKING = true
 AUTOTRACKER_ENABLE_LOCATION_TRACKING = true and not IS_ITEMS_ONLY
 AUTOTRACKER_ENABLE_DEBUG_LOGGING_EVENTS = false and AUTOTRACKER_ENABLE_DEBUG_LOGGING
@@ -7,11 +7,13 @@ AUTOTRACKER_ENABLE_DEBUG_LOGGING_EVENTS = false and AUTOTRACKER_ENABLE_DEBUG_LOG
 
 -- Globals --------------------------------------------
 IS_GAME_RUNNING = false
+IS_AP = false
+AP_SEED_ADDR = 0xfd0040
 ENABLED_WATCHES = false
 CURRENT_MAP_ADDR = 0x7e00dc
 NMI_VECTOR_ADDR = 0x7e0100
+ITEMS_BASE_ADDR = 0x7ECF00
 if AUTOTRACKER_ENABLE_ITEM_TRACKING then
-    ITEMS_BASE_ADDR = 0x7ECF00
     ScriptHost:LoadScript("scripts/autotracking/items/chars.lua")
     ScriptHost:LoadScript("scripts/autotracking/items/keyitems.lua")
     ScriptHost:LoadScript("scripts/autotracking/items/magic.lua")
@@ -19,6 +21,7 @@ if AUTOTRACKER_ENABLE_ITEM_TRACKING then
 end
 if AUTOTRACKER_ENABLE_LOCATION_TRACKING then
     ScriptHost:LoadScript("scripts/autotracking/locations.lua")
+    ScriptHost:LoadScript("scripts/autotracking/locations_ap.lua")
 end
 -------------------------------------------------------
 
@@ -40,7 +43,9 @@ ScriptHost:LoadScript("scripts/autotracking/callbacks.lua")
 
 -- Memory Watches -------------------------------------
 ScriptHost:AddMemoryWatch("CheckGameState1", CURRENT_MAP_ADDR, 0x2 , updateGameState)
-ScriptHost:AddMemoryWatch("CheckGameState2", NMI_VECTOR_ADDR, 0x1 , updateGameState)
+ScriptHost:AddMemoryWatch("CheckGameState2", NMI_VECTOR_ADDR, 0x1, updateGameState)
+ScriptHost:AddMemoryWatch("CheckGameState3", CHARS.addr, 0x3 , updateGameState)
+ScriptHost:AddMemoryWatch("CheckGameState4", AP_SEED_ADDR, 0x2 , updateGameState)
 
 function enableWatches()
     if ENABLED_WATCHES then
@@ -63,14 +68,20 @@ function enableWatches()
     end
     if AUTOTRACKER_ENABLE_LOCATION_TRACKING then
         if AUTOTRACKER_ENABLE_DEBUG_LOGGING then
-            print("Adding location tracker watches")
+            print("Adding location tracker watches", "IS_AP: "..tostring(IS_AP))
         end
-        ScriptHost:AddMemoryWatch("EventPointerTableAddr", EVENT_POINTER_TABLE_ADDR_ADDR, 0x3, updateEventPointerTableAddr)
-        ScriptHost:AddMemoryWatch("EventFlags", EVENT_FLAGS_ADDR, 0xFF, updateEventFlags)
-        ScriptHost:AddMemoryWatch("CurrentEventPointer", CURRENT_EVENT_POINTER_ADDR, 0x3, updateCurrentEventPointer)
-        -- ScriptHost:AddMemoryWatch("VanillaEventDataBank9",0x90000,0xF2D6,updateEventData)
-        -- ScriptHost:AddMemoryWatch("VanillaEventDataBankA",0xA0000,0xB574,updateEventData)
-        -- ScriptHost:AddMemoryWatch("CustomEventData",0x240000,0x1ffff,updateEventData)
+        if IS_AP then
+            for k, _ in pairs(EVENT_MAPPING_AP) do
+                ScriptHost:AddMemoryWatch("EventFlagsAP" .. k, EVENT_FLAGS_ADDR+k, 0x1, updateEventFlagsAP)
+            end
+        else
+            ScriptHost:AddMemoryWatch("EventPointerTableAddr", EVENT_POINTER_TABLE_ADDR_ADDR, 0x3, updateEventPointerTableAddr)
+            ScriptHost:AddMemoryWatch("EventFlags", EVENT_FLAGS_ADDR, 0xFF, updateEventFlags)
+            ScriptHost:AddMemoryWatch("CurrentEventPointer", CURRENT_EVENT_POINTER_ADDR, 0x3, updateCurrentEventPointer)
+            -- ScriptHost:AddMemoryWatch("VanillaEventDataBank9",0x90000,0xF2D6,updateEventData)
+            -- ScriptHost:AddMemoryWatch("VanillaEventDataBankA",0xA0000,0xB574,updateEventData)
+            -- ScriptHost:AddMemoryWatch("CustomEventData",0x240000,0x1ffff,updateEventData)
+        end
     end
     ENABLED_WATCHES = true
 end
@@ -104,6 +115,9 @@ function disableWatches()
         ScriptHost:RemoveMemoryWatch("EventPointerTable")
         for k, _ in pairs(EVENT_MAPPING) do
             ScriptHost:RemoveMemoryWatch("EventData" .. k)
+        end
+        for k, _ in pairs(EVENT_MAPPING_AP) do
+            ScriptHost:RemoveMemoryWatch("EventFlagsAP" .. k)
         end
     end
     ENABLED_WATCHES = false

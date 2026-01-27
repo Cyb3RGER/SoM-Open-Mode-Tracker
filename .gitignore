@@ -3,3 +3,5 @@ todo.*
 scripts/custom_items/Examples
 TrackerFlags.cs
 files/
+.idea/
+.luarc.json
