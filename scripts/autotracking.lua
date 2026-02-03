@@ -113,9 +113,11 @@ function disableWatches()
         ScriptHost:RemoveMemoryWatch("EventFlags")
         ScriptHost:RemoveMemoryWatch("CurrentEventPointer")
         ScriptHost:RemoveMemoryWatch("EventPointerTable")
+        ADDED_EVENT_POINTER_TABLE_MEMORY_WATCH = false
         for k, _ in pairs(EVENT_MAPPING) do
             ScriptHost:RemoveMemoryWatch("EventData" .. k)
         end
+        ADDED_EVENT_DATA_MEMORY_WATCHES = false
         for k, _ in pairs(EVENT_MAPPING_AP) do
             ScriptHost:RemoveMemoryWatch("EventFlagsAP" .. k)
         end

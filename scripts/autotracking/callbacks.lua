@@ -197,8 +197,8 @@ function updateEventPointerTableAddr(segment)
         if not ADDED_EVENT_POINTER_TABLE_MEMORY_WATCH then
             if AUTOTRACKER_ENABLE_DEBUG_LOGGING then
                 print(string.format("Adding event pointer table watch now"))
-                ScriptHost:AddMemoryWatch("EventPointerTable", tableAddr, 0x3 * 0xA00, updateEventPointerTable)
             end
+            ScriptHost:AddMemoryWatch("EventPointerTable", tableAddr, 0x3 * 0xA00, updateEventPointerTable)
             ADDED_EVENT_POINTER_TABLE_MEMORY_WATCH = true
         end
     else
@@ -232,7 +232,7 @@ function updateEventPointerTable()
         return
     end
     if not ADDED_EVENT_DATA_MEMORY_WATCHES then
-        if AUTOTRACKER_ENABLE_DEBUG_LOGGING_EVENTS then
+        if AUTOTRACKER_ENABLE_DEBUG_LOGGING then
             print(string.format("Adding event data watch now"))
         end
         if not canPullAllPointers() then
@@ -246,6 +246,7 @@ function updateEventPointerTable()
             end
             ScriptHost:AddMemoryWatch("EventData" .. k, addr, EVENT_DATA_WATCH_SIZE, updateEventData)
         end
+        --updateEventData()
         ADDED_EVENT_DATA_MEMORY_WATCHES = true
     end
 end
@@ -263,7 +264,7 @@ function updateEvents()
     end
     EVENT_FLAG_MAPPING = {}
     NOTHING_EVENTS = {}
-    if AUTOTRACKER_ENABLE_DEBUG_LOGGING_EVENTS then
+    if AUTOTRACKER_ENABLE_DEBUG_LOGGING then
         print(string.format("============ updateEvents ==========================="))
     end
     for k, _ in pairs(EVENT_MAPPING) do
@@ -282,6 +283,7 @@ function updateEvents()
     if AUTOTRACKER_ENABLE_DEBUG_LOGGING_EVENTS then
         print(string.format("====================================================="))
     end
+    updateEventFlags()
 end
 
 function updateCurrentEventPointer()
