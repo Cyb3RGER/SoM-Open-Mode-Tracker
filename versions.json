@@ -1,6 +1,14 @@
 {
     "versions": [
         {
+            "package_version": "1.7.0.3",
+            "download_url": "https://github.com/Cyb3RGER/SoM-Open-Mode-Tracker/releases/download/1.7.0.3/SoM-Open-Mode-Tracker-v1_7_0_3.zip",
+            "sha256": "5272961e2d33bdf7e9c8cab01a6e1689d29da5378cc61c8729753e4d3b997384",
+            "changelog": [
+                "Fix solo tracking"
+            ]
+        },
+        {
             "package_version": "1.7.0.2",
             "download_url": "https://github.com/Cyb3RGER/SoM-Open-Mode-Tracker/releases/download/1.7.0.2/SoM-Open-Mode-Tracker-v1_7_0_2.zip",
             "sha256": "9a7b69188b9ddee082fd468c4627ee91e1fd6bc83a17dbc7787bb6fdac1b9e82",
