@@ -198,7 +198,7 @@ function updateEventPointerTableAddr(segment)
             if AUTOTRACKER_ENABLE_DEBUG_LOGGING then
                 print(string.format("Adding event pointer table watch now"))
             end
-            ScriptHost:AddMemoryWatch("EventPointerTable", tableAddr, 0x3 * 0xA00, updateEventPointerTable)
+            ScriptHost:AddMemoryWatch("EventPointerTable", tableAddr + EVENT_POINTER_TABLE_WATCH_START_OFFSET, EVENT_POINTER_TABLE_WATCH_SIZE, updateEventPointerTable)
             ADDED_EVENT_POINTER_TABLE_MEMORY_WATCH = true
         end
     else
